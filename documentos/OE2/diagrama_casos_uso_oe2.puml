@@ -1,0 +1,119 @@
+@startuml diagrama_casos_uso_oe2
+!theme bluegray
+title SINÓPIA OE2 - OUVIDOR.PE\nSistema de Suporte Inteligente ao Ouvidor
+
+' Definindo atores
+actor "Ouvidor" as OUVIDOR #LightBlue
+actor "Gestor" as GESTOR #LightGreen
+actor "Administrador" as ADMIN #Orange
+actor "Colaborador" as COLABORADOR #LightYellow
+actor "Sistema IA" as IA #LightPink
+
+' Objetivos de Negócio
+note top : **OBJETIVOS DE NEGÓCIO**\n• Desenvolver Sistema de Suporte Inteligente\n• Implementar IA Generativa para Análise Automática\n• Personalizar Encaminhamentos\n• Garantir Acessibilidade e Conformidade\n• Assegurar Performance e Escalabilidade
+
+package "OUVIDOR.PE - Sistema de Suporte Inteligente" {
+  
+  package "Processamento com IA" #LightCyan {
+    usecase "Classificar Manifestação\nAutomaticamente" as UC1
+    usecase "Processar com IA/PLN" as UC2
+    usecase "Analisar Sentimentos\ne Emoções" as UC3
+    usecase "Detectar Duplicatas\ne Similaridade" as UC4
+    usecase "Sugerir Encaminhamentos\nInteligentes" as UC5
+    usecase "Minerar Base de\nConhecimento" as UC6
+  }
+  
+  package "Gestão e Monitoramento" #LightSalmon {
+    usecase "Monitorar Prazos\ne Alertas" as UC7
+    usecase "Gerar Dashboard\nInterativo" as UC8
+    usecase "Criar Relatórios\nGerenciais" as UC9
+    usecase "Analisar Performance\nOperacional" as UC10
+    usecase "Gerenciar Alertas\nPreditivos" as UC11
+  }
+  
+  package "Automação e Respostas" #LightGoldenRodYellow {
+    usecase "Gerar Respostas\nAutomáticas" as UC12
+    usecase "Gerenciar Templates\ne Textos Padrão" as UC13
+    usecase "Enviar Notificações\nMulticanal" as UC14
+    usecase "Executar Encaminhamento\nAutomático" as UC15
+  }
+  
+  package "Administração e Segurança" #Lavender {
+    usecase "Gerenciar Perfis\ne Acessos" as UC16
+    usecase "Auditar Ações\ne Decisões IA" as UC17
+    usecase "Configurar Sistema\ne Regras" as UC18
+    usecase "Integrar Sistemas\nExternos" as UC19
+    usecase "Garantir Conformidade\nLGPD" as UC20
+  }
+  
+  package "Curadoria e Qualidade" #MistyRose {
+    usecase "Gerenciar Palavras-Chave\ne Taxonomia" as UC21
+    usecase "Executar Limpeza\nPeriódica" as UC22
+    usecase "Validar Qualidade\ndas Classificações" as UC23
+    usecase "Treinar e Calibrar\nModelos IA" as UC24
+  }
+}
+
+' Relacionamentos dos Atores
+OUVIDOR --> UC1
+OUVIDOR --> UC2
+OUVIDOR --> UC3
+OUVIDOR --> UC4
+OUVIDOR --> UC5
+OUVIDOR --> UC7
+OUVIDOR --> UC8
+OUVIDOR --> UC12
+OUVIDOR --> UC15
+OUVIDOR --> UC21
+OUVIDOR --> UC23
+
+GESTOR --> UC8
+GESTOR --> UC9
+GESTOR --> UC10
+GESTOR --> UC11
+GESTOR --> UC17
+
+ADMIN --> UC16
+ADMIN --> UC17
+ADMIN --> UC18
+ADMIN --> UC19
+ADMIN --> UC20
+ADMIN --> UC24
+
+COLABORADOR --> UC8
+COLABORADOR --> UC9
+
+IA --> UC1
+IA --> UC2
+IA --> UC3
+IA --> UC4
+IA --> UC5
+IA --> UC6
+IA --> UC11
+IA --> UC12
+IA --> UC22
+IA --> UC24
+
+' Relacionamentos Include
+UC1 ..> UC2 : <<include>>
+UC1 ..> UC3 : <<include>>
+UC4 ..> UC2 : <<include>>
+UC5 ..> UC6 : <<include>>
+UC12 ..> UC13 : <<include>>
+UC15 ..> UC5 : <<include>>
+UC7 ..> UC11 : <<include>>
+UC17 ..> UC20 : <<include>>
+UC21 ..> UC22 : <<include>>
+UC23 ..> UC24 : <<include>>
+
+' Relacionamentos Extend
+UC14 ..> UC7 : <<extend>>
+UC14 ..> UC15 : <<extend>>
+UC19 ..> UC6 : <<extend>>
+UC10 ..> UC8 : <<extend>>
+UC20 ..> UC17 : <<extend>>
+
+' Requisitos Funcionais
+note bottom : **REQUISITOS FUNCIONAIS**\n• RF001-003: Controle RBAC\n• RF004-009: Classificação IA\n• RF010-014: Processamento PLN\n• RF015-018: Detecção Duplicatas\n• RF019-021: Encaminhamento Automático\n• RF022-024: Geração Respostas\n• RF025-028: Monitoramento Prazos\n• RF029-032: Dashboard/Relatórios\n• RF033-037: Integrações Externas\n• RF038-041: Segurança/LGPD\n• RF042-045: Performance/Arquitetura
+
+@enduml 

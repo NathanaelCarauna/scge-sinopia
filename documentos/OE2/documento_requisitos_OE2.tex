@@ -1,0 +1,868 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{listings}
+% \usepackage{fontawesome5} % Package not available
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+% Configuração da página
+\geometry{
+    left=3cm,
+    right=2.5cm,
+    top=3cm,
+    bottom=2.5cm,
+    headheight=15pt
+}
+
+% Cores personalizadas
+\definecolor{primaryblue}{RGB}{0,82,155}
+\definecolor{secondaryblue}{RGB}{70,130,180}
+\definecolor{accentgreen}{RGB}{0,128,0}
+\definecolor{warningorange}{RGB}{255,140,0}
+\definecolor{lightgray}{RGB}{245,245,245}
+\definecolor{darkgray}{RGB}{64,64,64}
+
+% Configuração do hyperref
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    filecolor=primaryblue,
+    urlcolor=primaryblue,
+    citecolor=primaryblue,
+    pdfauthor={Prof. Dr. Fernando Buarque},
+    pdftitle={SINÓPIA OE2 - Documento de Requisitos},
+    pdfsubject={Sistema Integrado de Ouvidoria Pública},
+    pdfkeywords={IA, Ouvidoria, Requisitos, SINÓPIA}
+}
+
+% Configuração dos títulos
+\titleformat{\section}
+{\Large\bfseries\color{primaryblue}}
+{\thesection}{1em}{}
+[\titlerule]
+
+\titleformat{\subsection}
+{\large\bfseries\color{secondaryblue}}
+{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalsize\bfseries\color{darkgray}}
+{\thesubsubsection}{1em}{}
+
+% Configuração do cabeçalho e rodapé
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\includegraphics[height=1cm]{logo-upe.png}}
+\fancyhead[C]{\textbf{SINÓPIA - OE2}}
+\fancyhead[R]{}
+\fancyfoot[C]{\thepage}
+\fancyfoot[L]{\small Documento de Requisitos}
+\fancyfoot[R]{\small Versão 1.0 - 2025}
+
+% Estilo para caixas de requisitos
+\newtcolorbox{reqbox}[2][]{
+    colback=lightgray,
+    colframe=primaryblue,
+    fonttitle=\bfseries,
+    title=#2,
+    #1
+}
+
+% Estilo para caixas de destaque
+\newtcolorbox{highlightbox}[2][]{
+    colback=secondaryblue!10,
+    colframe=secondaryblue,
+    fonttitle=\bfseries,
+    title=#2,
+    #1
+}
+
+% Comandos personalizados
+\newcommand{\rf}[1]{\textbf{\color{primaryblue}RF#1}}
+\newcommand{\rnf}[1]{\textbf{\color{accentgreen}RNF#1}}
+
+% Configuração do sumário
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+
+\begin{document}
+
+% Página de título
+\begin{titlepage}
+    \centering
+    
+    % Logo da instituição
+    \centering
+    \includegraphics[width=0.3\textwidth]{logo-upe.png}
+    
+    \vspace{2cm}
+    
+    % Título principal
+    {\Huge\bfseries\color{primaryblue}
+        SISTEMA INTEGRADO DE\\
+        OUVIDORIA PÚBLICA\\
+        BASEADO EM\\
+        INTELIGÊNCIA ARTIFICIAL
+    \par}
+    
+    \vspace{1cm}
+    
+    {\LARGE\color{secondaryblue}
+        SINÓPIA
+    \par}
+    
+    \vspace{1.5cm}
+    
+    % Subtítulo
+    {\Large\bfseries
+        MÓDULO OE2: SUPORTE INTELIGENTE\\
+        AO OUVIDOR (OUVIDOR.PE)
+    \par}
+    
+    \vspace{0.5cm}
+    
+    {\large
+        DOCUMENTO DE REQUISITOS
+    \par}
+    
+    \vspace{2cm}
+    
+    % Informações do projeto
+    \begin{tcolorbox}[
+        colback=lightgray,
+        colframe=primaryblue,
+        width=0.8\textwidth,
+        center title,
+        fonttitle=\bfseries,
+        title=INFORMAÇÕES DO PROJETO
+    ]
+        \begin{tabular}{@{}ll@{}}
+            \textbf{Versão:} & 1.0 \\
+            \textbf{Data:} & 11 de julho de 2025 \\
+            \textbf{Coordenador:} & Prof. Dr. Fernando Buarque \\
+            \textbf{Instituição Executora:} & Universidade de Pernambuco (UPE) \\
+            \textbf{Equipe:} & TIME-2 (OE2) \\
+        \end{tabular}
+    \end{tcolorbox}
+    
+    \vfill
+    
+    {\large Recife, 2025}
+\end{titlepage}
+
+% Sumário
+\tableofcontents
+\newpage
+
+% Lista de tabelas
+\listoftables
+\newpage
+
+% Introdução
+\section{Introdução e Escopo}
+
+\subsection{Contextualização}
+
+O módulo \textbf{OE2 - OUVIDOR.PE} representa o subsistema de suporte analítico e estratégico ao trabalho dos ouvidores no SINÓPIA. Atuando como \emph{back-office} da solução, será responsável pelo tratamento automatizado das manifestações recebidas, transformando-as em indicadores, padrões, alertas e sugestões de melhoria contínua, apoiando decisões baseadas em evidências e aumentando a resolutividade da ouvidoria.
+
+\begin{highlightbox}{Objetivo Principal}
+Desenvolver e implementar um subsistema de Análise e Processamento Automático avançados com IA Generativa de Suporte ao Ouvidor, incluindo mineração na base de conhecimento/manifestações existentes e garantias sistêmicas de segurança, conformidade, transparência e ética.
+\end{highlightbox}
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}[leftmargin=*]
+    \item \textbullet~Implementar IA Generativa para suporte automatizado ao ouvidor
+    \item \textbullet~Realizar mineração na base de conhecimento/manifestações existentes
+    \item \textbullet~Garantir segurança, conformidade, transparência e ética
+    \item \textbullet~Automatizar classificação e triagem de manifestações
+    \item \textbullet~Detectar duplicatas e manifestações similares
+    \item \textbullet~Sugerir encaminhamentos automáticos baseados em padrões históricos
+    \item \textbullet~Gerar respostas automáticas e textos padrão
+    \item \textbullet~Prover dashboards e alertas inteligentes
+    \item \textbullet~Integrar com sistemas externos e outros módulos do SINÓPIA
+\end{itemize}
+
+\subsection{Usuários Alvo}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lp{8cm}@{}}
+\toprule
+\textbf{Perfil} & \textbf{Descrição} \\
+\midrule
+Ouvidores & Principais usuários com acesso completo às funcionalidades \\
+Gestores/Diretores & Acesso aos módulos de ouvidor e gestão simultaneamente \\
+Colaboradores & Acesso limitado a visualização e operações básicas \\
+Servidores & Acesso a consultas e acompanhamento de manifestações \\
+Administradores & Acesso total para configuração e manutenção \\
+\bottomrule
+\end{tabular}
+\caption{Perfis de usuário do sistema OE2}
+\end{table}
+
+\section{Perfis de Usuário e Controle de Acesso}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{001} & Gerenciamento de Perfis & O sistema deve suportar os seguintes perfis com permissões específicas: Ouvidor (acesso completo às funcionalidades de processamento e análise), Gestor/Diretor (acesso aos módulos de ouvidor e gestão simultaneamente), Colaborador (acesso limitado a visualização e algumas operações básicas), Servidor (acesso a consultas e acompanhamento de manifestações), Administrador (acesso total para configuração e manutenção do sistema). \\
+\hline
+
+\rf{002} & Controle de Acesso Baseado em Funções (RBAC) & O sistema deve implementar controle de acesso baseado em papéis com: autenticação segura integrada com sistemas existentes, permissões granulares por funcionalidade, registro de todas as ações por usuário, sessões com timeout automático, autenticação multifator para perfis administrativos. \\
+\hline
+
+\rf{003} & Acesso Simultâneo a Módulos & O sistema deve permitir que gestores acessem simultaneamente: Módulo de ouvidor (OE2), Módulo de gestão (OE4), Interface unificada com navegação fluida entre módulos. \\
+\hline
+
+\end{longtable}
+
+\section{Classificação Inteligente de Manifestações}
+
+\subsection{Estrutura de Classificação}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{004} & Campos de Classificação & O sistema deve suportar classificação por: Tipo de manifestação (reclamação, solicitação, denúncia, sugestão, elogio), Modalidade (manifestação, acesso à informação, LGPD), Assunto (categorias principais), Subassunto (subcategorias específicas por secretaria), Palavras-chave (tags para indexação e busca), Órgão/setor de destino, Grau de prioridade, Nível de complexidade. \\
+\hline
+
+\end{longtable}
+
+\subsection{Inteligência Artificial para Classificação}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{005} & Sugestão Automática de Classificação via IA & O sistema deve utilizar IA/LLM para: analisar o texto da manifestação automaticamente, sugerir tipo, modalidade, assunto e subassunto, propor palavras-chave relevantes, indicar órgão/setor de destino com percentual de confiança, calcular grau de prioridade baseado em critérios predefinidos, permitir aceitação, rejeição ou modificação das sugestões pelo ouvidor. \\
+\hline
+
+\rf{006} & Aprendizado Contínuo & O sistema deve: registrar as decisões dos ouvidores sobre as sugestões, melhorar a precisão das sugestões baseado no feedback, atualizar modelos de IA periodicamente, manter histórico de acurácia por tipo de classificação. \\
+\hline
+
+\end{longtable}
+
+\subsection{Sistema de Curadoria de Palavras-Chave}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{007} & Gestão de Palavras-Chave & O sistema deve implementar: cadastro de palavras-chave por secretaria/órgão, aprovação de novas palavras-chave por gestores, desativação em vez de exclusão de palavras obsoletas, sistema de sinônimos e termos relacionados, normalização automática (correção ortográfica, padronização). \\
+\hline
+
+\rf{008} & Ranking e Estatísticas de Palavras-Chave & O sistema deve gerar: ranking de palavras-chave mais utilizadas, lista de palavras-chave não utilizadas, sugestões de consolidação de termos similares, relatórios de uso por período e órgão, alertas para palavras com baixo uso para limpeza periódica. \\
+\hline
+
+\rf{009} & Limpeza Periódica Automatizada & O sistema deve: identificar palavras-chave redundantes ou similares, sugerir consolidação de 10 ou mais palavras similares, propor desativação de palavras sem uso em período configurável, gerar relatórios de limpeza para aprovação de gestores, executar limpeza automática após aprovação. \\
+\hline
+
+\end{longtable}
+
+\section{Processamento e Análise com IA}
+
+\subsection{Processamento de Linguagem Natural}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{010} & Análise Semântica Avançada & O sistema deve implementar: processamento de linguagem natural para compreensão contextual, reconhecimento de entidades nomeadas (pessoas, lugares, órgãos), análise sintática e semântica do texto, correção automática de ortografia e gramática, identificação de sinônimos e termos relacionados, tratamento de manifestações com palavrões sem modificar o texto original. \\
+\hline
+
+\rf{011} & Análise de Sentimentos e Emoções & O sistema deve: identificar sentimento da manifestação (positivo, negativo, neutro), detectar nível de urgência e emoção, classificar grau de insatisfação ou contentamento, identificar manifestações com linguagem agressiva ou inadequada, priorizar manifestações com alto grau de insatisfação. \\
+\hline
+
+\rf{012} & Detecção de Veracidade & O sistema deve: analisar consistência interna da manifestação, identificar possíveis relatos falsos baseado em padrões, cruzar informações com bases de dados públicas quando aplicável, gerar score de confiabilidade da manifestação, alertar ouvidores sobre manifestações suspeitas. \\
+\hline
+
+\end{longtable}
+
+\subsection{Mineração de Dados e Conhecimento}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{013} & Mineração da Base Histórica & O sistema deve: processar manifestações históricas para identificar padrões, extrair conhecimento de respostas e encaminhamentos anteriores, identificar best practices de resolução por tipo de manifestação, criar base de conhecimento estruturada para consulta, sugerir soluções baseadas em casos similares anteriores. \\
+\hline
+
+\rf{014} & Análise Preditiva & O sistema deve implementar: previsão de tempo de resposta por tipo de manifestação, predição de volume de demandas por período, identificação de tendências e sazonalidades, alertas preventivos para picos de demanda, sugestões de alocação de recursos baseadas em predições. \\
+\hline
+
+\end{longtable}
+
+\section{Detecção de Duplicatas e Similaridade}
+
+\subsection{Identificação de Duplicatas}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{015} & Detecção Automática de Duplicatas & O sistema deve: identificar manifestações idênticas ou muito similares (>95\% similaridade), comparar manifestações mesmo sem login por nome ou CPF, alertar sobre duplicatas antes da criação da manifestação, sugerir cancelamento ou vinculação com manifestação original, manter histórico de manifestações duplicadas canceladas. \\
+\hline
+
+\rf{016} & Análise de Similaridade Avançada & O sistema deve: calcular percentual de similaridade entre manifestações (ex: 90\% semelhança), identificar manifestações relacionadas ao mesmo problema/servidor, agrupar manifestações por padrões (ex: mesmo servidor denunciado), permitir relacionamento manual pelo ouvidor, exibir manifestações relacionadas antes do encaminhamento. \\
+\hline
+
+\end{longtable}
+
+\subsection{Regras de Duplicatas e Agrupamento}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{017} & Regras de Cancelamento & O sistema deve implementar: regras claras para cancelamento de duplicatas, diferentes critérios de duplicata por tipo de manifestação, possibilidade de configuração de thresholds de similaridade, aprovação obrigatória do ouvidor para cancelamentos, notificação ao cidadão sobre duplicatas encontradas. \\
+\hline
+
+\rf{018} & Agrupamento Inteligente & O sistema deve: agrupar manifestações por critérios configuráveis, identificar casos sistêmicos (múltiplas manifestações sobre mesmo problema), criar alertas para problemas recorrentes, sugerir ações preventivas para casos agrupados, gerar relatórios de agrupamentos por período. \\
+\hline
+
+\end{longtable}
+
+\section{Encaminhamento Inteligente}
+
+\subsection{Sugestão de Destino}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{019} & IA para Sugestão de Órgão/Setor & O sistema deve: analisar o conteúdo da manifestação para identificar competência, sugerir órgão/setor de destino com percentual de confiança, considerar histórico de encaminhamentos similares, permitir configuração de regras de encaminhamento por tipo, aprender com correções dos ouvidores para melhorar sugestões. \\
+\hline
+
+\rf{020} & Encaminhamento Automático & O sistema deve: permitir encaminhamento automático mediante confirmação do ouvidor, implementar regras de auto-encaminhamento para casos óbvios, manter controle de qualidade com revisão periódica, permitir redirecionamento quando manifestação for enviada para departamento errado, registrar histórico completo de encaminhamentos. \\
+\hline
+
+\end{longtable}
+
+\subsection{Gestão de Autoridades e Destinatários}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{021} & Agrupamento de Autoridades & O sistema deve: cadastrar e organizar autoridades por hierarquia, agrupar destinatários por área de competência, permitir configuração de regras de escalação, implementar substituição automática em casos de ausência, manter atualização automática de contatos e responsáveis. \\
+\hline
+
+\end{longtable}
+
+\section{Geração Automática de Respostas}
+
+\subsection{Templates e Textos Padrão}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{022} & Biblioteca de Textos Automáticos & O sistema deve: manter biblioteca de textos padrão por tipo de manifestação, gerar textos específicos para cada finalidade (cidadão, órgãos internos), personalizar textos baseado no contexto da manifestação, permitir edição e aprovação de novos templates, versionamento de templates com controle de alterações. \\
+\hline
+
+\rf{023} & Geração Automática com IA & O sistema deve: gerar respostas automáticas iniciais baseadas no conteúdo, sugerir conclusões automáticas baseadas em respostas anteriores, adaptar linguagem ao perfil do solicitante, incluir informações relevantes automaticamente (prazos, procedimentos), permitir revisão e edição antes do envio. \\
+\hline
+
+\end{longtable}
+
+\subsection{Notificações e Comunicação}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{024} & Sistema de Notificações Multicanal & O sistema deve: enviar notificações por email automaticamente, integrar com WhatsApp para envio de atualizações (com autorização), notificar sobre mudanças de status da manifestação, alertar sobre vencimentos de prazos, permitir configuração de preferências de notificação por usuário. \\
+\hline
+
+\end{longtable}
+
+\section{Monitoramento e Alertas}
+
+\subsection{Controle de Prazos}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{025} & Gestão de Prazos Inteligente & O sistema deve: calcular prazos automaticamente por tipo de manifestação, gerar alertas preventivos antes do vencimento, considerar dias úteis e feriados nos cálculos, permitir prorrogação com justificativa, parar alertas após vencimento conforme configuração. \\
+\hline
+
+\rf{026} & Análise Histórica de Tempos & O sistema deve: manter histórico de tempos de resposta por tipo, identificar gargalos e atrasos recorrentes, gerar relatórios de performance temporal, sugerir otimizações baseadas em análise histórica, alertar sobre desvios significativos dos tempos médios. \\
+\hline
+
+\end{longtable}
+
+\subsection{Sistema de Alertas Avançado}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{027} & Alertas Contextuais & O sistema deve: gerar alertas baseados em volume de demanda, identificar sobrecarga de manifestações por ouvidor, alertar sobre manifestações de alta prioridade, notificar sobre casos que requerem atenção especial, permitir configuração de critérios de alerta por perfil. \\
+\hline
+
+\rf{028} & Alertas Preditivos & O sistema deve: prever aumentos de demanda baseado em sazonalidade, alertar sobre possíveis gargalos futuros, sugerir redistribuição preventiva de carga de trabalho, identificar padrões que indicam problemas sistêmicos, gerar alertas para gestores sobre tendências preocupantes. \\
+\hline
+
+\end{longtable}
+
+\section{Dashboard e Relatórios}
+
+\subsection{Painel Operacional}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{029} & Dashboard Interativo para Ouvidores & O sistema deve fornecer: visão geral de manifestações por status com códigos de cores, lista priorizada de manifestações pendentes, alertas visuais para prazos vencidos ou a vencer, estatísticas em tempo real de produtividade, acesso rápido às funcionalidades mais utilizadas. \\
+\hline
+
+\rf{030} & Agrupamento Visual por Status & O sistema deve: usar cores distintas para diferentes status, agrupar manifestações vencidas em seção específica, mostrar indicadores visuais de urgência, permitir customização de cores por preferência, implementar legendas claras para interpretação. \\
+\hline
+
+\end{longtable}
+
+\subsection{Relatórios e Análises}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{031} & Relatórios Gerenciais & O sistema deve gerar: relatórios de produtividade por ouvidor, estatísticas de resolução por tipo de manifestação, análises de satisfação do cidadão, relatórios de compliance e conformidade, dashboards executivos para gestores. \\
+\hline
+
+\rf{032} & Integração com Ferramentas de BI & O sistema deve: integrar com Power BI para análises avançadas, exportar dados em formatos padrão (CSV, Excel, JSON), fornecer APIs para consumo por ferramentas externas, manter data warehouse para análises históricas, permitir criação de relatórios customizados. \\
+\hline
+
+\end{longtable}
+
+\section{Integrações Externas}
+
+\subsection{Sistemas Governamentais}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{033} & Integração com SEI-PI & O sistema deve: verificar números de processo no SEI-PI automaticamente, importar informações relevantes de processos relacionados, validar existência e status de processos mencionados, criar vínculos automáticos entre manifestações e processos, sincronizar atualizações quando aplicável. \\
+\hline
+
+\rf{034} & Integrações com Bases Federais & O sistema deve integrar com: CadÚnico para complementar dados do manifestante, Receita Federal para validação de dados fiscais, Bolsa Família para identificação de beneficiários, SIAFI para consulta de informações orçamentárias, outras bases relevantes conforme necessidade. \\
+\hline
+
+\end{longtable}
+
+\subsection{Integração com Outros Módulos SINÓPIA}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{035} & Integração com OE1 (OUVE.PE) & O sistema deve: receber manifestações estruturadas do módulo de atendimento, processar metadados gerados pelo avatar de atendimento, sincronizar atualizações de status em tempo real, compartilhar classificações automáticas, manter consistência de dados entre módulos. \\
+\hline
+
+\rf{036} & Integração com OE3 (SUPORTE.OUVIDORIA) & O sistema deve: fornecer métricas operacionais para controle, receber configurações de workflow, compartilhar logs de auditoria, sincronizar permissões e acessos, contribuir para dashboards de performance. \\
+\hline
+
+\rf{037} & Integração com OE4 (GESTOR.OUVIDORIA) & O sistema deve: fornecer dados processados para análises estratégicas, compartilhar indicadores de performance, contribuir para relatórios executivos, sincronizar alertas gerenciais, apoiar tomada de decisão com dados estruturados. \\
+\hline
+
+\end{longtable}
+
+\section{Segurança e Conformidade}
+
+\subsection{Proteção de Dados}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{038} & Conformidade com LGPD & O sistema deve: implementar controles de privacidade por design, anonimizar dados pessoais automaticamente quando necessário, registrar todas as operações com dados pessoais, permitir exercício de direitos dos titulares, manter registros de atividades de tratamento. \\
+\hline
+
+\rf{039} & Segurança da Informação & O sistema deve implementar: criptografia AES-256 para dados em repouso, TLS 1.3 para dados em trânsito, controles de integridade e autenticidade, logs imutáveis de auditoria, proteção contra ameaças OWASP Top 10. \\
+\hline
+
+\end{longtable}
+
+\subsection{Auditoria e Compliance}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{040} & Sistema de Auditoria Completo & O sistema deve: registrar todas as ações dos usuários com timestamp, auditar todas as alterações e decisões automáticas feitas pela IA, registrar parâmetros, inputs e outputs de todos os algoritmos de IA, manter trilha de auditoria imutável para ações humanas e de IA, gerar relatórios de compliance periódicos incluindo atividades de IA, implementar alertas para ações suspeitas de usuários e comportamentos anômalos da IA, permitir rastreabilidade completa de decisões humanas e automatizadas, registrar versões de modelos de IA utilizados em cada decisão, manter logs de treinamento e retreinamento de modelos, documentar explicabilidade (XAI) para decisões críticas da IA. \\
+\hline
+
+\rf{041} & Controles de Qualidade & O sistema deve: implementar aprovações obrigatórias para ações críticas, manter versionamento de todas as alterações, registrar justificativas para decisões importantes, implementar workflows de aprovação configuráveis, gerar alertas para desvios de procedimentos. \\
+\hline
+
+\end{longtable}
+
+\section{Processamento e Performance}
+
+\subsection{Arquitetura e Escalabilidade}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{042} & Arquitetura de Microsserviços & O sistema deve: implementar arquitetura baseada em microsserviços, permitir escalabilidade horizontal automática, implementar balanceamento de carga dinâmico, usar containerização para deploy e manutenção, garantir alta disponibilidade com redundância. \\
+\hline
+
+\rf{043} & APIs e Interoperabilidade & O sistema deve fornecer: APIs RESTful para integração externa, documentação automática de APIs (Swagger/OpenAPI), versionamento de APIs para compatibilidade, rate limiting e controles de acesso para APIs, monitoramento de performance e uso de APIs. \\
+\hline
+
+\end{longtable}
+
+\subsection{Performance e Otimização}
+
+\begin{longtable}{|p{2cm}|p{5cm}|p{8cm}|}
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endfirsthead
+\hline
+\textbf{ID} & \textbf{Regra de Negócio} & \textbf{Descrição} \\
+\hline
+\endhead
+
+\rf{044} & Otimização de Performance & O sistema deve: processar manifestações em tempo real (< 3 segundos), implementar cache inteligente para consultas frequentes, otimizar consultas de banco de dados automaticamente, usar índices apropriados para buscas rápidas, implementar paginação eficiente para grandes volumes. \\
+\hline
+
+\rf{045} & Monitoramento de Sistema & O sistema deve: monitorar métricas de performance em tempo real, implementar health checks automáticos, gerar alertas para degradação de performance, manter logs estruturados para troubleshooting, implementar métricas de SLA e disponibilidade. \\
+\hline
+
+\end{longtable}
+
+\section{Tecnologias e Ferramentas}
+
+\subsection{Inteligência Artificial e Machine Learning}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lp{10cm}@{}}
+\toprule
+\textbf{Categoria} & \textbf{Ferramentas} \\
+\midrule
+Mineração de Dados & RapidMiner, KNIME, H2O.ai, Orange, Keras \\
+PLN & NLTK, TextBlob, VADER, SpaCy, Google Cloud API \\
+Modelos Pré-treinados & Hugging Face Transformers \\
+ML Personalizado & TensorFlow, PyTorch \\
+ML Tradicional & scikit-learn, PyCaret \\
+\bottomrule
+\end{tabular}
+\caption{Ferramentas de IA e Machine Learning}
+\end{table}
+
+\subsection{Segurança e Monitoramento}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lp{10cm}@{}}
+\toprule
+\textbf{Categoria} & \textbf{Ferramentas} \\
+\midrule
+Monitoramento de Rede & OSSEC, Snort, Wireshark \\
+Detecção de Vulnerabilidades & OpenVAS, Bro/Zeek \\
+Proteção de Aplicações & ModSecurity, Security Onion \\
+Análise de Logs & ELK Stack, Splunk \\
+Gestão de Secrets & Vault, CyberArk \\
+\bottomrule
+\end{tabular}
+\caption{Ferramentas de Segurança e Monitoramento}
+\end{table}
+
+\subsection{Visualização e Colaboração}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lp{10cm}@{}}
+\toprule
+\textbf{Categoria} & \textbf{Ferramentas} \\
+\midrule
+Dashboards & Tableau Public, Power BI Desktop \\
+Monitoramento Operacional & Grafana, Metabase \\
+Gráficos Customizados & Matplotlib, Plotly \\
+Documentação & Confluence, GitHub Pages \\
+Gestão de Projetos & Trello, Asana \\
+Colaboração & Google Docs \\
+\bottomrule
+\end{tabular}
+\caption{Ferramentas de Visualização e Colaboração}
+\end{table}
+
+\section{Requisitos Não-Funcionais}
+
+\subsection{Performance}
+
+\begin{highlightbox}{Métricas de Performance}
+\begin{itemize}
+    \item Tempo de resposta máximo de \textbf{3 segundos} para consultas
+    \item Suporte a \textbf{1000 usuários simultâneos}
+    \item Processamento de \textbf{10.000 manifestações por dia}
+    \item Disponibilidade de \textbf{99.9\%} (8.76 horas de downtime por ano)
+    \item Tempo de recuperação máximo de \textbf{15 minutos}
+\end{itemize}
+\end{highlightbox}
+
+\subsection{Escalabilidade}
+
+\begin{itemize}[leftmargin=*]
+    \item Crescimento horizontal automático baseado em demanda
+    \item Suporte a aumento de 500\% no volume sem degradação
+    \item Arquitetura elástica para picos sazonais
+    \item Balanceamento automático de carga entre instâncias
+\end{itemize}
+
+\subsection{Usabilidade}
+
+\begin{itemize}[leftmargin=*]
+    \item Interface intuitiva com curva de aprendizado máxima de 2 horas
+    \item Suporte a navegadores modernos (Chrome, Firefox, Safari, Edge)
+    \item Design responsivo para dispositivos móveis
+    \item Acessibilidade conforme WCAG 2.1 nível AA
+    \item Suporte a usuários com deficiências visuais e auditivas
+\end{itemize}
+
+\subsection{Segurança}
+
+\begin{itemize}[leftmargin=*]
+    \item Conformidade com ISO 27001 e LGPD
+    \item Criptografia de ponta a ponta para dados sensíveis
+    \item Autenticação multifator obrigatória para administradores
+    \item Logs de auditoria imutáveis com retenção de 7 anos
+    \item Testes de penetração trimestrais
+\end{itemize}
+
+\subsection{Manutenção}
+
+\begin{itemize}[leftmargin=*]
+    \item Código documentado e testado com cobertura mínima de 80\%
+    \item Implementação de CI/CD para deploys automatizados
+    \item Monitoramento proativo com alertas automáticos
+    \item Backup automático diário com retenção de 30 dias
+    \item Plano de continuidade de negócio com RTO de 4 horas
+\end{itemize}
+
+\section{Critérios de Aceitação}
+
+\subsection{Funcionalidades Core}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lc@{}}
+\toprule
+\textbf{Funcionalidade} & \textbf{Critério} \\
+\midrule
+Classificação automática & Precisão mínima de 85\% \\
+Detecção de duplicatas & Recall mínimo de 95\% \\
+Sugestão de encaminhamentos & Acurácia mínima de 80\% \\
+Geração de alertas & Falsos positivos < 5\% \\
+\bottomrule
+\end{tabular}
+\caption{Critérios de aceitação para funcionalidades core}
+\end{table}
+
+\subsection{Integração}
+
+\begin{itemize}[leftmargin=*]
+    \item Sincronização em tempo real com OE1 sem perda de dados
+    \item Integração com sistemas externos funcionando 24/7
+    \item APIs respondendo em menos de 1 segundo
+    \item Compatibilidade total com sistemas legados
+\end{itemize}
+
+\subsection{Performance}
+
+\begin{itemize}[leftmargin=*]
+    \item Processamento de manifestações em menos de 3 segundos
+    \item Dashboard carregando em menos de 2 segundos
+    \item Suporte a 1000 usuários simultâneos sem degradação
+    \item Backup e recuperação funcionando conforme RTO/RPO
+\end{itemize}
+
+\section{Conclusão}
+
+O documento de requisitos do módulo \textbf{OE2 - OUVIDOR.PE} estabelece as bases técnicas e funcionais para o desenvolvimento de um sistema avançado de suporte inteligente aos ouvidores. Com \textbf{45 requisitos funcionais} detalhados e especificações técnicas rigorosas, o sistema promete revolucionar o trabalho das ouvidorias públicas através da aplicação estratégica de Inteligência Artificial.
+
+\begin{highlightbox}{Principais Inovações}
+\begin{itemize}
+    \item \textbullet~\textbf{IA Generativa} para classificação e análise automática
+    \item \textbullet~\textbf{Mineração inteligente} da base histórica de conhecimento
+    \item \textbullet~\textbf{Auditoria completa} incluindo decisões da IA
+    \item \textbullet~\textbf{Análise preditiva} para gestão proativa
+    \item \textbullet~\textbf{Dashboards inteligentes} com alertas contextuais
+\end{itemize}
+\end{highlightbox}
+
+Este documento serve como guia técnico definitivo para a implementação do sistema, garantindo que todas as funcionalidades atendam aos mais altos padrões de qualidade, segurança e conformidade regulatória.
+
+\vfill
+
+\begin{center}
+\begin{tcolorbox}[
+    colback=primaryblue!10,
+    colframe=primaryblue,
+    center title,
+    fonttitle=\bfseries,
+    title=APROVAÇÃO
+]
+\begin{tabular}{@{}ll@{}}
+\textbf{Data de Aprovação:} & \_\_\_/\_\_\_/2025 \\
+\textbf{Responsável Técnico:} & Prof. Dr. Fernando Buarque de Lima Neto \\
+\textbf{Equipe de Desenvolvimento:} & TIME-2 (OE2) \\
+\textbf{Status:} & Versão 1.0 - Pronto para Desenvolvimento \\
+\end{tabular}
+\end{tcolorbox}
+\end{center}
+
+\end{document} 

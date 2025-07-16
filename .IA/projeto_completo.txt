@@ -1,0 +1,1118 @@
+   EDITAL Nº 14/2024-FACEPE (CIÊNCIA NO GOVERNO: PROGRAMA CIENTISTA ARRETADO)
+    7ª RODADA (GESTÃO DO CONHECIMENTO EM OUVIDORIA) – ADENDO Nº 07 – 2ª FASE
+
+1. PARTE-1: Identificação
+
+ Título da Proposta: Sistema Integrado de Ouvidoria Pública baseado em Inteligência Artificial
+
+                                                  (SINOPIA1)
+
+ Coordenador Geral (Proponente): Prof. Dr. Fernando Buarque de Lima Neto (CPF 339.490.344.04)
+
+ Instituição de Vínculo (Executora): Universidade de Pernambuco (UPE)
+
+ Instituição Receptora: Secretaria de Controladoria-Geral do Estado (SCGE-PE)
+
+
+
+2 PARTE-2: Detalhamento do Projeto
+2.1 Introdução
+2.1.1 Contextualização Geral
+As ouvidorias públicas são instrumentos fundamentais de participação cidadã e controle social, atuando
+como um canal de comunicação privilegiado entre a sociedade e o poder público (Lyra, 2004). Embora
+a prática de ouvidoria pública no Brasil tenha raízes que remontam à década de 1980, quando em 1986
+a Câmara de Vereadores de Curitiba instituiu a primeira ouvidoria do Brasil (Decreto nº 215/1986), sua
+instituição formal e abrangente no ordenamento jurídico brasileiro somente ocorreu com a Lei nº
+13.460/2017. Esta lei consolidou o papel das ouvidorias como instrumentos essenciais de participação
+cidadã e controle social na administração pública brasileira (Gomes, 2020). No estado de Pernambuco
+a Ouvidora-geral foi instituída pela Lei Estadual nº 12.452, de 4 de novembro de 2003. Esta lei
+estabeleceu a ouvidoria como um órgão autônomo, definindo suas competências e estrutura
+organizacional. A Ouvidoria em Pernambuco faz parte de um movimento nacional de fortalecimento dos
+mecanismos de participação e controle social, transparência e a eficiência na gestão pública.
+        Em seu seminal artigo, Maria Coelho Gomes explica como a ouvidoria pública transcende seu
+papel tradicional de canal de comunicação com o cidadão, tornando-se uma ferramenta estratégica
+para a gestão pública (Gomes, 2016). E quando bem estruturada e integrada aos processos de gestão
+pública, ouvidorias podem se tornar uma ferramenta seminais para o planejamento de políticas públicas
+e o aprimoramento interno de ações de governo.
+        Na prática isso gera ricos subsídios institucionais tais como: (i) Elementos informacionais para
+Decisão (Estratégicas, Táticas e Operacionais), (ii) Feedbacks para Melhoria Contínua (de Gestão, da
+Avaliação de Políticas Públicas, e da Promoção da Eficiência de Governo), e (iii) mesmo identificação
+de oportunidade (e.g., para Gestão de Riscos e promoção da Sustentabilidade). Um sistema integrado
+de ouvidoria por certo capitalizará bastante pelo uso das novas tecnologias de IA e da ampla expertise,
+saberes e habilidades do proponente e da equipe de alto nível montada para executar o projeto.
+
+1
+  SINOPIA é também uma palavra que signiﬁca traços preliminares que revelam a intenção de um artista, mutatis
+mutandis, aqui podem ser entendidas como as manifestações genuínas de cidadãos.
+
+
+
+
+                                                       1
+2.1.2 Contextualização Específica
+       Trata-se de um projeto integrado de ouvidoria que almeja atender o cidadão com rapidez e
+qualidade, ao mesmo tempo em que busca produzir os subsídios institucionais apontados em 2.1.1
+(Gomes, A Ouvidoria Pública como Instrumento de Participação Social e Ferramenta de Gestão, 2016).
+O projeto pretende endereçar demandas reprimidas relacionadas à volume, coerência e resolutividade,
+além de explorar plenamente os conhecimentos armazenados nas bases de dados da SGCE, ainda
+subutilizadas. Será fortemente centrado nas novas tecnologias — como Inteligência Artificial e Ciência
+de Dados — e atenderá integralmente às exigências da chamada tecnológica em lide. Com isso, tem-
+se a expectativa de causar grande impacto positivo e promover inovação na oferta de serviços públicos
+de qualidade.
+       Um levantamento preliminar identificou QUATRO Requisitos Funcionais principais e UM
+Requisitos Não-Funcional, a saber:
+            {RF1} receber, analisar e encaminhar manifestações multimodais dos cidadãos;
+            {RF2} tratar manifestações, minerar respostas, e sintetizar solução para os ouvidores;
+            {RF3} monitoramentos, integração, segurança e interoperabilidade aos técnicos TIC;
+            {RF4} auditorias, gestão de conhecimento e alocação de recursos para gestores;
+            {RNF1} documentação, treinamento, divulgação, e sustentabilidade para a sociedade.
+
+
+       Adicionalmente, os problemas complexos de ouvidoria tratados na SCGE são de naturezas
+linguística, estatística, tecnológica, administrativa e sociológica. Eles demandam Funcionalidades
+transversais que foram preliminarmente identificadas visando atender as demandas do Edital, a saber:
+            {F1} mediar conflitos entre usuários e órgãos/entidades públicas;
+            {F2} produzir dados e informações para aprimoramento dos serviços públicos;
+            {F3} promover a transparência e o acesso à informação;
+            {F4} fomentar o controle e a participação social na administração pública;
+            {F5} contribuir para a melhoria contínua da gestão pública;
+            {F6} garantir o tratamento adequado das demandas dos cidadãos (União, 2012);
+            {F7} utilizar o vasto conjunto de dados existentes para treinamento os algoritmos de IA;
+            {F8} integrar os saberes dos muitos atores do governo do estado;
+            {F9} assegurar interoperabilidade com os sistemas computacionais atuais;
+            {F10} assegurar acessibilidade multimeios para todos os cidadãos.
+
+       Afortunadamente, neste alvorecer da quarta revolução industrial, as novas tecnologias digitais,
+particularmente a Inteligência Artificial (IA), incluindo Large Language Models (LLMs), Machine
+Learning (ML), e Ciência de Dados (CD) apresentam-se como ferramentas poderosas e adequadas
+para revolucionar o funcionamento de órgãos públicos que tratam de problemas de múltiplas-naturezas,
+como as ouvidorias públicas. IA e as novas tecnologias digitais certamente podem empoderar todas as
+funcionalidades e expectativas mais prementes desses entes públicos (Wirtz, 2019).
+       Essas tecnologias digitais têm o potencial de transformar radicalmente a maneira como as
+manifestações são recebidas, processadas e analisadas, oferecendo soluções inovadoras para
+
+
+
+
+                                                 2
+problemas recorrentes (Desouza, 2017). Por exemplo, LLMs podem ser empregados para classificar
+automaticamente dados simbólicos, e.g., as manifestações, para identificar padrões complexos e
+extrair insights valiosos de grandes volumes de dados textuais não estruturados. Já os algoritmos de
+ML podem prever tendências futuras de demandas, classificar conteúdos por regras complexas e ainda
+otimizar processos que tenham metas e restrições não triviais; tudo permitindo uma abordagem proativa
+na gestão pública (Höchtl, 2016). E a Ciência de Dados, por sua vez, permite a integração e análise
+holística de dados heterogêneos, revelando correlações ocultas e fornecendo insights acionáveis para
+tomada de decisões baseadas em evidências na administração pública (Giest & Samuels, 2020).
+        Consequentemente, Sistemas Integrados de IA podem automatizar respostas a questões
+frequentes e realizar tarefas não triviais, liberando recursos humanos para tarefas mais complexas e
+estratégicas (Androutsopoulou, 2019). Além disso, as técnicas avançadas de análise de dados
+combinadas à mecanismos adaptativos podem revelar correlações não óbvias entre diferentes tipos de
+manifestações, auxiliando na identificação de problemas sistêmicos na administração pública
+(Maciejewski, 2017). Ou seja, LLM, ML e CD são escolhas bem validadas em aplicações de governo,
+pois podem as tornar mais ágeis, eficazes e capazes de tratamento dos crescentes volumes de
+manifestações (Sun, 2019). Isso tudo ao mesmo tempo que podem oferecer um serviço mais
+personalizado e responsivo aos cidadãos (Zuiderwijk, 2021). Além de maior satisfação do usuário, uma
+prestação de serviços assim também fortalece o papel instrumental de uma ouvidoria na prática
+democracia e melhoria contínua na gestão pública (Criado, 2013).
+        O time proponente, cujas competências amplas e complementares são comprovadas,
+argumenta e propõe que este projeto — pelas suas escolhas metodológicas e técnicas, pela
+abrangência temática, pelo cuidado com os detalhes inovadores e pelo aproveitamento da riqueza de
+dados e saberes disponíveis — tem plena capacidade de aumentar significativamente a eficiência
+operacional, reduzir os tempos de resposta, aprimorar a precisão na triagem e no encaminhamento de
+demandas, personalizar o atendimento e fornecer insights mais profundos para a tomada de decisões
+estratégicas no âmbito da Ouvidoria-Geral do Estado de Pernambuco.
+
+
+2.1.3 Definição dos objetivos
+2.1.3.1     Objetivo Geral:
+Desenvolver e implementar um sistema web/mobile integrado de ouvidoria pública, utilizando
+tecnologias de Inteligência Artificial e Ciência de Dados, para: (i) automatizar, personalizar, melhorar o
+volume e a qualidade de atendimentos de manifestações dos cidadãos, e adequadamente utilizar
+conhecimentos existentes para apoiar ouvidores; (ii) gerar projeções de demandas que possam ser
+utilizadas para a gestão de recursos, analisar coerência, promover auditabilidade, avaliação de
+indicadores chave para aprimorar a eficiência operacional; e, (iii) promover a interoperabilidade do
+sistema proposto junto à sistemática da SCGE, e fornecer insights para a sustentabilidade e melhoria
+contínua dos serviços públicos e da gestão governamental. Tudo isso garantindo sigilo de dados e
+individualização aos cidadãos, conformidade transacional das manifestações, transparência ativa, ética
+com responsabilidade social, e serviços mais amigáveis, acessíveis e inclusivos.
+
+
+
+
+                                                   3
+2.1.3.2    Objetivos Específicos:
+
+Em linha com os CINCO Requisitos sistêmicos principais levantados, decorrem os
+CINCO Objetivos Específicos deste projeto:
+
+ {OE1} [Vertical] Desenvolver e Implantar um subsistema web/mobile multimodal (i.e., voz e texto) com
+           Avatar inteligente de Atendimento ao Cidadão, Personalização do Encaminhamento-
+           Respostas       de   Manifestações   Cidadãs,    incluindo    Transparência,   e   promovendo
+           Acessibilidade e Inclusão de Pessoas com Deficiências visuais e auditivas-PCD e Pessoas
+           Neuro-divergentes do espectro autista-EA;
+
+ {OE2} [Vertical] Desenvolver e Implantar um subsistema de Análise e Processamento Automático
+           avançados com IA Generativa de Suporte ao Ouvidor, Mineração na base de
+           conhecimento/manifestações       existentes,    incluindo    Garantias   sistêmicas   (e.g.,   de
+           Segurança, Conformidade, Transparência e Ética).
+
+ {OE3} [Vertical] Desenvolver e Implantar um subsistema de Controle e Melhoria da Eficiência
+           Operacional, dos Fluxo de processamento, da Escalabilidade (e.g., balanceamento de
+           carga, microsserviços e arquiteturas elásticas) e da Interoperabilidade com outros sistemas
+           corporativos;
+
+ {OE4} [Vertical] Desenvolver e Implantar um subsistema de Apoio à Tomada de Decisão com IA
+           Generativa para Auditorias, Gestão do Conhecimento e Alocação de Recursos (e.g.,
+           Dashboards/Relatórios, Estatística temporal/não paramétrica e Probabilidades).
+
+ {OE5} [Transversal] Validações, Documentação, Publicações científicas e Plano de Transição
+           (Transferência Tecnológica).
+
+2.1.4 Justificativa:
+
+O mister de fortalecer a democracia e aprimorar a eficiência governamental naturalmente faz com que
+as ouvidorias enfrentam significativos desafios gerais (todos endereçados por este projeto) a saber:
+{DG1} volume crescente de demandas, {DG2} complexidade das questões apresentadas, e {DG3}
+necessidade de respostas ágeis e precisas (Menezes, 2017). A estes, outros desafios específicos são:
+{DE1} dificuldade em processar as demandas, {DE2} falta de padronização no tratamento das
+manifestações, e {DE3} limitação de recursos humanos para análise apropriada das demandas
+(Romão, 2016).
+
+       Computacionalmente, a identificação de padrões em manifestações (e.g., natureza, pertinência
+e priorização), a previsão de tendências futuras (e.g., demandas versus tramitação, geração de
+conhecimento e feedback), e personalização do atendimento (e.g., acesso, segurança e satisfação)
+(Cavalcante, 2018). Neste contexto, a aplicabilidade de novas tecnologias, especialmente LLMs e ML,
+mostram-se eficazes para enfrentar com grande possibilidade de sucesso todos esses obstáculos, e
+importante, endereçar muito bem todos os desafios (gerais e específicos).
+
+
+
+
+                                                   4
+       Nesse sentido, a IA pode potencializar a capacidade de processamento e análise de dados,
+automatizar tarefas repetitivas, melhorar a classificação e o encaminhamento de manifestações, além
+de fornecer insights valiosos para a tomada de decisões estratégicas (Wirtz, 2019). Ademais,
+tecnologias como machine learning e processamento de linguagem natural podem contribuir para a
+identificação precoce de problemas sistêmicos, permitindo ações preventivas e uma gestão pública
+mais eficiente e responsiva às necessidades dos cidadãos (Desouza, 2017).
+
+2.1.5 Potenciais Impactos Positivos (antevistos com a execução deste projeto)
+
+Os potenciais impactos para a SCGE, o governo e a sociedade, aqui listados refletem a abrangência e
+arrojo pensados para o projeto, que visam transformar fundamentalmente a operação da Ouvidoria
+Geral através da aplicação de tecnologias avançadas de IA. O projeto enseja não apenas melhorar
+significativamente a eficiência, qualidade e privacidade do serviço prestado aos cidadãos, mas também
+oferecer ferramental de alta tecnologia e métodos inovadores. Isso para que a Ouvidoria Geral venha
+operar usando toda sua base instalada de conhecimento, apoiar a gestão do estado de Pernambuco,
+e sobretudo satisfazer as demandas legítimas dos cidadãos. E isso sempre respeitando a LGPD/LAI e
+outras normas de forma responsiva-ativa, segura e ética. Eis aqui alguns dos impactos esperados:
+
+     Automatização inteligente e personalizada do fluxo de manifestações, revolucionando o
+      processamento e a resposta às demandas cidadãs.
+     Implementação de assistente virtual avançado (avatar) para suporte tanto aos cidadãos quanto
+      aos servidores, elevando a qualidade e eficiência do atendimento.
+     Promoção de Transparência, Acessibilidade e Inclusão ampla no sistema de ouvidoria de PE;
+     Análise preditiva e extração de insights qualitativos das manifestações, permitindo uma
+      compreensão mais profunda das necessidades dos cidadãos.
+     Desenvolvimento de rotinas de segurança inteligente, garantindo proteção e sigilo de dados
+      sensíveis, em adição a detecção de comunicações não conformes ou antiéticas.
+     Mineração na base de conhecimento de manifestações já existentes, visando aumentar
+      assertividade e coerência longitudinal de respostas.
+     Implementação de um dashboard interativo em tempo real com métricas avançadas de
+      desempenho, revolucionando a gestão operacional da ouvidoria.
+     Uso de IA Generativa para apoiar Auditorias, Gestão do Conhecimento e Alocação de Recursos.
+     Desenvolvimento de APIs inteligentes garantir para interoperabilidade, permitindo uma
+      integração suave com outros sistemas governamentais.
+     Implementação de um sistema de recomendação de políticas públicas baseado em IA, e
+      potencialmente transformando o processo de formulação de políticas.
+     Um módulo com explicabilidade para sugestões sintetizadas de IA, aumentará a transparência e
+      confiabilidade no uso de tecnologias avançadas no setor público.
+     O Plano de Transferência Tecnológica vai garantir sustentabilidade do novo sistema de ouvidoria.
+     O time acadêmico também espera promover e divulgar o SINÓPIA aos públicos interno/externo
+      da SCGE, bem como as divulgar em congressos todas as descobertas científicas havidas.
+
+
+
+
+                                                 5
+2.2 Métodos
+2.2.1 Visão Geral do Sistema
+
+O Sistema Integrado de Ouvidoria Pública baseado em Inteligência Artificial – SINÓPIA, ora proposto,
+assim como seu nome significa, pretende receber e tratar amplamente de manifestações genuínas dos
+cidadãos de PE. O sistema também deve apoiar os públicos interno e externo da Ouvidoria Geral da
+SGCE (i.e., Ouvidores, Gestores públicos, Pessoal de TIC e demais atores interessados).
+
+        O SINÓPIA capitalizará de todos os subsídios institucionais comentados na seção 2.1.1,
+endereçará todos os requisitos e funcionalidades transversais preliminarmente identificados na seção
+2.1.2, focará centralmente nos objetivos estabelecidos na seção 2.1.3 e desafios (gerais e específicos)
+apontados na seção 2.1.4. O Sistema foi concebido para conter QUATRO módulos verticais e UM,
+transversal, estes alinhados (de mesmo acrônimo) com os objetivos específicos OE1, OE2, O3, OE4,
+e OE5, respectivamente. Essa divisão visa paralelizar o trabalho em QUATRO time, dos quais
+decorrerão todos os entregáveis planejados.
+
+        A Figura 1 apresenta coloridos os módulos funcionais (verticais) do SINÓPIA, a saber: OE1-
+Atendimento multimodal de demandas dos cidadãos (OUVE.PE), OE2-Suporte inteligente ao Ouvidor
+(OUVIDOR.PE), OE3-Interoperabilidade, Controle e Melhoria Operacional (SUPORTE.OUVIDORIA),
+OE4-Apoio Estratégico-Operacional ao Gestor (GESTOR.OUVIDORIA), e o módulo transversal: OE5-
+Documentação, Publicações, Treinamentos e Plano de Transição. A Figura ilustra os CINCO usuários,
+e os locais das TRÊS IAs, TRÊS LLMs, e DUAS minerações de dados.
+
+
+
+
+Figura 1. Visão geral dos Módulos componentes do SINÓPIA, usuários e usos de IAs/LLMs/Minerações.
+
+
+
+
+                                                  6
+2.2.2 Descrição dos Módulos Técnicos do Sistema SINÓPIA
+2.2.2.1 OE1-Atendimento multimodal de demandas dos cidadãos (OUVE.PE)
+O OE1, denominado OUVE.PE, representa o subsistema ‘front-end’ com o cidadão do SINOPIA. Ele é
+dedicado ao atendimento direto ao cidadão por meio de um canal inteligente, inclusivo, responsivo e
+multimeios. Esse subsistema conterá um avatar multimodal, com interfaces de voz e texto para bem
+atender inclusive pessoas com deficiência (PCDs).
+        O OUVE.PE será desenvolvido a partir de tecnologias de Inteligência Artificial Generativa,
+Processamento de Linguagem Natural (PLN), Análise contextual e Análise de sentimento, permitindo
+personalizar o registro, a triagem e o encaminhamento automatizado das manifestações. A solução
+concebida em princípios de acessibilidade e usabilidade, permitindo que cidadãos com diferentes níveis
+de letramento digital possam interagir com o sistema de forma intuitiva. Para isso, são empregados
+modelos como Whisper (reconhecimento automático de voz) e FastSpeech2 (síntese de voz), além de
+arquiteturas de linguagem como BERTimbau/LLaMA 3 para compreensão textual em português, e
+algoritmos como XGBoost/CatBoost e Transformers para classificação e recomendação automatizada.
+        A interface (e Avatar) será construída de forma a atender a requisitos de acessibilidade digital
+(e baixa carga sensorial), garantindo conformidade, através de análise estática do HTML2, com as
+diretrizes Web Content Accessibility Guidelines – WCAG 2.2 (W3C, 2022) e o Modelo de Acessibilidade
+em Governo Eletrônico – eMAG (Brasil, 2022). Para assegurar a inclusão de usuários surdos, será
+integrada a ferramenta VLibras3, permitindo a tradução automática para a Língua Brasileira de Sinais
+(Libras). Além disso, a interface será compatível com leitores de tela, como NVDA4 e JAWS5 ,
+considerando prover também recursos assistivos por voz durante a navegação, como audiodescrição
+de imagens, proporcionando uma navegação mais acessível para pessoas com deficiência visual.
+        Ou seja, mais do que um canal de acolhimento, o avatar atuará como agente proativo de apoio
+à resolução, oferecendo ao cidadão sugestões automáticas, encaminhamentos para FAQs
+personalizadas (formato WIKI), informações sobre andamento da manifestação e orientação para
+outros canais e modalidades, em conformidade com as diretrizes de transparência, ética e inclusão.
+        No seu fluxo funcional, o OE1 autenticará acessos seguros e entregará manifestações já
+tratadas, estruturadas e enriquecidas com metadados. Espera-se que a fluida integração entre o
+acolhimento automatizado e o diagnóstico avançado (em OE2), reduzir o trabalho dos ouvidores, além
+de otimizar tempos de resposta aos cidadãos e possibilitar muitos subsídios estratégicos advindos das
+demandas à gestão pública.
+
+
+
+
+                        Figura 2. Conceptualização do Módulo OE1 (OUVE.PE)
+
+
+2
+  https://asesweb.governoeletronico.gov.br/
+3
+  https://www.gov.br/governodigital/pt-br/acessibilidade-e-usuario/vlibras
+4
+  https://www.nvaccess.org/download/
+5
+  https://www.freedomscientiﬁc.com/products/software/jaws/
+
+
+
+
+                                                   7
+2.2.2.2 OE2-Suporte inteligente ao Ouvidor (OUVIDOR.PE)
+
+O OE2, denominado OUVIDOR.PE, representa o subsistema de suporte analítico e estratégico ao
+trabalho dos ouvidores no SINOPIA. Atuando no ‘back-office’ da solução. Esse também ‘front-end’ (para
+ouvidores)   será responsável pelo tratamento automatizado das            manifestações recebidas,
+transformando-as em indicadores, padrões, alertas e sugestões de melhoria contínua, apoiando
+decisões baseadas em evidências e aumentando a resolutividade da ouvidoria.
+
+       Assim como o OE1, o OE2 contempla uma série de entregáveis fundamentais tais como
+elementos para prover escalabilidade e persistência que têm como objetivo assegurar a infraestrutura
+computacional necessária para um funcionamento integrado e suave para seus usuários. O núcleo
+funcional do OE2, que realiza a transformação de dados em insumos estratégicos, garante sempre
+aspectos de segurança, conformidade e transparência para produzir as devidas respostas ao cidadão.
+
+       Conforme a arquitetura geral do SINOPIA, o OE2 opera por meio de submódulos interligados
+para autenticação segura, processamento de manifestações e análise e mineração de dados, utilizando
+bancos específicos para acessos e manifestações. Essas operações são sustentadas pelas camadas
+de segurança transacional, persistência e interoperabilidade, permitindo integração fluida com os
+demais subsistemas, especialmente com o OE1 e o OE4.
+
+       A identificação de tendências e padrões críticos se dá por ferramentas como RapidMiner,
+KNIME, H2O.ai, Orange e Keras, enquanto a classificação automatizada de feedbacks, o controle de
+qualidade e a análise de satisfação utilizam bibliotecas como NLTK, TextBlob, VADER, SpaCy, Google
+Cloud API e modelos da Hugging Face Transformers.
+
+       A segurança da informação é garantida por um ecossistema robusto, com OSSEC, Snort,
+Wireshark, OpenVAS, Bro/Zeek, ModSecurity e Security Onion, assegurando confidencialidade,
+integridade e rastreamento, em conformidade com a LGPD.
+
+       As análises são convertidas em painéis visuais interativos com o uso do Tableau Public e Power
+BI Desktop, facilitando a atuação dos ouvidores e promovendo transparência e rastreabilidade. A
+documentação e os fluxos de trabalho são organizados em plataformas colaborativas como
+Confluence, GitHub Pages, Trello, Google Docs e Asana.
+
+       O OE2 complementa de forma decisiva o OUVE.PE, elevando a capacidade analítica da
+ouvidoria e contribuindo para uma gestão pública mais proativa, ética e responsiva. A Figura 2 ilustra
+como o módulo OE2 foi conceptualizado.
+
+
+
+
+                     Figura 3. Conceptualização do Módulo OE2 (OUVIDOR.PE)
+
+
+
+
+                                                 8
+2.2.2.3 OE3-Interoperabilidade,              Controle          e       Melhoria          Operacional
+(SUPORTE.OUVIDORIA)
+
+O OE3, denominado SUPORTE.OUVIDORIA, representa o subsistema de suporte, Interoperabilidade,
+controle e melhoria operacional do SINOPIA. Esse subsistema atua de forma transversal à estrutura
+da Ouvidoria-Geral, oferecendo mecanismos automatizados de gestão de processos, controle de
+desempenho e integração com sistemas internos e externos da SGCE e do Governo de Pernambuco.
+Sua missão principal é transformar a base operacional da ouvidoria em um ecossistema inteligente,
+rastreável e interoperável, capaz de garantir fluidez, confiabilidade e governança orientada a dados.
+
+        No que se refere às entradas, o OE3 receberá (i) fluxos de manifestações gerados pelo
+subsistema OUVE.PE, dados operacionais tais como tempos de tramitação, status, encaminhamentos,
+históricos de atendimento, logs de atividades e solicitações da gestão ou de áreas finalísticas. Também
+serão integradas informações oriundas de sistemas legados e de plataformas parceiras da
+administração pública estadual. Como processo, o OE3 executará a orquestração inteligente de
+workflows internos utilizando motores de processos (BPM), gerenciará filas de eventos com mensageria
+assíncrona, consolidará métricas de desempenho e executará detecção automatizada de gargalos
+operacionais. Tudo isso será possibilitado por uma arquitetura baseada em microsserviços,
+conteinerização e APIs abertas (RESTful/GraphQL). Além disso, o OE3 realizará a verificação segura
+de acessos administrativos, registrará logs auditáveis e proverá subsídios para a geração de relatórios,
+gráficos e painéis em tempo real. Como saída, o sistema entregará, principalmente para o Time de TIC
+da Ouvidoria e SGCE, dashboards interativos com indicadores de desempenho, relatórios técnico
+personalizáveis, alertas automatizados para gargalos, e APIs integradas com outros sistemas da SCGE
+e do governo. Também fornecerá suporte para painéis estratégicos de gestão e interfaces de análise
+preditiva baseadas em séries temporais, auxiliando a gestão a antecipar problemas e redistribuir
+esforços de maneira proativa. A Figura 3 resume os principais aspectos conceituais do módulo OE-3.
+
+        A agregação de valor do OE3 ocorre em múltiplas dimensões: (i) promove maior eficiência
+operacional, ao reduzir o tempo de resposta e eliminar retrabalho; (ii) assegura transparência e
+responsabilidade, com rastreabilidade completa e aderência à LGPD; (iii) amplia a interoperabilidade
+governamental, facilitando o compartilhamento de dados entre diferentes órgãos e promovendo
+serviços integrados; (iv) reforça a governança baseada em dados, viabilizando decisões informadas e
+em tempo real; e (v) incorpora os princípios de acessibilidade e inclusão digital, com interfaces
+responsivas e informativas para gestores, inclusive aqueles com baixa familiaridade tecnológica.
+
+
+
+
+                 Figura 4. Conceptualização do Módulo OE3 (SUPORTE.OUVIDORIA)
+
+
+
+
+                                                  9
+2.2.2.4 OE4-Apoio Estratégico-Operacional ao Gestor (GESTOR.OUVIDORIA)
+
+O OE4, módulo de Apoio Estratégico-Operacional ao Gestor, denominado GESTOR.OUVIDORIA, será
+o subsistema estratégico do SINOPIA voltado ao apoio à tomada de decisão e à conformidade,
+fornecendo inteligência analítica para os ouvidores e gestores públicos. Atuando no back-end da
+solução, o módulo transforma grandes volumes de manifestações (estruturadas e não estruturadas)
+em indicadores estratégicos e recomendações acionáveis, via técnicas avançadas de Inteligência
+Artificial (IA), Processamento de Linguagem Natural (PLN) e Análise estatística.
+
+        Com integração plena aos demais módulos do SINOPIA, especialmente ao OE1 (OUVE.PE) e
+OE2 (OUVIDOR.PE), o GESTOR.OUVIDORIA processa dados históricos e contextuais, detecta
+inconformidades automaticamente, antecipa demandas por meio de modelos preditivos e gera
+relatórios com IA explicável (XAI). O OE4 também realizará simulações de novas políticas de gestão,
+promovendo decisões baseadas em evidências.
+
+        Algumas das saídas para os gestores da Ouvidoria geral são ‘dashboards’, relatórios de
+desempenho e indicação de gargalos, e também sugestões para alocação de recursos. Além disso
+será esse módulo o principal responsável para produção de Elementos informacionais para Decisão
+(Estratégicas, Táticas e Operacionais), Feedbacks para Melhoria Contínua (de Gestão, da Avaliação
+de Políticas Públicas, e da Promoção da Eficiência de Governo), e identificação de oportunidade (e.g.,
+para Gestão de Riscos e promoção da Sustentabilidade).
+
+        O módulo assegura transparência, auditabilidade e conformidade com a LGPD, empregando
+modelos como SHAP, LIME, Prophet, e tecnologias de código aberto como scikit-learn, PyCaret, spaCy,
+NLTK e Hugging Face Transformers. A visualização dos resultados será feita por meio de plataformas
+como Grafana, Metabase e JasperReports, enquanto a documentação e controle de fluxo utilizarão,
+e.g., GitHub Pages, Trello e Confluence.
+
+        Para aprimorar a análise e a tomada de decisão, o OE4 será projetado para suportar a
+interoperabilidade com ferramentas externas de Business Intelligence (BI), incluindo Tableau, Power BI
+e outras plataformas de análise avançada. Além disso, serão utilizadas bibliotecas especializadas em
+visualização de dados, como Matplotlib e Plotly, proporcionando painéis interativos personalizados.
+
+        O GESTOR.OUVIDORIA reforça a capacidade institucional da ouvidoria ao unir previsão,
+conformidade e gestão de conhecimento, promovendo uma atuação mais proativa, responsiva e ética
+na gestão pública.
+
+
+
+
+                 Figura 5. Conceptualização do Módulo OE4 (GESTOR.OUVIDORIA)
+
+
+
+
+                                                 10
+2.2.3 Procedimentos e Aspectos Técnicos TRANSVERSAIS (Camadas do SINOPIA)
+2.2.3.1 Camada de Segurança
+Para garantir a segurança transacional dos dados processados múltiplas proteções serão incorporadas,
+todas em conformidade com a LGPD6, apoiadas pelas diretrizes da Open Web Application Security
+Project (OWASP, 2021) e dos padrões de segurança da informação estabelecidos pela ISO/IEC 27001
+(Standardization-ISO, 2013). O armazenamento dos dados seguirá práticas de criptografia, garantindo
+que informações sensíveis persistidas ou trafegadas fiquem protegidas contra acessos não autorizados.
+              A Camada de Segurança contará com uma arquitetura que incluirá proteção do perímetro,
+controles internos e externos de acesso e múltiplas estratégias para mitigar riscos, a saber:
+              •   Criptografia de Dados: todas as informações sensíveis serão protegidas em repouso e em
+trânsito utilizando criptografia AES-256 para armazenamento e TLS 1.3 para comunicações seguras;
+              •   Gerenciamento de Identidade e Acesso (IAM): implementação de autenticação multifator
+(MFA), autenticação baseada em biometria e controle de acesso baseado em papéis (RBAC - Role-
+Based Access Control) para restringir permissões de usuários de acordo com suas funções;
+              •   Proteção contra-ataques Web: uso de um Web Application Firewall (WAF) para bloquear
+ameaças conhecidas como SQL Injection, Cross-Site Scripting (XSS), Cross-Site Request Forgery
+(CSRF) e ataques baseados em exploração de APIs.
+              •   Prevenção contra DoS e DDoS: adoção de soluções de mitigação de ataques de negação
+de serviço, opcionalmente como serviços de proteção da Cloudflare , AWS Shield e Google Cloud Armor,
+para filtragem de tráfego malicioso e balanceamento de carga dinâmico.
+              •   Monitoramento Contínuo e Auditoria: implementação de um SIEM (Security Information and
+Event Management), como Splunk ou ELK Stack, para detecção proativa de incidentes de segurança,
+análise automática de logs e rastreamento de atividades suspeitas;
+              •   Gestão de Patches e Atualizações: adoção de um ciclo contínuo de atualização de sistemas
+e dependências para mitigar vulnerabilidades exploráveis (via OpenVAS e OWASP Dependency-Check);
+          Além das proteções técnicas (acima), serão aplicados procedimentos para garantir a conformidade
+legal e regulatória, reduzindo riscos de violação de dados e ataques cibernéticos:
+              •   Confidencialidade, Integridade e Disponibilidade (CIA): os dados serão protegidos por
+mecanismos que asseguram sigilo, precisão e acesso contínuo, reduzindo riscos de corrupção/perdas;
+              •   Auditabilidade e Não Repúdio: as interações na plataforma serão registradas em logs
+imutáveis, garantindo rastreabilidade de operações e impedindo negativas de ações por usuários;
+              •   Autenticidade das Ações: uso de assinaturas digitais e certificados X.509 para garantir que
+todas as transações e comunicações no sistema sejam verificáveis e protegidas contra adulterações;
+              •   Sanitização de Entradas e Filtragem de Requisições: aplicação de validação de dados de
+entrada para evitar ataques baseados em injeção de comandos maliciosos (proteção da integridade); e,
+              •   Isolamento de Ambientes: separação entre ambientes de desenvolvimento, homologação e
+produção para evitar exposição acidental de dados e garantir ciclos seguros de implantação/atualização.
+
+
+6
+    https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm (LGPS, Lei Federal LEI Nº 13.709, 14/08/2018.
+
+
+
+
+                                                               11
+2.2.3.2 Camada de Persistência
+O SINÓPIA adotará um modelo de persistência híbrido, combinando bancos de dados relacionais e
+NoSQL, para otimizar diferentes tipos de armazenamento, garantir armazenamento eficiente e seguro
+dos dados, e alta disponibilidade e integridade para as demais camadas e módulos. Considerar-se-ão:
+         •   Banco de Dados Relacional (e.g., PostgreSQL): Utilizado para armazenar informações
+estruturadas, garantindo integridade referencial e suporte a transações ACID;
+         •   Banco de Dados NoSQL (MongoDB): Responsável pelo armazenamento de documentos e
+logs de interações do sistema, garantindo flexibilidade no tratamento de dados não estruturados;
+         •   Armazenamento de Cache (Redis): Implementado para reduzir a carga do banco de dados
+primário e acelerar consultas recorrentes;
+         •   Data Lake: Infraestrutura para armazenar grandes volumes de dados brutos em formatos
+como Parquet ou Avro, possibilitando futuras análises em larga escala com as ferramentas de Big Data;
+         •   Segurança e Compliance: Todos os dados armazenados seguirão práticas de criptografia
+em repouso e em trânsito, garantindo conformidade com a LGPD e outras regulamentações.
+    A camada de persistência, portanto, constituir-se-á num pilar fundamental da arquitetura do
+SINÓPIA. Sua flexibilidade tecnológica permitirá suportar tanto as muitas operações transacionais e
+também as análises exploratórias em larga escala, assegurando desempenho, conformidade regulatória
+e escalabilidade para evolução contínua da plataforma.
+
+2.2.3.3 Camada de Escalabilidade e Interoperabilidade
+Para garantir alto desempenho resiliência, mesmo sob alta demanda, serão implementadas as
+seguintes estratégias complementares:
+         •   Microsserviços Independentes: cada módulo do SINÓPIA será isolado logicamente,
+permitindo escalabilidade horizontal e desacoplamento;
+         •   Escalabilidade Automática: o sistema será monitorado por ferramentas como Prometheus
+e Grafana, que detectarão picos de carga e ativarão automaticamente novos nós de processamento;
+         •   Cache Distribuído: adoção de Redis ou Memcached para acelerar respostas recorrentes
+e reduzir carga nos bancos de dados;
+         •   Replicação e Sharding de Dados: como recurso do PostgreSQL, poderá se utilizar
+replicação síncrona e assíncrona, e técnicas de sharding para grandes volumes de dados simultâneos.
+         •   Distribuição de Conteúdo via CDN: redes como Cloudflare e AWS CloudFront poderão ser
+integradas para reduzir a latência na entrega de conteúdos aos usuários finais;
+         •   Monitoramento Contínuo: o uso do ELK Stack (Elasticsearch, Logstash, Kibana) garantirá
+análise contínua de logs, detecção de falhas e geração de alertas proativos.
+    As soluções a serem desenvolvidas adotarão uma arquitetura baseada em APIs RESTful e gRPC,
+garantindo interoperabilidade e facilitando a comunicação entre diferentes módulos do sistema. Essa
+abordagem permitirá a integração transparente com sistemas corporativos já existentes na ouvidoria,
+bem como a conexão com serviços externos, tais como plataformas de análise avançada e ferramentas
+comerciais de Business Intelligence (BI).
+
+
+
+
+                                                 12
+          Além disso, serão implementadas estratégias de integração baseadas em event-driven
+architecture (EDA) e mensageria assíncrona utilizando message queues (RabbitMQ, Kafka), permitindo
+processamento eficiente de grandes volumes de dados e garantindo escalabilidade. A estrutura modular
+da API possibilitará a extensão do sistema para novas funcionalidades sem comprometer a estabilidade
+dos serviços existentes, promovendo uma arquitetura flexível e de fácil manutenção.
+
+2.2.4 Procedimentos e Aspectos Técnicos VERTICAIS (Funcionalidades Inteligentes)
+2.2.4.1       Análises Qualitativas
+
+Nos módulos OE1, OE2 e OE4 haverá a necessidade de avaliação qualitativa das interações com os
+usuários (Cidadãos, Ouvidores e Gestores). Estas análises base em critérios de clareza, resolutividade
+e adequação. Modelos de PLN como BERT e LLMs, combinados com métricas de similaridade semântica
+e inferência textual, permitirão gerações de escores de qualidade automatizado. Vários tipos de análises
+irão retroalimentar tanto os atendimentos automatizados quanto as interações com servidores, são elas:
+
+          •    Classificação Automática: a categorização aqui se realiza por meio da implementação de
+modelos de aprendizado profundo (Deep Learning), combinando redes neurais convolucionais–CNNs, e
+redes neurais recorrentes–RNNs (LeCun, 2015). As CNNs serão empregadas para identificar padrões
+estruturais nos textos tratados, enquanto RNNs permitem modelar dependência de sequência e contexto.
+Além disso, modelos baseados em IA Generativa (tais como LLMs) serão aplicados para aprimorar a
+compreensão semântica e sintática dos textos, especialmente durante a interação com chatbots. A
+utilização de representações contextuais avançadas, como word embeddings e modelos pré-treinados
+permitirá que a análise semântica seja adaptável a diferentes domínios e estilos linguísticos, aumentando
+a precisão da classificação automática. O sistema poderá integrar técnicas de aprendizado por reforço,
+garantindo a adaptação contínua às variações nos padrões de entrada ao longo do tempo.
+
+          •    Análise de Sentimento: para identificar a tonalidade emocional e a urgência das
+manifestações, serão utilizadas abordagens de maneira híbrida, combinando técnicas baseadas em
+regras, como o VADER – Valence Aware Dictionary and sEntiment Reasoner (Hutto, 2014), com modelos
+baseados em AM e discriminativos, como BERT e modelos especializados treinados em conjuntos de
+dados anotados para análise de sentimentos. Além disso, serão incorporadas técnicas de inferência
+semântica (Conneau, 2017) para avaliar contextos subjetivos, como ironia e sarcasmo, melhorando a
+precisão da priorização automática de manifestações críticas.
+
+2.2.4.2       Interação Humano-Máquina
+
+Com base em IA generativa e PLN, a interação Humano-Máquina consistirá na criação de chatbot
+multimodal (texto e voz), acessível e com capacidade de aprender via interações anteriores. Algumas
+características serão:
+          •    Geração de Respostas Graduais e Sensíveis ao Contexto: A geração de respostas
+automáticas será realizada com modelos generativos rápidos e leves baseados em LLMs, tais como o
+GPT-4 e Lhama 3 (Brown, 2020). Para garantir que as respostas estejam alinhadas com diretrizes
+
+
+
+
+                                                 13
+institucionais e padrões de atendimento público, os modelos serão ajustados por meio de adaptação
+gradual do modelo em corpora específicos das ouvidorias. Estratégias a serem exploradas:
+
+          – Treinamento Particionado: onde o modelo é atualizado apenas em subconjuntos de
+          parâmetros críticos, preservando a generalização do modelo base, garantindo maior eficiência;
+          – Adaptação Incremental: novos exemplos de dados reais são incorporados dinamicamente
+          ao modelo, e refinamento progressivo sem necessidade de retreinamento completo;
+          – Redução do Consumo de Memória: como Low-Rank Adaptation – LoRA (Hu, et al., 2021)
+          adiciona matrizes de ajuste separadas sem modificar os pesos originais do modelo, o consumo
+          de VRAM e armazenamento será reduzido em comparação ao fine-tuning convencional.
+      •   Ajustes contínuos dos modelos de conhecimento: a abordagem de Retrieval-Augmented
+Generation – RAG (Lewis, 2020) será empregada para melhorar a precisão e contextualização das
+interações. O modelo será estruturado em duas etapas principais, primeiro, uma rotina de recuperação
+(retriever) que buscará informações relevantes em documentos oficiais e bases de conhecimento
+estruturadas; aí um modelo gerador (generator) utilizará essas informações para construir as respostas.
+      •   Monitoramento e Aprimoramento: o desempenho dos modelos será rigorosamente monitorado
+por meio de m´métricas fundamentais de avaliação, incluindo precisão, recall e F1-score (Sasaki, 2007),
+além de m´métricas específicas para PLN, como Perplexity para avaliar a fluência da geração de texto e
+BLEU/ROUGE para medir a similaridade entre as respostas geradas e as respostas esperadas. Essa
+abordagem garantirá um acompanhamento contínuo de desempenho e ajustes periódicos.
+      •   Detecção de vieses e mitigação de erros éticos: o uso de técnicas de Inteligência Artificial
+Responsável – RAI, que aqui integrará ML, Ciência das Redes (Barabási, 2016), Desvios de Conceitos
+(Gama, 2014) e Semiótica Computacional (Buarque, 2018) poderá ser utilizado para aprimorar os
+processos de interação e decisão, visando aumentar a transparência, reduzir vieses éticos (talvez criar
+mecanismos de mitigação) e tratar aspectos subjetivos e contextuais assistidas por IA. Além de
+esperados e necessários avanços na relação com os usuários, o uso de RAI vai inovar ao poder avaliar
+se as subjetividades dos usuários podem comprometer a compliance (normas), a corretude (moralidade),
+e a justiça (humanidade) no curso das decisões. O uso extensivo da IA, hoje, frequentemente ainda não
+contempla a computação da subjetividade e nem capitaliza nas informações que podem ser agregadas
+quando computadas a relação dos entes (Ciência das Redes), evolução de objetos (desvios de
+conceitos) e valores simbólicos associados (Semiótica Computacional).
+      •   O design da interface adotará princípios de Design Inclusivo, levando em consideração as
+necessidades de indivíduos neurodivergentes, como aqueles dentro do espectro autista. Serão
+garantidas baixa sobrecarga sensorial, opções de personalização de cores e fontes, navegação
+simplificada e foco na usabilidade ergonômica. Para embasar, serão seguidos padrões ergonômicos,
+como o AutismGuide (Aguiar,2020), o Cognitive and Learning Disabilities Accessibility Task Force–COGA
+(CONSORTIUM, 2021) e o Guia de Acessibilidade de Interfaces para Autismo–GAIA (Mendonça, 2018).
+
+2.2.5 Abordagens Gerenciais para Administrar as Tarefas do Projeto
+2.2.5.1 Gestão (Ágil) nas Etapas de Execução do Projeto
+A execução do projeto se dará por quatro Times que coincidem com os entregáveis dos quatro primeiros
+objetivos específicos OE-1, OE-2, OE-3 e OE-4, sendo que todos os times colaborarão com o OE5.
+
+
+
+
+                                                14
+Cada time estará a cargo de um dos quatro Pesquisadores Associados – os líderes de times. Os demais
+participantes serão todos alocados nesses times, a razão de dois Pesquisadores (um Pesquisador
+Auxiliar e um Pesquisador Júnior) para cada um dos quatros times dos Pesquisadores Associados.
+          Para garantir eficiência e flexibilidade no desenvolvimento do projeto bem como atendimento
+pleno aos Desafios gerais e específicos do Projeto (seção 2.1.4), cumprimento dos Objetivos (seção
+2.1.3), Requisitos e funcionalidades transversais levantadas (seção 2.1.2), utilizaremos uma
+abordagem de gestão ágil, especificamente o framework Scrum7.
+          As tarefas serão divididas em sprints, cada uma com duração de quatro semanas, permitindo
+a revisão e adaptação contínua dos objetivos e prioridades com base no feedback recebido. Haverá
+reuniões diárias (‘daily stand-ups’) dentro de cada time que serão realizadas para assegurar que todos
+os membros da equipe estejam alinhados com os objetivos do sprint e para identificar imediatamente
+qualquer impedimento. Ao final de cada sprint, haverá reuniões de revisão e retrospectiva para avaliar
+o progresso, ajustar o planejamento com foco na produção dos entregáveis e capitalização dos
+subsídios institucionais (seção 2.1.1).
+
+2.2.5.2 Abordagem para Ideação e Prototipação
+Depois das sessões iniciais de ‘kick-off’ com os gestores gerais da SGCE e Ouvidoria, para pactuação
+de objetivos e metas do Projeto, cada um dos times, com a participação do Coordenador Geral,
+realizará sessões de ideação com os usuários específicos (stakeholders) atinentes a cada módulo.
+          Em workshops colaborativos (utilizando técnicas como brainstorming e design-thinking), serão
+formadas equipes multifuncionais temáticas para gerar e refinar ideias e conceitos. Após seleção das
+melhores ideias, a prototipação será validada com o Coordenador Geral do projeto e Gestores Gerais.
+          Haverá ampla explicação e discussão com os demais membros do time do Projeto e
+interessados da Ouvidoria. A seguir, nas reuniões gerais de revisão de sprints, utilizando ferramentas
+de design digital e prototipação, serão produzidos ‘mock-ups’ interativos que permitirão que todos os
+interessados visualizem, interajam e opinem antes das implementações iniciarem. Feedback rápido e
+iterações serão essenciais para garantir que se atendam às expectativas e necessidades dos usuários.
+
+2.2.5.3 Procedimentos para Desenvolvimento, Teste e Validação
+Os módulos do sistema serão desenvolvidos exclusivamente utilizando software e bibliotecas livres (ver
+2.2.4), para garantir que o projeto permaneça acessível e sustentável. A fase de desenvolvimento será
+acompanhada de testes ad hoc manuais e, eventualmente frameworks de teste poderão também ser
+utilizados garantindo assim a qualidade e a funcionalidade do sistema.
+          Após a implementação e testes internos, os módulos serão validados com usuários reais
+através de fases piloto (dentro de cada módulo do projeto), onde serão coletados feedback direto para
+ajustes finais. Este processo iterativo assegura que o sistema final seja robusto, eficiente e adaptado
+às necessidades dos usuários. Ao final serão realizados testes de integração/carga. Não se planeja
+aquisição de licenças dispendiosas na entregue.
+
+
+7
+    https://www.scrum.org/learning-series/what-is-scrum/
+
+
+
+
+                                                  15
+2.2.6 Principais Tecnologias (Open) consideradas no Desenvolvimento dos Módulos
+
+      No ‘Front-end’ do SINÓPIA:
+       -Interface personalizada (visualização e acompanhamento): React.js, FastAPI, Flask, K-Means
+       -Tratamento de voz: Whisper (reconhecimento automático de voz) e FastSpeech2 (síntese de
+       voz), e Transformers para classificação e recomendação automatizada.
+       -Qualidade de texto: Perplexity (fluência de geração) e BLEU/ROUGE (medir similaridade)
+       -Assistentes virtuais (cidadão/ouvidores): BERTimbau/Sentence, Rasa, Protégé, OWLReady2
+       -Classificação/triagem/encaminhamento automático: SVM, XGBoost/CatBoost, SpaCy/NLTK
+       -Guia de usuário para cidadãos e servidores: LhaMa 3, BERTopic
+      No ‘Back-end’ do SINÓPIA:
+       -Análise preditiva de tendências e padrões: RapidMiner, KNIME, H2O.ai, Orange, Keras
+       -Módulo de classificação de feedbacks (satisfação/controle de qualidade): NLTK, TextBlob,
+       VADER Sentiment Analysis, Orange, Google Cloud API, SpaCy, Hugging Face Transformers
+       -Segurança inteligente (sigilo e tráfego inapropriado): OSSEC, Snort, Wireshark, OpenVAS,
+       Bro/Zeek, ModSecurity, Security Onion
+       -Security Information and Event Management: Splunk ou ELK Stack (Elasticsearch, Logstash
+       e Kibana)
+       -Extração de insights (conhecimento e pontos de melhoria): Tableau Public, Power BI Desktop
+       -Documentação e Materiais de Suporte em plataformas colaborativas: Confluence, GitHub
+       Pages, Google Docs, Trello, Asana
+      No Módulo de Eficiência Operacional e Interoperabilidade:
+       -APIs (App. Programming Interfaces): RESTful, GraphQL. OData, WebSockets
+       -Gestão de Fluxo de dados: Apache Kafka
+       -Pesquisa rápida de dados textuais: Elasticsearch, Retrieval-Augmented Generation – RAG
+       -Ferramentas de Business Intelligence (BI): Grafana, Metabase, Power BI
+       -Ferramentas para integração: Node-RED, Bibliotecas para LLMs do Python
+       -Microsserviços e Sistemas de containers: Docker e Kubernetes
+       -Gestão de Memória: Low-Rank Adaptation – LoRA
+       -Sistemas de Gestão de Base da dados: PostgreSQL e/ou Mongo DB
+       -Outras ferramentas de armazenamento de dados: REDIS e Memcached (armazenamento de
+        Cache) e Data Lakes (armazenamento de grandes volumes de dados brutos em formatos
+        como Parquet ou Avro)
+
+      Para Apoio à Tomada de Decisão e Conformidade:
+       -Processamento e análise de dados: TensorFlow, Pandas, Numpy, Scikit-learn, Matplotlib,
+       Ploty, PyCaret
+       -ML (Redes Neurais Artificiais): Mapas SOM, Redes MLP+Backpropagation, Redes neurais
+       convolucionais–CNNs, e Redes neurais recorrentes–RNNs
+       -Processamento de linguagem natural: NLTK
+       -Ferramentas de visualização: Grafana, Metabase e JasperReports
+       -IA Explicável: SHAP(SHapley Additive ExPlanations), Propet e LIME(Local Interpretable
+       model-agnóstic XAI technique)
+
+
+
+
+                                              16
+2.3 Resultados Esperados
+2.3.1 Soluções Inovadoras por módulo {SI}, seus Entregáveis (...a-e) e Quantificação [n]
+   {SI1} [Interativo] Atendimento multimodal de demandas dos cidadãos (OUVE.PE):
+      a) Interface personalizada de visualização e acompanhamento [1]
+      b) Assistente virtual para sugestões para o cidadão (baseado em base histórica) [1]
+      c) Assistente virtual para apoiar aos ouvidores (em casos complexos) [1]
+      d) Módulo de classificação/triagem/encaminhamento automático de manifestações [1]
+      e) Guia de usuário para cidadãos e servidores da ouvidoria [1]
+
+   {SI2} [Poderoso] Suporte inteligente ao Ouvidor (OUVIDOR.PE)
+      a) Módulo de análise preditiva de tendências e padrões de manifestações [1]
+      b) Módulo de classificação de feedbacks (satisfação/controle de qualidade) [1]
+      c) Módulo de segurança inteligente (proteção do sigilo e tráfego inapropriado) [1]
+      d) Módulo de extração de insights (conhecimento e pontos de melhoria) [1]
+      e) Manual de operação para o Ouvidor [1]
+
+   {SI3} [Flexível] Interoperabilidade, Controle e Melhoria Operacional (SUPORTE.OUVIDORIA)
+      a) Concepção de métricas de desempenho baseadas em IA [1] – Intangível
+      b) Dashboard interativo com métricas inovadoras geradas em tempo real [1]
+      c) Rotina para detecção de gargalos operacionais [1]
+      d) APIs inteligentes (com documentação) para integração com outros sistemas [1]
+      e) Plataforma de treinamento baseada em IA para ouvidores [1]
+
+   {SI4} [Versátil] Apoio Estratégico-Operacional ao Gestor (GESTOR.OUVIDORIA)
+      a) Módulo de apoio a decisão explicável para gerentes [1]
+      b) Módulo de auditoria com suporte inteligente [1]
+      c) Gerador automático de relatórios com insights acionáveis [1]
+      d) Módulo de recomendação de novas políticas para a ouvidoria [1]
+      e) Manual de operação para o Gestor [1]
+
+   {SI5} [Instrutivo] Documentação, Publicações, Treinamentos e Plano de Transição
+      a) Relatório dos Testes e Validações [2]
+      b) Relatório de Testes de Usabilidade [2]
+      c) Documentação do Sistema, Guias técnicos, e Recomendações de Suporte [3]
+      d) Plano de Continuidade (transferência tecnológica/protocolo de monitoramento pós-entrega) [2]
+      e) Publicações Científicas [16] e Workshops de divulgação [3]
+2.3.2 Cronograma de entregas tangíveis e intangíveis (Times x Semestres)
+     TIMES     SEMESTRE-1               SEMESTRE-2           SEMESTRE-3          SEMESTRE-4
+  TIME-1 (OE1)   SI1a e SI5e               SI1b e SI5e         SI1c e SI5a       SI1d, SI1e e SI5e
+  TIME-2 (OE2)   SI2a e SI5e               SI2b e SI5e         SI2c e SI5c       SI2d, SI2e e SI5e
+  TIME-3 (OE3)   SI3a e SI5e               SI3c e SI5e         SI3c e SI5d       SI3d, SI3e e SI5e
+  TIME-4 (OE4)   SI4a e SI5e               SI4b e SI5e         SI4c e SI5b       SI4d, SI4e e SI5e
+
+
+
+
+                                              17
+   2.3.3 Soluções Inovadoras: Importâncias Estratégicas, OEs e suas Contribuições
+   {SI}     IMPORTÂNCIA          OBJ.ESP./TIMES         CONTRIBUIÇÃO p/CT&I         CONTRIB.p/GOVERNO
+   SI1          Alta                  OE1               Automação de Processos         Mais Eficiência
+   SI2          Alta                  OE2               Predição (Séries Temporais)    Mais Eficácia
+   SI3          Alta                  OE3               Algoritmos de Otimização      Mais Transparência
+   SI4          Alta                  OE4              IA Explicável e Transparente  Melhor Governança
+   SI5         Média                  OE5              Documentação e Divulgação Mais Sustentabilidade
+
+   2.3.4 Grau de Inovação e Comparações com outras soluções
+     {SI}      TIPO          ‘Tech. Readiness Level’                    COMPARAÇÕES
+     SI1      Disruptiva                                  Assistentes Virtuais e personalização via IA não
+                                      TRL8               são usuais; serão avanços para a Ouvidoria-geral
+     SI2      Disruptiva      (Sistemas completos e       Em conjunto, IA para Segurança, Classificações
+                                   qualificados)        automáticas e Tendências são inovações do projeto
+     SI3      Disruptiva                                 A Nova métrica a ser concebida e antecipação de
+                                                          problemas no novo Dashboard serão novidades
+                                    “Protótipos
+     SI4      Disruptiva                                Uso da IA para extrair sugestões de política públicas
+                                 completamente           e apoio com IA aos gestores é totalmente inovador
+                              Testados e Funcionais”    Plano de Continuidade (Transferência tecnológica) e
+     SI5 Incremental
+                                                        publicações contribuirão à melhoria incremental
+
+   3 PARTE-3: Orçamento
+           Quadro sintético de despesas: BOLSAS, DIVULGAÇÃO CIENTÍFICA e CONSUMÍVEIS
+   ITENS    DETALHE-1     DETALHE-2          DETALHE-3        DETALHE-4                            SUBTOTAL
+  BOLSAS      1xBFI-1     4xBFI-4 (24m)      4xBFI-8 (24m) 4xBFI-9 (24m)                          R$ 873.600,00
+               (24m)
+CONGRESSOS 10xViag.Nac.  6xViag.Internac.  10xInscr.Nacionais 6xInscr.Intern.                     R$ 110.000,00
+CONSUMÍVEIS 2xPeças/Mnt Suprim.(cartuchos)   Suprim.(papel)   2xPeças/Mnt                         R$ 13.500,00
+                                                                                     PCs
+                                                                                      TOTAL       R$ 997.100,00
+
+           Descrição e Justificativa dos itens do Orçamento:
+            1) Bolsas: pagamento dos 13 docentes e discentes da Universidade de Pernambuco que
+                realizarão todas as atividades previstas para o Projeto.
+            2) Custeio: Participação em Congressos: no período de dois anos a equipe deve participar de
+                divulgação científica em 6-congressos internacionais e 10-congressos nacionais (Viagem e
+                inscrição), i.e., ao menos uma/participante.
+                           Consumíveis: papel + cartuchos de impressoras e peças de manutenções de PCs.
+
+           Cronograma Físico-Financeiro : BOLSAS, DIVULGAÇÃO CIENTÍFICA e CONSUMÍVEIS
+ SEMESTRES          SEM.1 (p/Mês)      SEM.2 (p/Mês)           SEM.3 (p/Mês)    SEM.4 (p/Mês) SUBTOTAL
+   BOLSAS           (6x) 36.400,00     (6x) 36.400,00          (6x) 36.400,00   (6x) 36.400,00 R$ 873.600,00
+CONGRESSOS               (24m)
+                          0             (4x) 6.875,00           (6x) 6.875,00   (6x)(24m)
+                                                                                     6.875,00  R$ 110.000,00
+CONSUMÍVEIS         (1x)3.375,00        (1x)3.375,00            (1x) 3.375,00   (1x) 3.375,00  R$ 13.500,00
+                                                                                       TOTAL R$ 997.100,00
+
+           Contrapartidas: As contrapartidas do Projeto pela UPE são não financeiras, e.g., laboratórios,
+            biblioteca, e os tempos e expertises dos bolsistas na proporção de, pelo menos, 12h por semana.
+
+
+
+
+                                                       18
+PARTE-4: Equipe
+3.3.1 Quadro de Bolsas
+           Além do Coordenador-Geral (1 bolsa BFI1), o projeto SINÓPIA será executado por quatro times
+            com a seguinte constituição total de bolsas (4xBFI4, 4xBFI8, e 4xBFI9). A distribuição por times:
+COORDENADOR                 TIME-1                TIME-2                TIME-3                 TIME-4
+          1xBFI1      1x(BFI4,BFI8,BFI9)    1x(BFI4,BFI8,BFI9) 1x(BFI4,BFI8,BFI9)        1x(BFI4,BFI8,BFI9)
+
+           Descrição dos Perfis dos 13 bolsistas da Equipe:
+             -Previsto UM Coordenador-Geral (bolsistas BFI-1) com perfil de Professores doutor
+          experiente, já completamente estabelecido em Computação e líder com reconhecimento
+          nacional e internacional; suas funções serão: Planejar, Supervisionar, Administrar e Orientar
+          tecnicamente todas as tarefas dos demais 12 bolsistas. Além disso o Coordenador-Geral será o
+          ponto de contato, ordenador das despesas, e responsável técnico do Projeto.
+             -São previstos QUATRO Pesquisadores Associados (bolsistas BFI-4) com perfis de
+          Professores doutores já estabelecidos em Computação. Cada um vai liderar um dos SIs e vão
+          apoiar o Pesquisador Geral na concepção, modelagem e implementação dos entregáveis das
+          soluções inovadoras.
+             -São previstos QUATRO Auxiliares (bolsistas BFI-8) com perfis de Pós-Graduandos de
+          Computação em nível mínimo de mestrando. Cada um vai compor um dos quatro times e vão
+          apoiar os Associados na implementação, testes e validações dos entregáveis e demais tarefas.
+             -São previstos QUATRO Júniores (bolsistas BFI-9) com perfis de Graduação em
+          Computação. Comporão os times 1-4 em programação, tratamento de dados e documentação.
+
+3.3.2 Coordenador Geral da Proposta(Bolsista BFI-1)–Candidato a Pesquisador Arretado
+Fernando Buarque de Lima Neto8 é bolsista PQ do CNPQ (desde 2010), professor universitário e
+pesquisador há mais de duas décadas, com doutorado em Inteligência Artificial pela University of
+London(2002), Diploma do Imperial College London-DIC, em Redes Neurais Artificiais(2002), mestrado
+em Ciência da Computação pela Universidade Federal de Pernambuco(1998) e graduação em Ciência
+da Computação pela Universidade Católica de Pernambuco(1990). Leu Filosofia da Ciência e
+Neurociências no Imperial College London, e cursou um ano do Lato Sensu em Administração na
+Escola de Administração da Universidade de Pernambuco (UPE). Possui dois estágios pós-doutorais;
+em 2019 visitou a Eng. Elétrica e Computação da Universidade da Florida, como bolsista CAPES-PVE
+Sênior e em 2014-15 como Alexander von Humbold Fellow/Alemanha visitou o Centro Europeu de
+Sistemas de informação-WWU. É Professor Associado e Livre Docente da UPE lotado na Escola
+Politécnica (POLI), e membro permanente do Programa de Pós-Graduação nível Doutorado de
+Engenharia de Computação (PPG-EC) desde 2006. Fala fluentemente português, inglês espanhol, e
+compreende francês, alemão e italiano.
+
+
+
+8
+    C.Latteshttp://lattes.cnpq.br/5175924818753829 ORCIDhttps://orcid.org/0000-0003-1200-225X
+
+
+
+
+                                                      19
+     Prof. Buarque possui mais de 270 trabalhos publicados (3 patentes, 4-Políticas/Guias, 7-Livros, 18-
+Capítulos, 44-Artigos de periódicos, 146 Artigos de conferências e 32 artigos curtos) e orientou com
+sucesso cerca de 163 Alunos (2-Pós-Doc, 14-PhD, 50-MSc, 41-BSc e outro 56 ICs). Suas três linhas
+de     pesquisa      atuais     são     (1)     Inteligência Artificial(IA)/Computacional(IC):            Metaheurísticas
+Evolucionárias, Sociais e Híbridas, (2) Modelagem/Simulação de Problemas Reais Complexos, e (3)
+Sistemas de Decisão explicáveis via Semiótica Computacional. Possui três posições acadêmicas
+internacionais ativas: (i) Honorary Professor na Computação da Universidade de Exeter/UK, (ii) VIP
+(‘Visiting Int. Professor-Gastprofessor’) na Economia-Administração da WWU/Alemanha, e (iii)
+Visiting Professor Eng. Elétrica University of Johannesburg. Desde 2007 é Senior Member IEEE/EUA.
+     Em 2020 foi eleito membro permanente da Academia Pernambucana de Ciências-APC. Em 2018
+foi nomeado por cinco anos para o Conselho Superior da FACEPE, e nomeado por dois anos,
+Embaixador de Pesquisa da Universidade de Münster-WWU. De 2019-2022 foi Adjunct (External
+Visiting) Professor da Eng. Elétrica e Computação da Texas A&M University/EUA.
+     Fernando Buarque possui longa trajetória de palestrante internacional o que lhe rende vários
+convites ao longo do ano para palestrar dentro e fora do Brasil frequentemente. Em 2014-15 foi
+Diretor-Presidente da Sociedade Brasileira de Inteligência Computacional-SBIC; 2014-16, Membro
+da Comissão Assessora da Área de Engenharia da Computação-ENADE do INEP/MEC; 2013,
+Buarque organizou e presidiu o 11o. Congresso Brasileiro de Inteligência Computacional-CBIC e 1o.
+‘BRICS Congress on Computational Intelligence’. Ele já foi membro do Conselho Superior e da Câmara
+de Inovação da FACEPE; na UPE foi Diretor da Pós-Graduação, Chefe de Departamento/Coordenador
+da Pós-Graduação em Computação. Hoje é avaliador de projetos para a Comunidade Europeia, NRF
+e HESA (África do Sul), CNPq, CAPES e FACEPE. Recentemente vem liderando ações para o BRICS
+e consolidação redes na América Latina (2013-2022 foi ‘Steering Committee Chair’ do IEEE LA-CCI).
+     O Prof. Buarque também coordenou o MBA em Ciência de Dados na POLI/UPE, é membro do
+Conselho da Universidade da ONU em Macau-China, e Conselheiro do Instituto de Sistemas
+Inteligentes da Universidade de Johannesburg-África do Sul. Atualmente lidera vários times de
+pesquisa e inovação na UPE, e.g., times de Compliance, Otimização e IA Responsável. Recentemente,
+junto ao TJPE, suas contribuições de sistemas com IA foram seminais para reduções significativas nos
+prazos de decisões de precatórios e também em decisões da 2ª instância da justiça pernambucana.
+
+     Pontos curriculares de destaque do Prof. Fernando Buarque com aderência à presente seleção:
+
+ Coordenador geral de DOIS Projetos JIGA da SECTI/FACEPE, onde NOVE equipes entregaram
+  MVPs funcionais para NOVE órgãos da administração direta e indireta de Pernambuco;
+ Dentre seus mais de 50 orientandos de mestrado, TRÊS foram ligados à SCGE.
+ A Metodologia Pedagógica Ativa chamada da Sala de Aula Aberta (SAA)9 entregou mais de 80
+     protótipos-funcionais de inovação em PE. O Anexo A lista 35 exemplos, CINCO deles para a SCGE,
+     sendo que UM especificamente entregue para melhoria de qualidade na Ouvidoria-geral da SCGE.
+    Dentre seus vários prêmios, TRÊS recentes (VIDE Anexo B) ilustram sua experiência em inovação
+     e liderança em projetos de inovação aberta no serviço público.
+
+9 SAA é uma metodologia pedagógica, que inverte o processo de ensino-aprendizagem e é baseada em problemas reais. Foi proposta
+
+pelo Prof. Fernando Buarque em 2016, e vem focando em atender demandas qualiﬁcadas e complexas do Governo e Indústria de PE.
+
+
+
+
+                                                            20
+3.3.3 ‘Mini-CV’ dos Pesquisadores Associados (Bolsistas BFI-4)/Aderências ao Projeto
+
+    -Líder do Time-1 (Tratamento de Manifestações-OUVE.PE): Cleyton Mário de Oliveira Rodrigues
+(C.Lattes: http://lattes.cnpq.br/5674391087077141) é professor doutor, associado na POLI/UPE e
+membro permanente do corpo docente da Pós-Graduação de Computação (PPGEC). Graduado em
+Engenharia da Computação pela UPE (2006), concluiu o Mestrado em Inteligência Artificial pela
+Universidade Federal de Pernambuco (UFPE) em 2009, incluindo um intercâmbio no Institut National
+de Recherche en Informatique et en Automatique (INRIA), em Paris. Em 2019, obteve o Doutorado em
+Ciência da Computação pela UFPE. Com ampla experiência em Inteligência Artificial, suas áreas de
+especialização incluem Processamento de Linguagem Natural (PLN), Engenharia do Conhecimento,
+Ontologias e Programação Lógica. Ele lidera projetos de Inovação, Pesquisa e Desenvolvimento (IP&D)
+em parceria com a indústria, aplicando IA em desafios complexos e impulsionar avanços tecnológicos.
+    -Líder do Time-2 (Suporte inteligente ao Ouvidor-OUVIDOR.PE): Carlo Marcelo Revoredo da Silva
+(C.Lattes: http://lattes.cnpq.br/5941653866734201) é professor doutor, adjunto POLI/UPE, atuando
+como vice-coordenador do curso de Engenharia de Telecomunicações e como membro permanente do
+corpo docente da Pós-Graduação de Computação (PPGEC). Possui mestrado (2014) e doutorado
+(2020) em Ciência da Computação pela Universidade Federal de Pernambuco (UFPE). Sua área de
+atuação concentra-se em Cibersegurança e Acessibilidade e Inclusão, com o emprego de tecnologias
+emergentes, como IA Generativa e aprendizado de máquina. Possui um histórico em projetos, tendo
+coordenado 3 Programas de Extensão Tecnológica (PET), sendo 2 premiados, e um projeto de
+laboratório multiusuário de cibersegurança, todos pela FACEPE.
+    -Líder do Time-3 (Interoperabilidade, Controle e Melhoria Operacional-SUPORTE.OUVIDORIA):
+Emmanuel Andrade de Barros Santos (C.Lattes: http://lattes.cnpq.br/4514740366790714) é professor
+doutor, adjunto na POLI/UPE, com graduação em Engenharia Eletrônica pela (2010), mestrado (2013)
+e doutorado (2019) em Engenharia Elétrica com ênfase em Eletrônica, todos pela UFPE. Além de pós-
+doutorado no Grupo de Pesquisa em Engenharia Biomédica – GPEB-UFPE. Atua há mais de uma
+década em pesquisa e desenvolvimento nas áreas de Inteligência Artificial, IoT, instrumentação
+eletrônica e aprendizado de máquina, com aplicações em sistemas inteligentes e embarcados.
+Coordena projetos financiados, e.g, o CNPq. Suas parcerias unem tecnologias de IA Generativa,
+otimização e eficiência de processos.
+   -Líder do Time-4 (Apoio Estratégico-Operacional ao Gestor-GESTOR.OUVIDORIA): João Fausto
+Lorenzato de Oliveira (C.Lattes: http://lattes.cnpq.br/1868656138898441) é professor doutor, associado
+na POLI/UPE, onde atua nos cursos de Engenharia de Controle e Automação e como membro
+permanente do corpo docente da Pós-Graduação de Computação (PPGEC). Possui graduação em
+Engenharia da Computação (2009) pela UPE, mestrado (2012) e doutorado (2016) em Ciências da
+Computação pela Universidade Federal de Pernambuco, e Livre Docente pela UPE em 2023. É bolsista
+de produtividade FACEPE/CNPQ e desenvolve projetos de pesquisa e inovação com a indústria e
+governo. Possui experiência em inteligência computacional, previsão de séries temporais e
+desenvolvimento de sistemas híbridos. Com publicações de impacto, tem colaborações e vários
+projetos financiados.
+
+
+
+
+                                                21
+4 PARTE-5: Referências
+
+AGUIAR, Y. P., GALY, E., GODDE, A., TRÉMAUD, M., & TARDIF, C. (2020). AutismGuide: a usability
+      guidelines to design software solutions for users with autism spectrum disorder.
+      Behaviour & Information Technology (Taylor & Francis), p. Disponível em:
+      https://doi.org/10.1080/0144929X.2020.1856927.
+
+Androutsopoulou, A. K. (2019). Transforming the communication between citizens and
+      government through AI-guided chatbots. Government Information Quarterly, pp. 36(2),
+      358-367.
+
+Barabási, A. L. (2016). Network science. Cambridge University Press.
+
+Brasil, G. d. (2022). Modelo de Acessibilidade em Governo Eletrˆonico (eMAG). pp.
+         https://www.gov.br/governodigital/pt-br/.
+
+Brown, T. M. (2020). Language models are few-shot learners. Advances in Neural Information
+       Processing Systems, pp. 33, 1877-1901.
+
+Buarque, F. M. (2018). A semiotic-inspired machine for personalized multi-criteria intelligent
+      decision support. Data Knowledge Engineering, pp. Volume 117, Pages 225-238.
+
+Cavalcante, P. (2018). Innovations in the Federal Government During the Post-new Public
+       Management Era. . Revista de Administração Contemporânea, pp. 22(6), 885-902.
+
+Conneau, A. K. (2017). Supervised learning of universal sentence representations from natural
+      language inference data. p. arXiv preprint arXiv:1705.02364.
+
+CONSORTIUM, W. W. (2021). Making content usable for people with cognitive and learning
+     disabilities. W3C Working Group Note, pp. https://www.w3.org/TR/coga-usable/.
+
+Criado, J. I.-A.-G. (2013). Government innovation through social media. Government Information
+        Quarterly, pp. 30(4), 319-326.
+
+Desouza, K. C. (2017). Learning from public sector experimentation with artiﬁcial intelligence.
+      Brookings Institution Report, pp. https://www.brookings.edu/articles/learning-from-
+      public-sector-experimentation-with-artiﬁcial-intelligence/.
+
+Gama, J. e. (2014). A survey on concept drift adaptation. ACM Computing Surveys, pp. 46(4), 1-
+       37.
+
+Gomes, M. E. (2016). A Ouvidoria Pública como Instrumento de Participação Social e
+      Ferramenta de Gestão. Revista do Tribunal de Contas do Estado de Minas Gerais, pp.
+      34(1), 32-51.
+
+Gomes, M. E. (2020). Do instituto do ombudsman à construção das ouvidorias públicas no
+      Brasil. In Lyra, R. P. (Org.). A ouvidoria na esfera pública brasileira (pp. 49-124). João
+      Pessoa: Editora Universitária da UFPB.
+
+Höchtl, J. P. (2016). Big data in the policy cycle: Policy decision making in the digital era. Journal
+       of Organizational Computing and Electronic Commerce, pp. 26(1-2), 147-169.
+
+
+
+
+                                                 22
+Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., & Chen, W. (2021). LoRA: Low-Rank
+         Adaptation of Large Language Models. International Conference on Learning
+         Representations (ICLR).
+
+Hutto, C. &. (2014). VADER: A parsimonious rule-based model for sentiment analysis of social
+        media text. Proceedings of the International AAAI Conference on Web and Social Media,
+        pp. 8(1), 216-225.
+
+LeCun, Y. B. (2015). Deep learning. Nature, pp. 521(7553), 436444.
+
+Lewis, P. P. (2020). Retrieval-augmented generation for knowledge-intensive NLP tasks.
+        Advances in Neural Information Processing Systems, pp. 33, 9459-9474.
+
+Lyra, R. P. (2004). Ouvidor: o defensor dos direitos na administração pública brasileira. In
+         Autônomas x obedientes: a ouvidoria pública em debate (pp. 119-152). João Pessoa:
+         Editora Universitária da UFPB.
+
+Maciejewski, M. (2017). To do more, better, faster and more cheaply: Using big data in public
+       administration. International Review of Administrative Sciences, pp. 83(1_suppl), 120-
+       135.
+
+MENDONÇA, B., LOPES, C. J., MENDES, M. S., & MARQUES, A. B. (2018). Redesign de aplicativos
+     para pessoas com Transtorno do Espectro Autista orientado pelas diretrizes do GAIA.
+     IHC 2018 – XVII Simpósio Brasileiro sobre Fatores Humanos em Sistemas
+     Computacionais, pp. Anais Estendidos, 22–26 out. 2018.
+
+Menezes, R. A. (2017). A atuação das ouvidorias públicas federais como instâncias de controle
+      e participação social no Brasil. . Revista de Administração Pública, pp. 51(3), 407-425.
+
+OWASP. (2021). OWASP Top Ten Security Risks.
+
+Romão, W. M. (2016). Ouvidorias públicas e democracia: reﬂexões para construção de um
+      sistema nacional de ouvidorias públicas. Brasília: Ministério da Justiça, pp. Série
+      Pensando o Direito, 51.
+
+Sasaki, Y. (2007). The truth of the F-measure . MIME technical report, pp. 1(5), 1-6.
+
+Standardization-ISO, I. O. (2013). ISO/IEC 27001: Information Security Management Systems —
+       Requirements.
+
+Sun, T. Q. (2019). Mapping the challenges of Artiﬁcial Intelligence in the public sector: Evidence
+        from public healthcare. Government Information Quarterly, pp. 36(2), 368-383.
+
+União, B.-C.-G. d. (2012). Orientações para implantação de uma unidade de ouvidoria: rumo ao
+       sistema participativo. Brasília: CGU.
+
+W3C. (2022). Web Content Accessibility Guidelines (WCAG) 2.2.
+
+Wirtz, B. W. (2019). Artiﬁcial Intelligence and the Public Sector—Applications and Challenges.
+        International Journal of Public Administration, pp. 42(7), 596-615.
+
+Zuiderwijk, A. C. (2021). Implications of the use of artiﬁcial intelligence in public governance: A
+       systematic literature review and a research agenda. Government Information Quarterly,
+       pp. 38(3), 101577.
+
+
+
+                                                 23
+5 PARTE-6: Anexos:
+
+(A) Exemplos de Projetos de Inovação Aberta (35/80) do Coordenador-Geral,
+          (Alguns dos Projetos executados na SGCE e Ouvidora-geral)
+
+
+
+
+                                   24
+ (B) Exemplos Recentes da Expertise em Inovação do Coordenador Geral
+
+Prêmio de Inovação com IA no        Prêmio de Inovação em Pesquisa
+       Judiciário 2023                         de IA 2024
+
+
+
+
+  Prêmio de Inovação no Setor Público Pernambucano de 2023
+
+
+
+
+                               25

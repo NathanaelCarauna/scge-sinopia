@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimentos - Ouve.PE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="atendimentos.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzRBNTU2OCIvPgo8cGF0aCBkPSJNMTIgMTZIMjhWMjRIMTJWMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="UPE Logo">
+            </div>
+            <h1 class="title">Ouve.PE</h1>
+        </div>
+        <div class="header-right">
+            <button class="header-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button class="header-btn theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="header-btn notifications">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="user-profile">
+                <span class="user-name">Ouvidor Compesa</span>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-status"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-plus"></i>
+                    <span>Novo atendimento</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Painéis</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Relatórios</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="atendimentos.html" class="nav-item active">
+                    <i class="fas fa-headset"></i>
+                    <span>Atendimentos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <span>Atendimentos</span>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="filters-section">
+                <div class="filters-grid">
+                    <!-- First Row -->
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Protocolo</option>
+                            <option value="20230">20230</option>
+                            <option value="20239">20239</option>
+                            <option value="202314">202314</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Modalidade</option>
+                            <option value="manifestacao">Manifestação</option>
+                            <option value="acesso-informacao">Acesso à Informação</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Solicitado</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+
+                    <!-- Second Row -->
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">No prazo atendimento</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">No prazo gestor</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Situação</option>
+                            <option value="aberta">Aberta</option>
+                            <option value="fechada">Fechada</option>
+                            <option value="pendente">Pendente</option>
+                        </select>
+                    </div>
+
+                    <!-- Third Row -->
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Tipo</option>
+                            <option value="reclamacao">Reclamação</option>
+                            <option value="sugestao">Sugestão</option>
+                            <option value="elogio">Elogio</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Assunto</option>
+                            <option value="atendimento">Atendimento</option>
+                            <option value="servicos">Serviços</option>
+                            <option value="infraestrutura">Infraestrutura</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Subassunto</option>
+                            <option value="qualidade">Qualidade</option>
+                            <option value="prazo">Prazo</option>
+                            <option value="documentacao">Documentação</option>
+                        </select>
+                    </div>
+
+                    <!-- Fourth Row -->
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Classificação</option>
+                            <option value="alta">Alta</option>
+                            <option value="media">Média</option>
+                            <option value="baixa">Baixa</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <div class="date-input-group">
+                            <input type="text" class="filter-input" placeholder="Período">
+                            <i class="fas fa-calendar-alt date-icon"></i>
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Palavra-chave</option>
+                            <option value="urgente">Urgente</option>
+                            <option value="pendente">Pendente</option>
+                        </select>
+                    </div>
+
+                    <!-- Fifth Row -->
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">Priorização</option>
+                            <option value="alta">Alta</option>
+                            <option value="normal">Normal</option>
+                            <option value="baixa">Baixa</option>
+                        </select>
+                    </div>
+                    <div class="filter-group filter-group-wide">
+                        <select class="filter-select">
+                            <option value="">Órgão</option>
+                            <option value="compesa">COMPESA</option>
+                            <option value="upe">UPE</option>
+                            <option value="governo">Governo do Estado</option>
+                        </select>
+                    </div>
+
+                    <!-- Sixth Row -->
+                    <div class="filter-group filter-group-full">
+                        <textarea class="filter-textarea" placeholder="Setor" rows="2"></textarea>
+                    </div>
+
+                    <!-- Seventh Row -->
+                    <div class="filter-group">
+                        <input type="text" class="filter-input" placeholder="CPF/CNPJ">
+                    </div>
+                    <div class="filter-group filter-group-wide">
+                        <div class="date-input-group">
+                            <input type="text" class="filter-input" placeholder="Período de publicação do atendimento">
+                            <i class="fas fa-calendar-alt date-icon"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="filter-actions">
+                    <button class="btn btn-secondary" onclick="clearFilters()">LIMPAR FILTROS</button>
+                    <button class="btn btn-primary" onclick="applyFilters()">FILTRAR</button>
+                    <button class="btn btn-info" onclick="printResults()">IMPRIMIR</button>
+                </div>
+            </div>
+
+            <!-- Results Table -->
+            <div class="results-section">
+                <div class="table-container">
+                    <table class="results-table">
+                        <thead>
+                            <tr>
+                                <th>Protocolo</th>
+                                <th>Data Criação</th>
+                                <th>Data recebimento órgão</th>
+                                <th>Data encerramento do prazo atendimento</th>
+                                <th>Data encerramento do prazo do gestor</th>
+                                <th>Data prorrogação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>20230</td>
+                                <td>20/10/23 10:39</td>
+                                <td>20/10/23 10:39</td>
+                                <td>06/11/23</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>20239</td>
+                                <td>20/10/23 11:06</td>
+                                <td>20/10/23 11:06</td>
+                                <td>21/11/23</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>202314</td>
+                                <td>23/10/23 15:10</td>
+                                <td>01/11/23 08:57</td>
+                                <td>07/11/23</td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <span class="pagination-info">Página 1 de 1</span>
+                    <button class="pagination-btn" disabled>
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="atendimentos.js"></script>
+</body>
+</html> 

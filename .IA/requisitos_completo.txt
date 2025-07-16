@@ -1,0 +1,654 @@
+Universidade de Pernambuco
+Escola Politécnica de Pernambuco
+Engenharia da Computação
+
+Documento de Requisitos
+
+Grupo:
+Bernardo Braga
+Giulia Buonafina
+Franciele
+Jéssica
+Laís Oliveira
+Peri Macedo
+
+Recife
+2025
+
+1
+
+Sumário
+1. Introdução​
+1.1. Escopo e Alinhamento Estratégico​
+1.2. Glossário​
+2. Visão Geral do Produto​
+2.1. Perspectivas do produto​
+2.2. Regras de negócio​
+2.3. Descrição dos atores do sistema​
+3. Objetivos de Negócio​
+4. Requisitos Funcionais (Casos de Uso)​
+[RF01] - Conexão com API OUVE.PE​
+[RF02] - Sincronização de dados​
+[RF03] - Autenticação integrada​
+[RF04] - Mapeamento de usuários​
+[RF05] - Classificação assistida​
+[RF06] - Manifestação por voz​
+[RF07] - Assistente de preenchimento​
+[RF08] - Triagem automática da manifestação​
+[RF09] - Direcionamento ao portal da transparência​
+[RF10] - Alerta sobre finalização de processo​
+[RF11] - Cópia de informações do processo​
+[RF12] - Avatar de atendimento​
+[RF13] - Atendimento por voz​
+[RF14] - Chatbot integrado​
+[RF15] - Síntese de fala​
+[RF16] - Controle do Plugin​
+[RF17] - Guia da Plataforma​
+[RF18] - Leitor de tela​
+[RF19] - Alto contraste​
+[RF20] - Ajuste de fonte​
+[RF21] - LIBRAS no avatar​
+[RF22] - Interface simplificada​
+[RF23] - Feedback sonoro​
+[RF25] - Busca avançada​
+[RF26] - Análise de veracidade​
+[RF27] - Detecção de duplicatas​
+[RF28] - Feedback do usuário​
+[RF29] - Validação do conteúdo​
+5. Requisitos não Funcionais​
+
+3
+3
+4
+4
+4
+4
+6
+7
+7
+8
+8
+8
+8
+8
+8
+9
+9
+9
+9
+9
+9
+10
+10
+10
+10
+10
+10
+11
+11
+11
+11
+11
+12
+12
+12
+12
+12
+12
+
+2
+
+1.​
+
+Introdução
+Este projeto visa desenvolver um Sistema Integrado de Ouvidoria Pública
+
+baseado em Inteligência Artificial para cidadãos e servidores públicos que ofereça
+eficiência e qualidade, ao mesmo tempo em que busca produzir os subsídios
+institucionais. O sistema pretende endereçar demandas reprimidas relacionadas à
+volume, coerência e resolutividade, além de explorar plenamente os conhecimentos
+armazenados nas bases de dados da SGCE, ainda subutilizadas. Para os cidadãos
+será possível automatizar, personalizar, melhorar o volume e a qualidade dos seus
+pedidos e/ou manifestações. Em relação aos servidores públicos, será possível
+gerar projeções de demandas que possam ser utilizadas para a gestão de recursos,
+analisar coerência, promover auditabilidade, avaliação de indicadores chave para
+aprimorar a eficiência operacional; e fornecer insights para a sustentabilidade e
+melhoria contínua dos serviços públicos e da gestão governamental.
+1.1.​
+
+Escopo e Alinhamento Estratégico
+O Sistema Integrado de Ouvidoria Pública é um projeto robusto que
+
+será dividido em quatro módulos para garantir a melhor estruturação e
+eficiência do projeto, sendo eles o OE1: Atendimento Multimodal; OE2:
+Suporte ao Ouvidor; OE3: Suporte, Controle e Melhoria Operacional e o OE4:
+Apoio ao Gestor. Esse documento de requisito irá focar nos requisitos do
+módulo OE1: Atendimento Multimodal.
+O sistema permitirá:
+●​ Gerenciamento de usuários por perfil (Usuário não cadastrado, Usuário
+não identificado, Logado, Logado Gov, Logado Ouve);
+●​ Controle de acesso baseado no tipo de autenticação feita pelo cidadão;
+●​ Receber,
+
+analisar
+
+e
+
+encaminhar
+
+pedidos
+
+e/ou
+
+manifestações
+
+multimodais (i.e., voz e texto) dos cidadãos;
+●​ Acompanhamento dos pedidos e/ou manifestações realizadas;
+
+3
+
+●​ Acessibilidade e Inclusão de Pessoas com Deficiências visuais e
+auditivas-PCD e Pessoas Neuro-divergentes do espectro autista;
+1.2.​
+
+Glossário
+●​ SGCE - Secretaria Geral da Controladoria do Estado
+●​ Manifestação
+
+-
+
+Reclamações,
+
+Solicitações,
+
+Denúncias,
+
+Sugestões e Elogios
+●​ Pedido - Pedido de acesso à dados públicos e pessoais
+●​ LGPD - Lei Geral de Proteção de Dados
+●​ RF - Requisito Funcional
+●​ RNF - Requisito não funcional
+●​ RN - Regras de negócio
+
+2. Visão Geral do Produto
+2.1.​
+
+Perspectivas do produto
+
+O sistema será uma aplicação web/mobile integrado de ouvidoria pública,
+acessível por navegadores modernos, destinada a atender cidadãos e
+servidores públicos. O sistema terá funcionalidades distintas por perfil de
+usuário, incluindo análise, encaminhamento e acompanhamento de pedidos
+e/ou manifestações multimodais dos cidadãos.
+2.2.​
+
+Regras de negócio
+
+Regras Gerais
+ID
+
+Regra de
+Negócio
+
+RN01 Validação por
+perfil
+
+Descrição
+
+O sistema deve validar as credenciais e permissões específicas
+de cada perfil de usuário antes de permitir acesso às
+funcionalidades.
+
+4
+
+RN02 Acesso por
+perfil
+
+Cada perfil de usuário deve ter acesso apenas às
+funcionalidades e informações compatíveis com seu nível de
+autorização.
+
+RN03 Notificações
+obrigatórias
+
+O sistema deve notificar os cidadãos sobre alterações de status
+e solicitações pendentes.
+
+RN04 Nível de
+Autenticação
+Gov
+
+LGPD e Acesso à Informação exigem autenticação via Gov.br
+(nível ouro).
+
+Registro de Manifestações
+ID
+
+Regra de Negócio
+
+Descrição
+
+RN05 Registro de
+manifestação
+
+Toda manifestação deve ser registrada com número de
+protocolo único e senha.
+
+RN06 Limite de
+acompanhamento
+
+Manifestações podem ser anônimas ou identificadas,
+mas manifestações anônimas têm limitações de
+acompanhamento.
+
+RN07 Dados obrigatórios
+dentro de uma
+manifestação
+
+Tipo de manifestação (denúncia, reclamação,
+solicitação, sugestão, elogio), órgão/entidade
+envolvida, descrição dos fatos.
+
+RN08 Encaminhamento da
+manifestação
+
+Sistema deve encaminhar automaticamente a
+manifestação para o órgão competente baseado no
+assunto
+
+RN09 Transferência da
+manifestação
+
+Se a manifestação for enviada para o órgão não
+responsável, o prazo para a transferência não pode
+exceder 48 horas após o recebimento.
+
+RN10 Anexos permitidos
+
+São permitidos até 5 arquivos por manifestação, total
+de 20MB.
+
+Prazos de Resposta
+
+5
+
+ID
+
+Regra de
+Negócio
+
+Descrição
+
+RN11
+
+Manifestações
+simples
+
+Até 20 dias úteis para resposta (conforme Lei de Acesso à
+Informação)
+
+RN12 Manifestações
+complexas
+
+Até 30 dias úteis, prorrogáveis por mais 10 dias mediante
+justificativa
+
+Acompanhamento e Controle de Qualidade
+ID
+
+Regra de Negócio
+
+Descrição
+
+RN13
+
+Atualizações ao
+manifestante
+
+Manifestante identificado deve receber atualizações por
+e-mail/SMS em cada mudança de status.
+
+RN14
+
+Manifestações
+similares
+
+Manifestações recorrentes sobre o mesmo assunto devem
+ser identificadas automaticamente.
+
+RN15
+
+Reabertura da
+manifestação
+
+Sistema deve permitir reabertura de casos mediante
+justificativa do manifestante.
+
+RN16
+
+Pesquisa de
+satisfação
+
+Pesquisa de satisfação deve ser enviada após conclusão
+do atendimento.
+
+2.3. Descrição dos atores do sistema
+Tipo de ator
+
+Usuário
+
+identificado
+
+Responsabilidades
+
+Ator que representa um cidadão
+
+●​ Registrar manifestações sem
+se cadastrar.
+●​ Consultar status via protocolo
+e senha.
+●​ Acessar informações sobre o
+processo.
+
+não que registra manifestações sem
+cadastro no sistema.
+
+cadastrado
+
+Usuário
+
+Descrição
+
+não
+
+Ator que representa um cidadão
+que registra manifestações
+anônimas no sistema.
+
+●​ Registrar manifestações
+anônimas.
+●​ Consultar status via protocolo
+e senha.
+●​ Acessar informações sobre o
+processo.
+
+6
+
+Usuário logado
+
+Ator genérico que representa
+qualquer usuário autenticado no
+sistema.
+
+Logado Gov
+
+Ator que representa um cidadão
+autenticado via login único do
+governo (Gov.br), permitindo
+identificação completa.
+
+●​ Registrar manifestações
+●​ Consultar o histórico de
+atendimentos realizados
+●​ Registrar Pedidos de Acesso
+à Informação de Dados
+Públicos.
+●​ Registrar Pedidos de Acesso
+à Informação de Dados
+Pessoais.
+
+Logado Ouve
+
+Ator que representa um cidadão
+autenticado via login único da
+Ouvidoria (Ouve.PE),
+
+●​ Registrar manifestações
+●​ Consultar o histórico de
+atendimentos realizados
+●​ Registrar Pedidos de Acesso
+à Informação de Dados
+Públicos.
+
+3. Objetivos de Negócio
+Objetivo de negócio
+
+Descrição
+
+Implementar Interface
+Multimodal
+
+Desenvolver sistema que suporte interação por voz, texto e
+gestos, garantindo múltiplas formas de comunicação.
+
+Criar Avatar Inteligente
+
+Implementar assistente virtual com IA para atendimento
+automatizado e direcionamento de manifestações.
+
+Personalizar
+Encaminhamentos
+
+Desenvolver algoritmo de IA para classificação e
+encaminhamento inteligente baseado no perfil da
+manifestação.
+
+Garantir Acessibilidade Total
+
+Implementar recursos de acessibilidade para PCD visuais,
+auditivas e pessoas neuro-divergentes.
+
+Assegurar Responsividade
+Mobile
+
+Garantir experiência otimizada em dispositivos móveis com
+todas as funcionalidades.
+
+4. Requisitos Funcionais (Casos de Uso)
+Integração com OUVE.PE
+
+7
+
+[RF01] - Conexão com API OUVE.PE
+●​ Descrição
+O plugin deve se conectar com as APIs existentes do sistema
+OUVE.PE.
+[RF02] - Sincronização de dados
+●​ Descrição
+O plugin deve sincronizar dados bidirecionalmente com OUVE.PE.
+[RF03] - Autenticação integrada
+●​ Descrição
+O plugin deve utilizar o sistema de autenticação existente do
+OUVE.PE.
+[RF04] - Mapeamento de usuários
+●​ Descrição
+O plugin deve mapear usuários entre os sistemas sem duplicação.
+
+Registro e Gestão de Manifestações
+[RF05] - Classificação assistida
+●​ Descrição
+O plugin deve sugerir classificações de manifestações baseado no
+conteúdo dentro das 5 categorias: Reclamação, Solicitação, Denúncia,
+Sugestão e Elogio. Caso não seja a desejada, ter a opção de alterar.
+[RF06] - Manifestação por voz
+●​ Descrição
+O plugin deve permitir registro completo de manifestações por
+comando de voz.
+
+8
+
+[RF07] - Assistente de preenchimento
+●​ Descrição
+O plugin deve assistir no preenchimento da manifestação, dando
+sugestões inteligentes e validação em tempo real.
+[RF08] - Triagem automática da manifestação
+●​ Descrição
+O sistema deve ser capaz de efetuar a triagem do órgão competente
+de acordo com o conteúdo da manifestação.
+[RF09] - Direcionamento ao portal da transparência
+●​ Descrição
+O plugin deve ser capaz de identificar quando uma informação
+solicitada já se encontra no portal da transparência e direcionar o
+usuário para o portal correspondente.
+[RF10] - Alerta sobre finalização de processo
+●​ Descrição
+O plugin deve ser capaz de emitir um alerta ao usuário para que ao
+final do processo de manifestação, ele não perca informações
+importantes ao fechar.
+[RF11] - Cópia de informações do processo
+●​ Descrição
+O plugin deve ser capaz de baixar uma cópia na máquina do usuário
+com as informações da manifestação, como protocolo e senha.
+
+Avatar Inteligente e Interface Multimodal
+[RF12] - Avatar de atendimento
+●​ Descrição
+
+9
+
+O plugin deve disponibilizar avatar inteligente sobreposto à interface
+OUVE.PE.
+[RF13] - Atendimento por voz
+●​ Descrição
+O plugin deve capturar comandos de voz e convertê-los em ações no
+OUVE.PE.
+[RF14] - Chatbot integrado
+●​ Descrição
+O plugin deve oferecer chatbot que compreende o contexto do
+OUVE.PE.
+[RF15] - Síntese de fala
+●​ Descrição
+O plugin deve converter texto da interface em áudio para usuários com
+deficiência visual.
+[RF16] - Controle do Plugin
+●​ Descrição
+O plugin deve ser capaz de ser desativado e reativado pelo usuário.
+[RF17] - Guia da Plataforma
+●​ Descrição
+O plugin deve oferecer um guia do usuário em como se movimentar na
+plataforma e o que significa cada módulo.
+
+Acessibilidade e Inclusão Digital
+[RF18] - Leitor de tela
+●​ Descrição
+
+10
+
+O plugin deve enriquecer informações para leitores de tela, fazendo
+descrições contextuais.
+[RF19] - Alto contraste
+●​ Descrição
+O plugin deve oferecer alternância de tema com alto contraste.
+[RF20] - Ajuste de fonte
+●​ Descrição
+O plugin deve oferecer ajuste de fonte para aumentar a letra dos textos
+e facilitar a leitura.
+[RF21] - LIBRAS no avatar
+●​ Descrição
+O plugin deve disponibilizar interpretação em LIBRAS via VLIBRAS.
+[RF22] - Interface simplificada
+●​ Descrição
+O plugin deve oferecer interface simplificada para neuro divergentes,
+reduzindo estímulos visuais, oferecendo uma navegação linear e
+instruções claras.
+[RF23] - Feedback sonoro
+●​ Descrição
+O plugin deve fornecer feedback auditivo para ações no sistema, como
+confirmações sonoras e alerta de erro.
+[RF24] - Zoom e magnificação
+●​ Descrição
+O plugin deve permitir zoom avançado de elementos da interface.
+
+11
+
+Pesquisa e Análise
+[RF25] - Busca avançada
+●​ Descrição
+O sistema deve permitir a busca avançada de manifestações e
+atendimentos com filtros por data e status.
+[RF26] - Análise de veracidade
+●​ Descrição
+O sistema deve analisar o sentimento das manifestações para verificar
+a
+
+veracidade
+
+das
+
+informações
+
+oferecidas,
+
+classificando
+
+uma
+
+manifestação como sendo legítima ou fruto de trote e informar a % de
+ambos os casos.
+[RF27] - Detecção de duplicatas
+●​ Descrição
+O sistema deve identificar manifestações com o mesmo conteúdo já
+encaminhadas pelo mesmo usuário.
+[RF28] - Feedback do usuário
+●​ Descrição
+O plugin deve coletar feedback sobre a experiência ao final do
+atendimento ou manifestação.
+[RF29] - Validação do conteúdo
+●​ Descrição
+Validar se o conteúdo inserido é válido (evitar campos em branco ou
+aleatórios).
+​
+
+5. Requisitos não Funcionais
+
+12
+
+Tipo
+
+Descrição
+
+Prioridade
+
+Usabilidade
+
+O sistema deve ser intuitivo e fácil de navegar, com
+menus auto explicativos e interface amigável.
+
+Alta
+
+Segurança
+
+Os dados devem ser armazenados de forma segura, com Alta
+acesso restrito, criptografia e backups periódicos.
+
+Interface
+
+O sistema deve ser compatível com navegadores
+modernos (Chrome, Firefox, Edge) e dispositivos móveis.
+
+Alta
+
+Escalabilidade
+
+O sistema deve permitir crescimento de capacidade
+conforme aumento da demanda.
+
+Média
+
+Manutenibilidade
+
+O código-fonte deve ser documentado e modular para
+facilitar futuras manutenções e atualizações.
+
+Alta
+
+Integração
+
+Capacidade de integração com sistemas externos, como
+o Gov.br.
+
+Média
+
+13
+
+

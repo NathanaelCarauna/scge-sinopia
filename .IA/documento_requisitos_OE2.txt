@@ -1,0 +1,584 @@
+SISTEMA INTEGRADO DE OUVIDORIA PUBLICA BASEADO EM INTELIGENCIA ARTIFICIAL
+SINOPIA - MODULO OE2: SUPORTE INTELIGENTE AO OUVIDOR (OUVIDOR.PE)
+DOCUMENTO DE REQUISITOS
+
+VERSAO: 1.0
+DATA: 11 de julho de 2025
+INSTITUICAO: Universidade de Pernambuco (UPE)
+CLIENTE: Secretaria de Controladoria-Geral do Estado (SCGE-PE)
+
+===============================================================================
+
+1. INTRODUCAO E ESCOPO
+
+1.1 Contextualizacao
+O modulo OE2 - OUVIDOR.PE representa o subsistema de suporte analitico e estrategico ao trabalho dos ouvidores no SINOPIA. Atuando como back-office da solucao, sera responsavel pelo tratamento automatizado das manifestacoes recebidas, transformando-as em indicadores, padroes, alertas e sugestoes de melhoria continua, apoiando decisoes baseadas em evidencias e aumentando a resolutividade da ouvidoria.
+
+1.2 Objetivos Especificos
+- Desenvolver e implementar subsistema de Analise e Processamento Automatico avancados com IA Generativa
+- Implementar mineracao na base de conhecimento/manifestacoes existentes
+- Garantir seguranca, conformidade, transparencia e etica em todos os processos
+- Automatizar classificacao e triagem de manifestacoes
+- Detectar duplicatas e manifestacoes similares
+- Sugerir encaminhamentos automaticos com base em padroes historicos
+- Gerar respostas automaticas e textos padrao
+- Prover dashboards e alertas inteligentes para ouvidores
+- Integrar com sistemas externos e outros modulos do SINOPIA
+
+1.3 Usuarios Alvo
+- Ouvidores (principais usuarios)
+- Gestores/Diretores da Ouvidoria
+- Colaboradores da Ouvidoria
+- Servidores publicos
+- Administradores do sistema
+
+===============================================================================
+
+2. PERFIS DE USUARIO E CONTROLE DE ACESSO
+
+2.1 Perfis de Usuario
+
+RF001 - Gerenciamento de Perfis
+O sistema deve suportar os seguintes perfis com permissoes especificas:
+- Ouvidor: acesso completo as funcionalidades de processamento e analise
+- Gestor/Diretor: acesso aos modulos de ouvidor e gestao simultaneamente  
+- Colaborador: acesso limitado a visualizacao e algumas operacoes basicas
+- Servidor: acesso a consultas e acompanhamento de manifestacoes
+- Administrador: acesso total para configuracao e manutencao do sistema
+
+RF002 - Controle de Acesso Baseado em Funcoes (RBAC)
+O sistema deve implementar controle de acesso baseado em papeis com:
+- Autenticacao segura integrada com sistemas existentes
+- Permissoes granulares por funcionalidade
+- Registro de todas as acoes por usuario
+- Sessoes com timeout automatico
+- Autenticacao multifator para perfis administrativos
+
+
+===============================================================================
+
+3. CLASSIFICACAO INTELIGENTE DE MANIFESTACOES
+
+3.1 Estrutura de Classificacao
+
+RF004 - Campos de Classificacao
+O sistema deve suportar classificacao por:
+- Tipo de manifestacao (reclamacao, solicitacao, denuncia, sugestao, elogio)
+- Modalidade (manifestacao, acesso a informacao, LGPD)
+- Assunto (categorias principais)
+- Subassunto (subcategorias especificas por secretaria)
+- Palavras-chave (tags para indexacao e busca)
+- Orgao/setor de destino
+- Grau de prioridade
+- Nivel de complexidade
+
+3.2 Inteligencia Artificial para Classificacao
+
+RF005 - Sugestao Automatica de Classificacao via IA
+O sistema deve utilizar IA/LLM para:
+- Analisar o texto da manifestacao automaticamente
+- Sugerir tipo, modalidade, assunto e subassunto
+- Propor palavras-chave relevantes
+- Indicar orgao/setor de destino com percentual de confianca
+- Calcular grau de prioridade baseado em criterios predefinidos
+- Permitir aceitacao, rejeicao ou modificacao das sugestoes pelo ouvidor
+
+RF006 - Aprendizado Continuo
+O sistema deve:
+- Registrar as decisoes dos ouvidores sobre as sugestoes
+- Melhorar a precisao das sugestoes baseado no feedback
+- Atualizar modelos de IA periodicamente
+- Manter historico de acuracia por tipo de classificacao
+
+3.3 Sistema de Curadoria de Palavras-Chave
+
+RF007 - Gestao de Palavras-Chave
+O sistema deve implementar:
+- Cadastro de palavras-chave por secretaria/orgao
+- Aprovacao de novas palavras-chave por gestores
+- Desativacao em vez de exclusao de palavras obsoletas
+- Sistema de sinonimos e termos relacionados
+- Normalizacao automatica (correcao ortografica, padronizacao)
+
+RF008 - Ranking e Estatisticas de Palavras-Chave
+O sistema deve gerar:
+- Ranking de palavras-chave mais utilizadas
+- Lista de palavras-chave nao utilizadas
+- Sugestoes de consolidacao de termos similares
+- Relatorios de uso por periodo e orgao
+- Alertas para palavras com baixo uso para limpeza periodica
+
+RF009 - Limpeza Periodica Automatizada
+O sistema deve:
+- Identificar palavras-chave redundantes ou similares
+- Sugerir consolidacao de 10 ou mais palavras similares
+- Propor desativacao de palavras sem uso em periodo configuravel
+- Gerar relatorios de limpeza para aprovacao de gestores
+- Executar limpeza automatica apos aprovacao
+
+===============================================================================
+
+4. PROCESSAMENTO E ANALISE COM IA
+
+4.1 Processamento de Linguagem Natural
+
+RF010 - Analise Semantica Avancada
+O sistema deve implementar:
+- Processamento de linguagem natural para compreensao contextual
+- Reconhecimento de entidades nomeadas (pessoas, lugares, orgaos)
+- Analise sintatica e semantica do texto
+- Correcao automatica de ortografia e gramatica
+- Identificacao de sinonimos e termos relacionados
+- Tratamento de manifestacoes com palavroes sem modificar o texto original
+
+RF011 - Analise de Sentimentos e Emocoes
+O sistema deve:
+- Identificar sentimento da manifestacao (positivo, negativo, neutro)
+- Detectar nivel de urgencia e emocao
+- Classificar grau de insatisfacao ou contentamento
+- Identificar manifestacoes com linguagem agressiva ou inadequada
+- Priorizar manifestacoes com alto grau de insatisfacao
+
+RF012 - Deteccao de Veracidade
+O sistema deve:
+- Analisar consistencia interna da manifestacao
+- Identificar possiveis relatos falsos baseado em padroes
+- Cruzar informacoes com bases de dados publicas quando aplicavel
+- Gerar score de confiabilidade da manifestacao
+- Alertar ouvidores sobre manifestacoes suspeitas
+
+4.2 Mineracao de Dados e Conhecimento
+
+RF013 - Mineracao da Base Historica
+O sistema deve:
+- Processar manifestacoes historicas para identificar padroes
+- Extrair conhecimento de respostas e encaminhamentos anteriores
+- Identificar best practices de resolucao por tipo de manifestacao
+- Criar base de conhecimento estruturada para consulta
+- Sugerir solucoes baseadas em casos similares anteriores
+
+RF014 - Analise Preditiva
+O sistema deve implementar:
+- Previsao de tempo de resposta por tipo de manifestacao
+- Predicao de volume de demandas por periodo
+- Identificacao de tendencias e sazonalidades
+- Alertas preventivos para picos de demanda
+- Sugestoes de alocacao de recursos baseadas em predicoes
+
+===============================================================================
+
+5. DETECCAO DE DUPLICATAS E SIMILARIDADE
+
+5.1 Identificacao de Duplicatas
+
+RF015 - Deteccao Automatica de Duplicatas
+O sistema deve:
+- Identificar manifestacoes identicas ou muito similares (>95% similaridade)
+- Comparar manifestacoes mesmo sem login por nome ou CPF
+- Alertar sobre duplicatas antes da criacao da manifestacao
+- Sugerir cancelamento ou vinculacao com manifestacao original
+- Manter historico de manifestacoes duplicadas canceladas
+
+RF016 - Analise de Similaridade Avancada
+O sistema deve:
+- Calcular percentual de similaridade entre manifestacoes (ex: 90% semelhanca)
+- Identificar manifestacoes relacionadas ao mesmo problema/servidor
+- Agrupar manifestacoes por padroes (ex: mesmo servidor denunciado)
+- Permitir relacionamento manual pelo ouvidor
+- Exibir manifestacoes relacionadas antes do encaminhamento
+
+5.2 Regras de Duplicatas e Agrupamento
+
+RF017 - Regras de Cancelamento
+O sistema deve implementar:
+- Regras claras para cancelamento de duplicatas
+- Diferentes criterios de duplicata por tipo de manifestacao
+- Possibilidade de configuracao de thresholds de similaridade
+- Aprovacao obrigatoria do ouvidor para cancelamentos
+- Notificacao ao cidadao sobre duplicatas encontradas
+
+RF018 - Agrupamento Inteligente
+O sistema deve:
+- Agrupar manifestacoes por criterios configurveis
+- Identificar casos sistmicos (multiplas manifestacoes sobre mesmo problema)
+- Criar alertas para problemas recorrentes
+- Sugerir acoes preventivas para casos agrupados
+- Gerar relatorios de agrupamentos por periodo
+
+===============================================================================
+
+6. ENCAMINHAMENTO INTELIGENTE
+
+6.1 Sugestao de Destino
+
+RF019 - IA para Sugestao de Orgao/Setor
+O sistema deve:
+- Analisar o conteudo da manifestacao para identificar competencia
+- Sugerir orgao/setor de destino com percentual de confianca
+- Considerar historico de encaminhamentos similares
+- Permitir configuracao de regras de encaminhamento por tipo
+- Aprender com correcoes dos ouvidores para melhorar sugestoes
+
+RF020 - Encaminhamento Automatico
+O sistema deve:
+- Permitir encaminhamento automatico mediante confirmacao do ouvidor
+- Implementar regras de auto-encaminhamento para casos obvios
+- Manter controle de qualidade com revisao periodica
+- Permitir redirecionamento quando manifestacao for enviada para departamento errado
+- Registrar historico completo de encaminhamentos
+
+6.2 Gestao de Autoridades e Destinatarios
+
+RF021 - Agrupamento de Autoridades
+O sistema deve:
+- Cadastrar e organizar autoridades por hierarquia
+- Agrupar destinatarios por area de competencia
+- Permitir configuracao de regras de escalacao
+- Implementar substituicao automatica em casos de ausencia
+- Manter atualizacao automatica de contatos e responsaveis
+
+===============================================================================
+
+7. GERACAO AUTOMATICA DE RESPOSTAS
+
+7.1 Templates e Textos Padrao
+
+RF022 - Biblioteca de Textos Automaticos
+O sistema deve:
+- Manter biblioteca de textos padrao por tipo de manifestacao
+- Gerar textos especificos para cada finalidade (cidadao, orgaos internos)
+- Personalizar textos baseado no contexto da manifestacao
+- Permitir edicao e aprovacao de novos templates
+- Versionamento de templates com controle de alteracoes
+
+RF023 - Geracao Automatica com IA
+O sistema deve:
+- Gerar respostas automaticas iniciais baseadas no conteudo
+- Sugerir conclusoes automaticas baseadas em respostas anteriores
+- Adaptar linguagem ao perfil do solicitante
+- Incluir informacoes relevantes automaticamente (prazos, procedimentos)
+- Permitir revisao e edicao antes do envio
+
+7.2 Notificacoes e Comunicacao
+
+RF024 - Sistema de Notificacoes Multicanal
+O sistema deve:
+- Enviar notificacoes por email automaticamente
+- Integrar com WhatsApp para envio de atualizacoes (com autorizacao)
+- Notificar sobre mudancas de status da manifestacao
+- Alertar sobre vencimentos de prazos
+- Permitir configuracao de preferencias de notificacao por usuario
+
+===============================================================================
+
+8. MONITORAMENTO E ALERTAS
+
+8.1 Controle de Prazos
+
+RF025 - Gestao de Prazos Inteligente
+O sistema deve:
+- Calcular prazos automaticamente por tipo de manifestacao
+- Gerar alertas preventivos antes do vencimento
+- Considerar dias uteis e feriados nos calculos
+- Permitir prorrogacao com justificativa
+- Parar alertas apos vencimento conforme configuracao
+
+RF026 - Analise Historica de Tempos
+O sistema deve:
+- Manter historico de tempos de resposta por tipo
+- Identificar gargalos e atrasos recorrentes
+- Gerar relatorios de performance temporal
+- Sugerir otimizacoes baseadas em analise historica
+- Alertar sobre desvios significativos dos tempos medios
+
+8.2 Sistema de Alertas Avancado
+
+RF027 - Alertas Contextuais
+O sistema deve:
+- Gerar alertas baseados em volume de demanda
+- Identificar sobrecarga de manifestacoes por ouvidor
+- Alertar sobre manifestacoes de alta prioridade
+- Notificar sobre casos que requerem atencao especial
+- Permitir configuracao de criterios de alerta por perfil
+
+RF028 - Alertas Preditivos
+O sistema deve:
+- Prever aumentos de demanda baseado em sazonalidade
+- Alertar sobre possveis gargalos futuros
+- Sugerir redistribuicao preventiva de carga de trabalho
+- Identificar padroes que indicam problemas sistmicos
+- Gerar alertas para gestores sobre tendencias preocupantes
+
+===============================================================================
+
+9. DASHBOARD E RELATORIOS
+
+9.1 Painel Operacional
+
+RF029 - Dashboard Interativo para Ouvidores
+O sistema deve fornecer:
+- Visao geral de manifestacoes por status com codigos de cores
+- Lista priorizada de manifestacoes pendentes
+- Alertas visuais para prazos vencidos ou a vencer
+- Estatisticas em tempo real de produtividade
+- Acesso rapido as funcionalidades mais utilizadas
+
+RF030 - Agrupamento Visual por Status
+O sistema deve:
+- Usar cores distintas para diferentes status
+- Agrupar manifestacoes vencidas em secao especifica
+- Mostrar indicadores visuais de urgencia
+- Permitir customizacao de cores por preferencia
+- Implementar legendas claras para interpretacao
+
+9.2 Relatorios e Analises
+
+RF031 - Relatorios Gerenciais
+O sistema deve gerar:
+- Relatorios de produtividade por ouvidor
+- Estatisticas de resolucao por tipo de manifestacao
+- Analises de satisfacao do cidadao
+- Relatorios de compliance e conformidade
+- Dashboards executivos para gestores
+
+RF032 - Integracao com Ferramentas de BI
+O sistema deve:
+- Integrar com Power BI para analises avancadas
+- Exportar dados em formatos padrao (CSV, Excel, JSON)
+- Fornecer APIs para consumo por ferramentas externas
+- Manter data warehouse para analises historicas
+- Permitir criacao de relatorios customizados
+
+===============================================================================
+
+10. INTEGRACOES EXTERNAS
+
+10.1 Sistemas Governamentais
+
+RF033 - Integracao com SEI-PI
+O sistema deve:
+- Verificar numeros de processo no SEI-PI automaticamente
+- Importar informacoes relevantes de processos relacionados
+- Validar existencia e status de processos mencionados
+- Criar vinculos automaticos entre manifestacoes e processos
+- Sincronizar atualizacoes quando aplicavel
+
+RF034 - Integracoes com Bases Federais
+O sistema deve integrar com:
+- CadUnico para complementar dados do manifestante
+- Receita Federal para validacao de dados fiscais
+- Bolsa Familia para identificacao de beneficiarios
+- SIAFI para consulta de informacoes orcamentarias
+- Outras bases relevantes conforme necessidade
+
+10.2 Integracao com Outros Modulos SINOPIA
+
+RF035 - Integracao com OE1 (OUVE.PE)
+O sistema deve:
+- Receber manifestacoes estruturadas do modulo de atendimento
+- Processar metadados gerados pelo avatar de atendimento
+- Sincronizar atualizacoes de status em tempo real
+- Compartilhar classificacoes automaticas
+- Manter consistencia de dados entre modulos
+
+RF036 - Integracao com OE3 (SUPORTE.OUVIDORIA)
+O sistema deve:
+- Fornecer metricas operacionais para controle
+- Receber configuracoes de workflow
+- Compartilhar logs de auditoria
+- Sincronizar permissoes e acessos
+- Contribuir para dashboards de performance
+
+RF037 - Integracao com OE4 (GESTOR.OUVIDORIA)
+O sistema deve:
+- Fornecer dados processados para analises estrategicas
+- Compartilhar indicadores de performance
+- Contribuir para relatorios executivos
+- Sincronizar alertas gerenciais
+- Apoiar tomada de decisao com dados estruturados
+
+===============================================================================
+
+11. SEGURANCA E CONFORMIDADE
+
+11.1 Protecao de Dados
+
+RF038 - Conformidade com LGPD
+O sistema deve:
+- Implementar controles de privacidade por design
+- Anonimizar dados pessoais automaticamente quando necessario
+- Registrar todas as operacoes com dados pessoais
+- Permitir exercicio de direitos dos titulares
+- Manter registros de atividades de tratamento
+
+RF039 - Seguranca da Informacao
+O sistema deve implementar:
+- Criptografia AES-256 para dados em repouso
+- TLS 1.3 para dados em transito
+- Controles de integridade e autenticidade
+- Logs imutaveis de auditoria
+- Protecao contra ameacas OWASP Top 10
+
+11.2 Auditoria e Compliance
+
+RF040 - Sistema de Auditoria Completo
+O sistema deve:
+- Registrar todas as acoes dos usuarios com timestamp
+- Auditar todas as alteracoes e decisoes automaticas feitas pela IA
+- Registrar parametros, inputs e outputs de todos os algoritmos de IA
+- Manter trilha de auditoria imutavel para acoes humanas e de IA
+- Gerar relatorios de compliance periodicos incluindo atividades de IA
+- Implementar alertas para acoes suspeitas de usuarios e comportamentos anomalos da IA
+- Permitir rastreabilidade completa de decisoes humanas e automatizadas
+- Registrar versoes de modelos de IA utilizados em cada decisao
+- Manter logs de treinamento e retreinamento de modelos
+- Documentar explicabilidade (XAI) para decisoes criticas da IA
+
+RF041 - Controles de Qualidade
+O sistema deve:
+- Implementar aprovacoes obrigatorias para acoes criticas
+- Manter versionamento de todas as alteracoes
+- Registrar justificativas para decisoes importantes
+- Implementar workflows de aprovacao configurveis
+- Gerar alertas para desvios de procedimentos
+
+===============================================================================
+
+12. PROCESSAMENTO E PERFORMANCE
+
+12.1 Arquitetura e Escalabilidade
+
+RF042 - Arquitetura de Microsservicos
+O sistema deve:
+- Implementar arquitetura baseada em microsservicos
+- Permitir escalabilidade horizontal automatica
+- Implementar balanceamento de carga dinamico
+- Usar containerizacao para deploy e manutencao
+- Garantir alta disponibilidade com redundancia
+
+RF043 - APIs e Interoperabilidade
+O sistema deve fornecer:
+- APIs RESTful para integracao externa
+- Documentacao automatica de APIs (Swagger/OpenAPI)
+- Versionamento de APIs para compatibilidade
+- Rate limiting e controles de acesso para APIs
+- Monitoramento de performance e uso de APIs
+
+12.2 Performance e Otimizacao
+
+RF044 - Otimizacao de Performance
+O sistema deve:
+- Processar manifestacoes em tempo real (< 3 segundos)
+- Implementar cache inteligente para consultas frequentes
+- Otimizar consultas de banco de dados automaticamente
+- Usar indices apropriados para buscas rapidas
+- Implementar paginacao eficiente para grandes volumes
+
+RF045 - Monitoramento de Sistema
+O sistema deve:
+- Monitorar metricas de performance em tempo real
+- Implementar health checks automaticos
+- Gerar alertas para degradacao de performance
+- Manter logs estruturados para troubleshooting
+- Implementar metricas de SLA e disponibilidade
+
+===============================================================================
+
+13. TECNOLOGIAS E FERRAMENTAS
+
+13.1 Inteligencia Artificial e Machine Learning
+
+Ferramentas para IA/ML:
+- RapidMiner, KNIME, H2O.ai, Orange, Keras para mineracao de dados
+- NLTK, TextBlob, VADER, SpaCy para processamento de linguagem natural
+- Google Cloud API, Hugging Face Transformers para modelos pre-treinados
+- TensorFlow, PyTorch para modelos customizados
+- scikit-learn, PyCaret para machine learning tradicional
+
+13.2 Seguranca e Monitoramento
+
+Ferramentas de Seguranca:
+- OSSEC, Snort, Wireshark para monitoramento de rede
+- OpenVAS, Bro/Zeek para deteccao de vulnerabilidades
+- ModSecurity, Security Onion para protecao de aplicacoes
+- ELK Stack, Splunk para analise de logs
+- Vault, CyberArk para gestao de secrets
+
+13.3 Visualizacao e Colaboracao
+
+Ferramentas de Visualizacao:
+- Tableau Public, Power BI Desktop para dashboards
+- Grafana, Metabase para monitoramento operacional
+- Matplotlib, Plotly para graficos customizados
+
+Ferramentas de Colaboracao:
+- Confluence, GitHub Pages para documentacao
+- Trello, Asana para gestao de projetos
+- Google Docs para colaboracao em documentos
+
+===============================================================================
+
+14. REQUISITOS NAO-FUNCIONAIS
+
+14.1 Performance
+- Tempo de resposta maximo de 3 segundos para consultas
+- Suporte a 1000 usuarios simultaneos
+- Processamento de 10000 manifestacoes por dia
+- Disponibilidade de 99.9% (8.76 horas de downtime por ano)
+- Tempo de recuperacao maximo de 15 minutos
+
+14.2 Escalabilidade
+- Crescimento horizontal automatico baseado em demanda
+- Suporte a aumento de 500% no volume sem degradacao
+- Arquitetura elastica para picos sazonais
+- Balanceamento automatico de carga entre instancias
+
+14.3 Usabilidade
+- Interface intuitiva com curva de aprendizado maxima de 2 horas
+- Suporte a navegadores modernos (Chrome, Firefox, Safari, Edge)
+- Design responsivo para dispositivos moveis
+- Acessibilidade conforme WCAG 2.1 nivel AA
+- Suporte a usuarios com deficiencias visuais e auditivas
+
+14.4 Seguranca
+- Conformidade com ISO 27001 e LGPD
+- Criptografia de ponta a ponta para dados sensiveis
+- Autenticacao multifator obrigatoria para administradores
+- Logs de auditoria imutaveis com retencao de 7 anos
+- Testes de penetracao trimestrais
+
+14.5 Manutencao
+- Codigo documentado e testado com cobertura minima de 80%
+- Implementacao de CI/CD para deploys automatizados
+- Monitoramento proativo com alertas automaticos
+- Backup automatico diario com retencao de 30 dias
+- Plano de continuidade de negocio com RTO de 4 horas
+
+===============================================================================
+
+15. CRITERIOS DE ACEITACAO
+
+15.1 Funcionalidades Core
+- Classificacao automatica com precisao minima de 85%
+- Deteccao de duplicatas com recall minimo de 95%
+- Sugestao de encaminhamentos com acuracia minima de 80%
+- Geracao de alertas em tempo real sem falsos positivos > 5%
+
+15.2 Integracao
+- Sincronizacao em tempo real com OE1 sem perda de dados
+- Integracao com sistemas externos funcionando 24/7
+- APIs respondendo em menos de 1 segundo
+- Compatibilidade total com sistemas legados
+
+15.3 Performance
+- Processamento de manifestacoes em menos de 3 segundos
+- Dashboard carregando em menos de 2 segundos
+- Suporte a 1000 usuarios simultaneos sem degradacao
+- Backup e recuperacao funcionando conforme RTO/RPO
+
+===============================================================================
+
+DOCUMENTO APROVADO EM: ___/___/2025
+RESPONSAVEL TECNICO: Prof. Dr. Fernando Buarque de Lima Neto
+EQUIPE DE DESENVOLVIMENTO: TIME-2 (OE2)
+STATUS: VERSAO 1.0 - PRONTO PARA DESENVOLVIMENTO 

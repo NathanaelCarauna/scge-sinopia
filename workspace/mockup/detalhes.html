@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Atendimento - Ouve.PE</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="detalhes.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzRBNTU2OCIvPgo8cGF0aCBkPSJNMTIgMTZIMjhWMjRIMTJWMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="UPE Logo">
+            </div>
+            <h1 class="title">Ouve.PE</h1>
+        </div>
+        <div class="header-right">
+            <button class="header-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button class="header-btn theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="header-btn notifications">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="user-profile">
+                <span class="user-name">Ouvidor Compesa</span>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-status"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Main Sidebar -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-item">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-plus"></i>
+                    <span>Novo atendimento</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Painéis</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Relatórios</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="atendimentos.html" class="nav-item active">
+                    <i class="fas fa-headset"></i>
+                    <span>Atendimentos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Secondary Sidebar - Stages -->
+        <aside class="stages-sidebar">
+            <div class="stage-item" data-stage="1">
+                <div class="stage-number">1</div>
+                <div class="stage-label">Recebido</div>
+            </div>
+            <div class="stage-item" data-stage="2">
+                <div class="stage-number">2</div>
+                <div class="stage-label">Aguardando resposta</div>
+            </div>
+            <div class="stage-item active" data-stage="3">
+                <div class="stage-number">3</div>
+                <div class="stage-label">Aguardando retorno do cidadão</div>
+            </div>
+            <div class="stage-item" data-stage="4">
+                <div class="stage-number">4</div>
+                <div class="stage-label">Concluído</div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn" onclick="showDetails()">DETALHES</button>
+                <button class="action-btn" onclick="showHistory()">HISTÓRICO</button>
+                <button class="action-btn" onclick="printDetails()">IMPRIMIR</button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="details-content">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator">/</span>
+                <a href="atendimentos.html">Atendimentos</a>
+                <span class="separator">/</span>
+                <span id="protocol-breadcrumb">PROTOCOLO DE PEDIDO DE DADOS PESSOAIS 202475</span>
+            </div>
+
+            <!-- Page Title -->
+            <h1 class="page-title" id="page-title">PEDIDO DE INFORMAÇÃO DE DADOS PESSOAIS 202475</h1>
+
+            <!-- Tabs -->
+            <div class="tabs-container">
+                <div class="tabs">
+                    <button class="tab active" data-tab="atendimento">ATENDIMENTO</button>
+                    <button class="tab" data-tab="anexos">ANEXOS</button>
+                    <button class="tab" data-tab="usuario">USUÁRIO</button>
+                    <button class="tab" data-tab="comunicacao">COMUNICAÇÃO</button>
+                    <button class="tab" data-tab="encaminhamentos">ENCAMINHAMENTOS</button>
+                    <button class="tab" data-tab="vinculados">ATEND. VINCULADOS</button>
+                </div>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Atendimento Tab -->
+                <div class="tab-pane active" id="atendimento">
+                    <div class="content-grid">
+                        <!-- Left Column -->
+                        <div class="left-column">
+                            <!-- Case Details -->
+                            <div class="case-details">
+                                <div class="detail-row">
+                                    <label>Relato:</label>
+                                    <div class="detail-text" id="relato-text">
+                                        Vivemos cercados pelas nossas alternativas, pelo que poderíamos ter sido.
+                                        Ah, se apenas tivéssemos acertado aquele número durante de tu eu ganhava a sena acumulada...
+                                    </div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <label>Descrição:</label>
+                                    <div class="detail-text" id="descricao-text">
+                                        Teste inclusão de Reclamação para pedido de complementação
+                                    </div>
+                                </div>
+
+                                <div class="detail-row">
+                                    <label>Modalidade:</label>
+                                    <span id="modalidade" class="editable-field">ACESSO À INFORMAÇÃO</span>
+                                    <select id="modalidade-select" class="edit-field" style="display: none;">
+                                        <option value="ACESSO À INFORMAÇÃO">ACESSO À INFORMAÇÃO</option>
+                                        <option value="MANIFESTAÇÃO">MANIFESTAÇÃO</option>
+                                        <option value="DENÚNCIA">DENÚNCIA</option>
+                                        <option value="SUGESTÃO">SUGESTÃO</option>
+                                        <option value="ELOGIO">ELOGIO</option>
+                                    </select>
+                                </div>
+
+                                <div class="detail-row">
+                                    <label>Tipo:</label>
+                                    <span id="tipo" class="editable-field">PEDIDO DE INFORMAÇÃO DE DADOS PESSOAIS</span>
+                                    <select id="tipo-select" class="edit-field" style="display: none;">
+                                        <option value="PEDIDO DE INFORMAÇÃO DE DADOS PESSOAIS">PEDIDO DE INFORMAÇÃO DE DADOS PESSOAIS</option>
+                                        <option value="PEDIDO DE INFORMAÇÃO DE DADOS PÚBLICOS">PEDIDO DE INFORMAÇÃO DE DADOS PÚBLICOS</option>
+                                        <option value="RECURSO DE 1ª INSTÂNCIA">RECURSO DE 1ª INSTÂNCIA</option>
+                                        <option value="RECURSO DE 2ª INSTÂNCIA">RECURSO DE 2ª INSTÂNCIA</option>
+                                        <option value="RECLAMAÇÃO">RECLAMAÇÃO</option>
+                                    </select>
+                                </div>
+
+                                <div class="detail-row">
+                                    <label>Origem de Atendimento:</label>
+                                    <span id="origem" class="editable-field">INTERNET</span>
+                                    <select id="origem-select" class="edit-field" style="display: none;">
+                                        <option value="INTERNET">INTERNET</option>
+                                        <option value="PRESENCIAL">PRESENCIAL</option>
+                                        <option value="TELEFONE">TELEFONE</option>
+                                        <option value="CARTA">CARTA</option>
+                                        <option value="E-MAIL">E-MAIL</option>
+                                    </select>
+                                </div>
+
+                                <div class="detail-row">
+                                    <label>Assunto:</label>
+                                    <span id="assunto" class="editable-field">SERVIDOR</span>
+                                    <select id="assunto-select" class="edit-field" style="display: none;">
+                                        <option value="SERVIDOR">SERVIDOR</option>
+                                        <option value="ATENDIMENTO">ATENDIMENTO</option>
+                                        <option value="POLÍTICA PÚBLICA">POLÍTICA PÚBLICA</option>
+                                        <option value="INFRAESTRUTURA">INFRAESTRUTURA</option>
+                                        <option value="OUTROS">OUTROS</option>
+                                    </select>
+                                </div>
+
+                                <div class="detail-row">
+                                    <label>Subassunto:</label>
+                                    <span id="subassunto" class="editable-field">IRREGULARIDADE</span>
+                                    <select id="subassunto-select" class="edit-field" style="display: none;">
+                                        <option value="IRREGULARIDADE">IRREGULARIDADE</option>
+                                        <option value="DESEMPENHO">DESEMPENHO</option>
+                                        <option value="CONDUTA">CONDUTA</option>
+                                        <option value="TRANSPARÊNCIA">TRANSPARÊNCIA</option>
+                                        <option value="OUTROS">OUTROS</option>
+                                    </select>
+                                </div>
+
+                                <div class="detail-row">
+                                    <label>Palavras-chave:</label>
+                                    <span id="palavras-chave" class="editable-field">IRREGULARIDADE</span>
+                                    <input type="text" id="palavras-chave-input" class="edit-field" value="IRREGULARIDADE" style="display: none;">
+                                </div>
+                            </div>
+
+                            <!-- Response Section -->
+                            <div class="response-section" id="response-section">
+                                <div class="response-header">
+                                    <label>Tipo de Resposta:</label>
+                                    <span id="tipo-resposta" class="editable-field">Em análise</span>
+                                    <select id="tipo-resposta-select" class="edit-field" style="display: none;">
+                                        <option value="Em análise">Em análise</option>
+                                        <option value="Acesso concedido">Acesso concedido</option>
+                                        <option value="Acesso negado">Acesso negado</option>
+                                        <option value="Acesso parcialmente concedido">Acesso parcialmente concedido</option>
+                                        <option value="Não se aplica">Não se aplica</option>
+                                    </select>
+                                </div>
+
+                                <div class="response-header">
+                                    <label>Motivo da Negativa de Acesso:</label>
+                                    <span id="motivo-negativa" class="editable-field">Em análise</span>
+                                    <select id="motivo-negativa-select" class="edit-field" style="display: none;">
+                                        <option value="Em análise">Em análise</option>
+                                        <option value="Dados pessoais">Dados pessoais</option>
+                                        <option value="Segurança da sociedade">Segurança da sociedade</option>
+                                        <option value="Informação sigilosa">Informação sigilosa</option>
+                                        <option value="Não existe informação">Não existe informação</option>
+                                        <option value="Outros">Outros</option>
+                                    </select>
+                                </div>
+
+                                <div class="response-header">
+                                    <label>Conformidade:</label>
+                                    <span id="conformidade" class="editable-field">Em análise</span>
+                                    <select id="conformidade-select" class="edit-field" style="display: none;">
+                                        <option value="Em análise">Em análise</option>
+                                        <option value="Conforme">Conforme</option>
+                                        <option value="Não conforme">Não conforme</option>
+                                        <option value="Parcialmente conforme">Parcialmente conforme</option>
+                                    </select>
+                                </div>
+
+                                <div class="response-header">
+                                    <label>Solicitada Ajustes pela OGE:</label>
+                                    <span id="ajustes-oge" class="editable-field">Em análise</span>
+                                    <select id="ajustes-oge-select" class="edit-field" style="display: none;">
+                                        <option value="Em análise">Em análise</option>
+                                        <option value="Sim">Sim</option>
+                                        <option value="Não">Não</option>
+                                        <option value="Pendente">Pendente</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Classification Actions -->
+                            <div class="classification-actions" id="classification-actions">
+                                <button class="save-btn" onclick="saveClassification()">SALVAR</button>
+                                <button class="cancel-btn" onclick="cancelClassification()">CANCELAR</button>
+                            </div>
+
+                            <!-- Publication Section -->
+                            <div class="publication-section">
+                                <h3>Nº da Publicação</h3>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" id="houveInstauracao">
+                                        <span>Houve instauração de processo administrativo</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" id="acessoRestrito">
+                                        <span>Acesso Restrito</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" id="sigiloso" checked>
+                                        <span>Sigiloso</span>
+                                    </label>
+                                    <label class="checkbox-item">
+                                        <input type="checkbox" id="anonimo">
+                                        <span>Anônimo</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Text Editor -->
+                            <div class="text-editor" id="text-editor" style="display: none;">
+                                <div class="editor-toolbar">
+                                    <button class="editor-btn" data-command="bold"><strong>B</strong></button>
+                                    <button class="editor-btn" data-command="italic"><em>I</em></button>
+                                    <button class="editor-btn" data-command="underline"><u>U</u></button>
+                                </div>
+                                <div class="editor-content" contenteditable="true" id="editor-content">
+                                    Vivemos cercados pelas nossas alternativas, pelo que poderíamos ter sido.
+                                    Ah, se apenas tivéssemos acertado aquele número funcionário e eu ganhava a sena acumulada...
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Right Column -->
+                        <div class="right-column">
+                            <div class="info-panel">
+                                <div class="info-row">
+                                    <label>Órgão Atual:</label>
+                                    <span>COMPANHIA PERNAMBUCANA DE SANEAMENTO</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Órgão de Origem:</label>
+                                    <span id="orgao-origem">SECRETARIA DA CONTROLADORIA GERAL DO ESTADO</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Setor Atual:</label>
+                                    <span id="setor-atual">-</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Gestor:</label>
+                                    <span id="gestor">-</span>
+                                    <select id="gestor-select" style="display: none;">
+                                        <option value="">Selecione...</option>
+                                        <option value="gestor1">Gestor Administrativo</option>
+                                        <option value="gestor2">Gestor Técnico</option>
+                                        <option value="gestor3">Gestor de Atendimento</option>
+                                        <option value="gestor4">Supervisor de Setor</option>
+                                    </select>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Para Cidadão:</label>
+                                    <span id="para-cidadao-span">-</span>
+                                    <select id="para-cidadao-select" style="display: none;">
+                                        <option value="">Selecione...</option>
+                                        <option value="sim">Sim</option>
+                                        <option value="nao">Não</option>
+                                    </select>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Encaminhado por:</label>
+                                    <span id="encaminhado-por">Natália Ouvidor OGE</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Encaminhado em:</label>
+                                    <span id="encaminhado-em">28/05/2025 09:35</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Etapa:</label>
+                                    <span id="etapa">Aguardando resposta</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Situação:</label>
+                                    <span id="situacao">Recebida pela Ouvidoria de Rede</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Data de Criação:</label>
+                                    <span id="data-criacao">27/05/2025 10:21</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Data de Prorrogação:</label>
+                                    <span id="data-prorrogacao">-</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Data Final:</label>
+                                    <span id="data-final">27/06/2025</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Data de Conclusão:</label>
+                                    <span id="data-conclusao">-</span>
+                                </div>
+
+                                <div class="info-row">
+                                    <label>Publicação:</label>
+                                    <span id="publicacao">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Other tabs content (placeholder) -->
+                <div class="tab-pane" id="anexos">
+                    <p>Conteúdo da aba Anexos...</p>
+                </div>
+                <div class="tab-pane" id="usuario">
+                    <p>Conteúdo da aba Usuário...</p>
+                </div>
+                <div class="tab-pane" id="comunicacao">
+                    <p>Conteúdo da aba Comunicação...</p>
+                </div>
+                <div class="tab-pane" id="encaminhamentos">
+                    <p>Conteúdo da aba Encaminhamentos...</p>
+                </div>
+                <div class="tab-pane" id="vinculados">
+                    <p>Conteúdo da aba Atendimentos Vinculados...</p>
+                </div>
+            </div>
+
+            <!-- Forward Actions (hidden by default) -->
+            <div class="forward-actions" id="forward-actions" style="display: none;">
+                <button class="action-btn secondary" onclick="cancelForward()">CANCELAR</button>
+                <button class="action-btn success" onclick="saveForward()">SALVAR ENCAMINHAMENTO</button>
+            </div>
+
+            <!-- Bottom Actions -->
+            <div class="bottom-actions" id="bottom-actions">
+                <button class="action-btn secondary" onclick="goBack()">VOLTAR</button>
+                <button class="action-btn primary" onclick="classifyCase()">CLASSIFICAR</button>
+                <button class="action-btn primary" onclick="forwardCase()" style="display: none;">ENCAMINHAR</button>
+                <button class="action-btn primary" onclick="respondCase()" style="display: none;">RESPONDER</button>
+                <button class="action-btn danger" onclick="cancelCase()" style="display: none;">CANCELAR</button>
+                <button class="action-btn info" onclick="reopenCase()">REABRIR</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal de Resposta -->
+    <div id="response-modal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Informe uma orientação</h3>
+                <button class="modal-close" onclick="closeResponseModal()">×</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="modal-form-row">
+                    <div class="form-group">
+                        <label for="tipo-resposta">Tipo de Resposta *</label>
+                        <select id="tipo-resposta" required>
+                            <option value="">Selecione...</option>
+                            <option value="parcial">Parcial</option>
+                            <option value="final">Final</option>
+                            <option value="complementacao">Complementação do Cidadão</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="para-cidadao">Para Cidadão</label>
+                        <select id="para-cidadao">
+                            <option value="">Selecione...</option>
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group full-width">
+                    <label for="modelo-resposta">Modelo de Resposta</label>
+                    <select id="modelo-resposta">
+                        <option value="">Selecione...</option>
+                        <option value="manifestacao-encaminhamento-externo">MANIFESTAÇÃO - ENCAMINHAMENTO EXTERNO PARA ÓRGÃO COMPETENTE</option>
+                        <option value="manifestacao-encaminhamento-gestor">MANIFESTAÇÃO - ENCAMINHAMENTO PARA O GESTOR COMPETENTE</option>
+                        <option value="manifestacao-prorrogacao">MANIFESTAÇÃO - PRORROGAÇÃO</option>
+                        <option value="manifestacao-resposta-conclusiva-cidadao">MANIFESTAÇÃO - RESPOSTA CONCLUSIVA AO CIDADÃO</option>
+                        <option value="manifestacao-resposta-conclusiva-falta">MANIFESTAÇÃO - RESPOSTA CONCLUSIVA POR FALTA DE COMPLEMENTAÇÃO</option>
+                        <option value="manifestacao-resposta-parcial">MANIFESTAÇÃO - RESPOSTA PARCIAL INFORMANDO ENCAMINHAMENTO INTERNO - CIDADÃO</option>
+                        <option value="manifestacao-solicitacao-complementacao">MANIFESTAÇÃO - SOLICITAÇÃO DE COMPLEMENTAÇÃO</option>
+                        <option value="pai-conclusao-pedido">PAI - CONCLUSÃO DE PEDIDO DE ACESSO À INFORMAÇÃO</option>
+                        <option value="pai-encaminhamento-administrativa">PAI - ENCAMINHAMENTO PARA AUT ADMINISTRATIVA</option>
+                        <option value="pai-encaminhamento-gestor">PAI - ENCAMINHAMENTO PARA O GESTOR COMPETENTE</option>
+                        <option value="pai-justificativa-prorrogacao">PAI - JUSTIFICATIVA DE PRORROGAÇÃO DE PAI PARA CIDADÃO</option>
+                        <option value="pai-resposta-parcial">PAI - RESPOSTA PARCIAL AO CIDADÃO DO ENCAMINHAMENTO PARA SETOR</option>
+                    </select>
+                </div>
+
+                <div class="text-editor">
+                    <div class="editor-toolbar">
+                        <button type="button" class="editor-btn" title="Negrito">
+                            <i class="fas fa-bold"></i>
+                        </button>
+                        <button type="button" class="editor-btn" title="Itálico">
+                            <i class="fas fa-italic"></i>
+                        </button>
+                        <button type="button" class="editor-btn" title="Sublinhado">
+                            <i class="fas fa-underline"></i>
+                        </button>
+                    </div>
+                    <textarea id="response-text" placeholder="Digite sua resposta aqui..."></textarea>
+                </div>
+
+                <div class="file-upload-area">
+                    <i class="fas fa-paperclip"></i>
+                    <span>Clique para adicionar arquivos</span>
+                    <input type="file" multiple style="display: none;">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="modal-btn secondary" onclick="closeResponseModal()">CANCELAR</button>
+                <button class="modal-btn primary" onclick="saveResponse()">SALVAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="detalhes.js"></script>
+</body>
+</html> 

@@ -1,0 +1,141 @@
+⁃	servidor tem acesso aos módulos de ouvidor e gestão 
+	⁃	Chamar módulo de gestão de módulo do diretor
+	⁃	Verificar os papéis dos usuários 
+	⁃	Verificar o local de cada manifestação 
+	⁃	Sugerir órgãos para as manifestações, oferecendo probabilidades/grau de pertinência 
+	⁃	Sugerir palavras chaves a partir da leitura do texto
+	⁃	Secretaria de educação por exemplo: colocar “desvio e embutido”, 
+	⁃	Não obrigar a usar palavras chaves
+	⁃	Mais importante para o banco de dados é a palavra chave 
+	⁃	Verificar ambiente de teste para visualizar o sistema
+	⁃	Assunto e sub-assunto: 
+	⁃	Muito importante essa questão das palavras chave 
+	⁃	Sistema de curadoria de palavras
+	⁃	Se as pessoas criarem palavras, a quantidade de palavras chave seria inadministrável 
+	⁃	Funcionalidade 
+	⁃	De tempos em tempos o sistema chegar à conclusão de que algumas palavras são parecidas, sugerir filtrar. 
+	⁃	Pegue 10 palavras e simplificar 
+	⁃	Rank de palavras chaves mais utilizadas 
+	⁃	Rank Palavras chave não utilizadas (gestão) ?
+	⁃	Limpeza periódica 
+	⁃	Gerar texto automático da resposta/encaminhamento às manifestações 
+	⁃	Textos específicos para cada finalidade, para o cidadão ou para quem recebe a manifestação 
+	⁃	O usuário poderia receber um WhatsApp sobre a mudança de status de uma manifestação (possibilidade)
+	⁃	O usuário do recebe alguma resposta manualmente / sobre alterações no status 
+	⁃	Agrupar demandas/avisar/prever tipos de manifestações que demoram mais/ priorizar quais manifestações devem ser respondidas primeiro. 
+	⁃	Integração dos módulos de gestão e ouvidor (?) 
+	⁃	Evitar sobrecarga de mensagens para o ouvidor, em relação 
+	⁃	Análise histórica de tempos de resposta por tipo de manifestação e e emissão de alertas.
+	⁃	Verificar grau de semelhança/similaridade de um documento para outro 
+	⁃	Por ex: demandas que são 90% parecidas.
+	⁃	Verificação de manifestações duplicadas!
+	⁃	Deixar o cidadão cadastrar, e aí no módulo do ouvidor, seria indicado a similaridade. 
+	⁃	A ideia seria reduzir o volume de trabalho do ouvidor 
+	⁃	Se o ouvidor A fez o encaminhamento, e o ouvidor B receber a mesma manifestação, o sistema deve acusar a similaridade.
+    Ouvidores com interpretação distintas
+
+Melhorias na modelagem dos metadados
+
+Acesso ao sistema para testes
+
+Encaminhamento automático
+
+Agrupamento de autoridades
+
+Cores dos agrupamentos dos retângulos no dashboard
+- faltando agrupamento de vencidas
+
+Manifestações com palavrões, dificuldade de compreensão da ortografia e gramática, são tratadas mas não modificadas 
+
+Respostas automáticas
+
+Tramitação da manifestação
+Analisar, classificar, encaminhar, monitorar o prazo, analisar retorno, criticar, devolver, responder
+Diferença entre Ouvidor e Gestor
+
+71 orgãos do estado tem ouvidoria, 9 não tem
+A maior demanda são demandas de outras secretarias, o cidadão não sabe para onde encaminhar
+IA deve identificar na manifestação qual o destino/departamento responsável
+Permitir redirecionamento quando uma manifestação for enviada para o departamento errado
+IA para atribuir palavras chaves para facilitar busca, filtros, relações.
+
+Classificação possui assunto e subassunto e palavras chaves
+Cada secretaria cadastra seu próprio subassunto, mas não podem cadastrar
+Risco alto de a permissão de criar palavras se tornar inadministrável
+O sistema possui Auditoria
+Depois de vencidas as manifestações, os alertas param.
+Se o manifestante não responder em até 3 dias, a manifestação é encerrada.
+
+
+
+REQUISITOS	
+1	Ferramentas interativas para apoiar o cidadão na elaboração de manifestações, sugerindo possíveis melhorias no registro da manifestação antes do seu envio definitivo (requisito geral)
+2	Incluir avatar que interaja com o cidadão, fazendo perguntas que direcionam para o registro do atendimento.   1º) O avatar deve identificar a modalidade (manifestação, acesso à informação e LGPD); 2º) O avatar deve identificar a autenticação necessária e direcionar o cidadão para fazê-lo e o avatar deve continuar interagindo com o cidadão enquanto ele tiver fazendo a autenticação; 3º) Serão fornecidas as informações que precisam constar em cada tipo de atendimento. O avatar deve criticar o que o cidadão está informando e comunicar as informações que estejam pendentes. Se o cidadão quiser enviar o atendimento, mesmo o avatar tendo acusado que ele está incompleto, deve surgir uma mensagem informando que isso poderá comprometer a resposta/ providência do órgão para aquele atendimento, mas não deve impedir o registro; 4º) Quando se tratarem de informações que já constam nos portais estaduais, o avatar deverá informar o endereço eletrônico onde estão elas estarão disponíveis, dando a possibilidade de continuar o registro se for o desejo do cidadão; 5º) Ao final do atendimento, o avatar deve fornecer o protocolo de atendimento e a senha. Nos casos em que forem necessárias autenticações, esses protocolos registrados estarão disponíveis no cadastro do cidadão do sistema existente (sistema Ouve.PE).  O avatar deve ter áudio, também, sempo possível que toda a interação, do início ao fim, ocorra por meio de áudios. Deve haver transcrição do audio e confirmação, também por audio e por escrito, antes do envio. Deve haver a opção de silenciar o avatar e, ainda, de fechá-lo.   Ao final do atendimento, deve ser aberta a pesquisa de satisfação;  O avatar deve reconhecer dados pessoais e palavras ofensivas e/ou de baixo calão;  A linguagem do avatar deve ser simples e adaptada à linguagem do cidadão com quem está interagindo. 
+3	Acessibilidade. Atender 100% do eMag. Incluir ferramentas de acessibilidade para população atípica e cegos;
+4	Incluir identificação de sentimento do cidadão, inclusive, se o relato é verdadeiro ou falso;
+5	Desenvolver forma de interação por whatsapp, com possibilidade de registro de manifestação diretamente, com a mesma inteligência do avatar que será desenvolvido no sistema. Possibilidade de o cidadão receber informação sobre o andamento do atendimento pelo whatsapp. 
+	
+	
+Questionamentos UPE:	
+- O que é esperado no front-end aqui? - Qual o fluxo atual de ações? - Quais os relatórios e painéis atuais? - Como é feito o registro eletrônico (armazenamento)? - Quais os banco de dados existentes?  - Como a ouvidoria atualmente recebe manifestações com múltiplas línguas, emojis, ou mensagens de áudio?	
+
+
+
+Anotações da Reunião – Ouvidoria de Pernambuco
+02 de julho de 2025
+1.    Perfis e Acessos
+ 
+a.      Definir e configurar os perfis de usuário: ouvidor, gestor (diretor), colaborador, servidor, administrador.
+b.     Cada perfil deve ter permissões específicas para ações como encaminhamento, edição, visualização e resposta.
+c.      Possibilidade de acesso simultâneo ao módulo de ouvidor e ao módulo de gestão (diretor).
+ 
+2.    Classificação das Manifestações
+ 
+a.      Campos: Tipo, Modalidade, Assunto, Subassunto, Palavras-chave.
+b.     Sugestão automática de classificação via IA/LLM com base no texto da manifestação.
+c.      Curadoria das palavras-chave: evitar criação descontrolada, desativação em vez de exclusão, ranking, limpeza periódica.
+d.    Filtragem por palavras-chave para análise e gestão.
+ 
+3.    Funcionalidades com Inteligência Artificial
+ 
+a.      Sugerir classificação automática (tipo, assunto, subassunto, palavra-chave).
+b.     Sugerir setor de encaminhamento com base em padrões anteriores.
+c.      Sugerir conclusões automáticas com base em respostas anteriores.
+d.     Detectar duplicidade de manifestações, com regras claras de cancelamento e alerta.
+e.      Relacionar manifestações similares, com sugestões baseadas em regras da OGE.
+f.        Agrupamento inteligente por padrões como servidor denunciado, tipo de irregularidade, etc.
+g.      Previsão de tempo de resposta e sugestão de prioridade.
+h.      Análise de similaridade entre manifestações (ex: 90% de semelhança).
+i.        Geração automática de respostas iniciais.
+j.        Reconhecimento automático de dados pessoais para anonimização.
+k.     Análise semântica de sinônimos e ortografia.
+ 
+4.    Encaminhamento e Notificações
+ 
+a.      Sugestão de setor ou órgão de destino com probabilidade ou pertinência.
+b.     Encaminhamento automático mediante confirmação do ouvidor.
+c.      Textos-padrão para resposta ao cidadão e destinatários internos.
+d.     Envio de notificações por e-mail e WhatsApp (com autorização do cidadão).
+e.      Aviso ao cidadão sobre duplicidade ou manifestações similares.
+ 
+5.    Integrações Externas
+ 
+a.      Integração com o SEI-PI para verificação do número do processo.
+b.     Integrações com CadÚnico, Receita Federal e Bolsa Família para complementar dados da manifestação automaticamente.
+ 
+6.    Visualização, Monitoramento e Painel Gerencial
+ 
+a.      Dashboard com agrupamento visual por status (com cores).
+b.     Dados estatísticos de uso e desempenho integrados via Power BI.
+c.      Lista de manifestações vencidas ou a vencer.
+d.     Logs e histórico completo das ações.
+e.      Alertas preventivos de vencimento baseados em demanda.
+ 
+7.    Funcionalidades Operacionais Complementares
+ 
+a.      Identificação de duplicidade mesmo sem login, por nome ou CPF.
+b.     Relacionar manifestações manualmente pelo ouvidor.
+c.      Exibição de manifestações anteriores relacionadas antes do encaminhamento.
+d.     Palavras-chave não são obrigatórias.
+e.      Acesso a ambiente de testes para validação de funcionalidades.
+

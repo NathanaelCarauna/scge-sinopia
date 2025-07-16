@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ouve.PE - Sistema de Ouvidoria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <div class="logo">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzRBNTU2OCIvPgo8cGF0aCBkPSJNMTIgMTZIMjhWMjRIMTJWMTZaIiBmaWxsPSJ3aGl0ZSIvPgo8L3N2Zz4K" alt="UPE Logo">
+            </div>
+            <h1 class="title">Ouve.PE</h1>
+        </div>
+        <div class="header-right">
+            <button class="header-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button class="header-btn theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="header-btn notifications">
+                <i class="fas fa-bell"></i>
+            </button>
+            <div class="user-profile">
+                <span class="user-name">Ouvidor Compesa</span>
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-status"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-plus"></i>
+                    <span>Novo atendimento</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>Painéis</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Relatórios</span>
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+                <a href="atendimentos.html" class="nav-item">
+                    <i class="fas fa-headset"></i>
+                    <span>Atendimentos</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    <span>Configurações</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Breadcrumb -->
+            <div class="breadcrumb">
+                <span>Home</span>
+            </div>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard">
+                <!-- Manifestação Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>MANIFESTAÇÃO</h2>
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                    <div class="cards-grid">
+                        <div class="card card-orange">
+                            <div class="card-content">
+                                <div class="card-number">0</div>
+                                <div class="card-label">Recebidas</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                        </div>
+                        <div class="card card-green">
+                            <div class="card-content">
+                                <div class="card-number">15</div>
+                                <div class="card-label">Classificadas e não encaminhadas</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                        </div>
+                        <div class="card card-purple">
+                            <div class="card-content">
+                                <div class="card-number">5</div>
+                                <div class="card-label">Respondidas por Gestores</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                        </div>
+                        <div class="card card-blue">
+                            <div class="card-content">
+                                <div class="card-number">0</div>
+                                <div class="card-label">Próxima do vencimento - Prorrogável</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                        </div>
+                        <div class="card card-purple-dark">
+                            <div class="card-content">
+                                <div class="card-number">0</div>
+                                <div class="card-label">Próxima do vencimento - Prorrogada</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                        </div>
+                        <div class="card card-red">
+                            <div class="card-content">
+                                <div class="card-number">2</div>
+                                <div class="card-label">Vencidas</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Acesso à Informação Section -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>ACESSO À INFORMAÇÃO</h2>
+                        <button class="expand-btn">
+                            <i class="fas fa-chevron-up"></i>
+                        </button>
+                    </div>
+                    <div class="cards-grid">
+                        <div class="card card-orange">
+                            <div class="card-content">
+                                <div class="card-number">3</div>
+                                <div class="card-label">Recebidas</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                        </div>
+                        <div class="card card-green">
+                            <div class="card-content">
+                                <div class="card-number">3</div>
+                                <div class="card-label">Classificadas e não encaminhadas</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-sync"></i>
+                            </div>
+                        </div>
+                        <div class="card card-purple">
+                            <div class="card-content">
+                                <div class="card-number">2</div>
+                                <div class="card-label">Respondidas por Autoridades</div>
+                            </div>
+                            <div class="card-icon">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
