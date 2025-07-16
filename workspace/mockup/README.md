@@ -241,4 +241,129 @@ Quando o botão **ENCAMINHAR** é pressionado na página de detalhes:
 6. **Cancelamento**:
    - Restaura valores originais dos campos
    - Volta ao modo de visualização normal
-   - Preserva estado anterior do caso 
+   - Preserva estado anterior do caso
+
+## Integração com IA
+
+### Funcionalidades de Inteligência Artificial
+Implementação completa dos requisitos OE2 para suporte inteligente ao ouvidor:
+
+#### 🤖 **Análise Automática de Manifestações**
+
+1. **Badges de Análise no Relato**:
+   - **Sentimento**: Neutro/Positivo/Negativo (75% confiança)
+   - **Urgência**: Baixa/Média/Alta (80% confiança)  
+   - **Veracidade**: Score de confiabilidade (85%)
+   - **Linguagem**: Normal/Agressiva/Inadequada
+   - **Duplicatas**: Link para 2 manifestações similares (78%, 65%)
+
+2. **Sugestões Inteligentes de Classificação**:
+   - **Modalidade**: MANIFESTAÇÃO (90% confiança)
+   - **Tipo**: SUGESTÃO (85% confiança)
+   - **Assunto**: ATENDIMENTO (82% confiança)
+   - **Subassunto**: DESEMPENHO (88% confiança)
+   - **Palavras-chave**: "atendimento, demora, serviço público, eficiência" (90% confiança)
+   - **Botões de Ação**: Aceitar ✓, Rejeitar ✗, Explicar ?
+
+#### 🎯 **Painel de Análise Inteligente**
+
+1. **Encaminhamento Sugerido**:
+   - Órgão: SECRETARIA DE DESENVOLVIMENTO SOCIAL (80%)
+   - Setor: DIRETORIA DE ATENDIMENTO AO CIDADÃO (75%)
+   - Botão "Aplicar Sugestão" para uso automático
+
+2. **Scores de Análise**:
+   - **Prioridade**: Baixa (30%) - barra visual
+   - **Complexidade**: Média (60%) - barra visual  
+   - **Confiabilidade**: Alta (85%) - barra visual
+
+3. **Insights da IA**:
+   - Similar a 2 casos dos últimos 30 dias
+   - Tempo médio de resolução: 7 dias
+   - Taxa de satisfação histórica: 89%
+
+#### 🔍 **Sistema de Explicabilidade (XAI)**
+
+1. **Modal de Explicação**:
+   - Por que a IA sugere cada classificação
+   - Fatores considerados na análise
+   - Casos similares que influenciaram a decisão
+   - Opção de fornecer feedback para melhoria
+
+2. **Transparência**:
+   - Percentual de confiança em cada sugestão
+   - Histórico de decisões registrado
+   - Aprendizado baseado no feedback do ouvidor
+
+#### 📊 **Detecção de Duplicatas e Similaridade**
+
+1. **Modal de Manifestações Similares**:
+   - Lista de casos com percentual de similaridade
+   - Metadados: protocolo, data, usuário, órgão
+   - Ações: Marcar como duplicata, Vincular casos
+   - Alerta para similaridade >95% (duplicatas)
+
+2. **Análise Automática**:
+   - Comparação semântica do texto
+   - Identificação de padrões recorrentes
+   - Agrupamento por problema/servidor
+
+#### ⚡ **Recursos Avançados**
+
+1. **Aprendizado Contínuo**:
+   - Registro de todas as decisões do ouvidor
+   - Feedback positivo/negativo para retreinamento
+   - Melhoria da precisão baseada na experiência
+
+2. **Processamento em Tempo Real**:
+   - Análise automática ao carregar manifestação
+   - Animações de carregamento da IA
+   - Notificações de progresso e conclusão
+
+3. **Integração com Workflow**:
+   - Opção de aplicar todas as sugestões automaticamente
+   - Integração com modo de classificação existente
+   - Suporte para encaminhamento inteligente
+
+#### 📝 **Modal de Resposta Inteligente**
+
+1. **Sugestões Automáticas**:
+   - **Tipo de Resposta**: Final/Parcial/Complementação (92% confiança)
+   - **Modelo de Resposta**: Template adequado baseado na classificação (88% confiança)
+   - **Texto da Resposta**: Rascunho gerado automaticamente (85% confiança)
+
+2. **Geração de Texto Inteligente**:
+   - Rascunho personalizado baseado na manifestação
+   - Linguagem formal e respeitosa da ouvidoria
+   - Estrutura adequada com agradecimento, análise e encerramento
+   - Consideração do contexto e tipo de manifestação
+
+3. **Adaptação ao Contexto**:
+   - Análise da classificação da manifestação
+   - Seleção do template mais apropriado
+   - Geração de texto coerente com o tipo de resposta
+   - Integração com histórico de respostas similares
+
+4. **Controles do Usuario**:
+   - Aceitar sugestões individualmente
+   - Rejeitar sugestões específicas
+   - Explicação detalhada de cada sugestão
+   - Edição livre após aplicar rascunho
+
+### 🛡️ **Conformidade e Auditoria**
+
+- **Logs Completos**: Todas as decisões da IA são registradas
+- **Rastreabilidade**: Histórico de sugestões aceitas/rejeitadas
+- **Explicabilidade**: Justificativa para cada análise
+- **Feedback Loop**: Sistema de melhoria contínua
+- **Transparência**: Percentuais de confiança visíveis
+
+### 📱 **Experiência do Usuário**
+
+- **Interface Intuitiva**: Badges coloridos e botões claros
+- **Feedback Visual**: Animações e confirmações
+- **Controle Total**: Ouvidor sempre tem decisão final
+- **Eficiência**: Reduz tempo de classificação manual
+- **Aprendizado**: Sistema melhora com o uso
+
+A implementação segue rigorosamente os requisitos RF005-RF012 do documento OE2, fornecendo um sistema completo de suporte inteligente ao ouvidor com transparência, explicabilidade e aprendizado contínuo. 
