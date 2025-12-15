@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gerador de Ícones SINOPIA</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        canvas { border: 1px solid #ccc; margin: 10px; }
+        .icon-container { display: inline-block; text-align: center; margin: 10px; }
+        button { padding: 10px 20px; margin: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h1>Gerador de Ícones SINOPIA</h1>
+    <p>Clique nos botões para baixar os ícones:</p>
+    
+    <div id="icons"></div>
+    
+    <script>
+        const sizes = [16, 32, 48, 128];
+        const container = document.getElementById('icons');
+        
+        sizes.forEach(size => {
+            const div = document.createElement('div');
+            div.className = 'icon-container';
+            
+            const canvas = document.createElement('canvas');
+            canvas.width = size;
+            canvas.height = size;
+            canvas.id = `icon-${size}`;
+            
+            const ctx = canvas.getContext('2d');
+            
+            // Background gradient
+            const gradient = ctx.createLinearGradient(0, 0, size, size);
+            gradient.addColorStop(0, '#3b82f6');
+            gradient.addColorStop(1, '#1d4ed8');
+            
+            // Draw rounded rectangle background
+            const radius = size * 0.2;
+            ctx.beginPath();
+            ctx.moveTo(radius, 0);
+            ctx.lineTo(size - radius, 0);
+            ctx.quadraticCurveTo(size, 0, size, radius);
+            ctx.lineTo(size, size - radius);
+            ctx.quadraticCurveTo(size, size, size - radius, size);
+            ctx.lineTo(radius, size);
+            ctx.quadraticCurveTo(0, size, 0, size - radius);
+            ctx.lineTo(0, radius);
+            ctx.quadraticCurveTo(0, 0, radius, 0);
+            ctx.closePath();
+            ctx.fillStyle = gradient;
+            ctx.fill();
+            
+            // Draw robot icon
+            ctx.fillStyle = 'white';
+            const scale = size / 128;
+            
+            // Robot head
+            const headX = size * 0.25;
+            const headY = size * 0.2;
+            const headW = size * 0.5;
+            const headH = size * 0.4;
+            ctx.beginPath();
+            ctx.roundRect(headX, headY, headW, headH, size * 0.08);
+            ctx.fill();
+            
+            // Eyes
+            ctx.fillStyle = '#1d4ed8';
+            const eyeSize = size * 0.1;
+            const eyeY = headY + headH * 0.35;
+            ctx.beginPath();
+            ctx.arc(headX + headW * 0.3, eyeY, eyeSize, 0, Math.PI * 2);
+            ctx.arc(headX + headW * 0.7, eyeY, eyeSize, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Mouth
+            ctx.fillStyle = '#1d4ed8';
+            ctx.fillRect(headX + headW * 0.25, headY + headH * 0.7, headW * 0.5, size * 0.04);
+            
+            // Antenna
+            ctx.fillStyle = 'white';
+            ctx.fillRect(size * 0.48, size * 0.08, size * 0.04, size * 0.12);
+            ctx.beginPath();
+            ctx.arc(size * 0.5, size * 0.08, size * 0.05, 0, Math.PI * 2);
+            ctx.fill();
+            
+            // Body
+            ctx.beginPath();
+            ctx.roundRect(size * 0.3, size * 0.62, size * 0.4, size * 0.28, size * 0.06);
+            ctx.fill();
+            
+            div.appendChild(canvas);
+            
+            const btn = document.createElement('button');
+            btn.textContent = `Baixar ${size}x${size}`;
+            btn.onclick = () => {
+                const link = document.createElement('a');
+                link.download = `icon${size}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            };
+            div.appendChild(btn);
+            
+            container.appendChild(div);
+        });
+        
+        // Download all button
+        const allBtn = document.createElement('button');
+        allBtn.textContent = 'Baixar Todos';
+        allBtn.style.display = 'block';
+        allBtn.style.marginTop = '20px';
+        allBtn.onclick = () => {
+            sizes.forEach(size => {
+                const canvas = document.getElementById(`icon-${size}`);
+                const link = document.createElement('a');
+                link.download = `icon${size}.png`;
+                link.href = canvas.toDataURL('image/png');
+                setTimeout(() => link.click(), size * 10);
+            });
+        };
+        container.appendChild(allBtn);
+    </script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+
+{
+  "manifest_version": 3,
+  "name": "SINOPIA - Assistente IA Ouvidoria",
+  "version": "1.0.0",
+  "description": "Integra capacidades de Inteligência Artificial ao sistema OUVE.PE para assistência aos ouvidores",
+  "author": "UPE - Universidade de Pernambuco",
+  
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  
+  "host_permissions": [
+    "file://*/*",
+    "http://localhost:*/*",
+    "https://localhost:*/*",
+    "http://127.0.0.1:*/*",
+    "https://127.0.0.1:*/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": [
+        "file://*/*detalhes.html*",
+        "http://localhost:*/*detalhes*",
+        "https://localhost:*/*detalhes*",
+        "http://127.0.0.1:*/*detalhes*",
+        "https://127.0.0.1:*/*detalhes*"
+      ],
+      "js": [
+        "lib/ai-suggestions.js",
+        "content/content-script.js"
+      ],
+      "css": [
+        "content/ai-styles.css"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+  
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "SINOPIA - Assistente IA"
+  },
+  
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/*"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
+

@@ -139,24 +139,6 @@
                                         Vivemos cercados pelas nossas alternativas, pelo que poderíamos ter sido.
                                         Ah, se apenas tivéssemos acertado aquele número durante de tu eu ganhava a sena acumulada...
                                     </div>
-                                    <!-- Badges de Análise IA -->
-                                    <div class="ai-analysis-badges">
-                                        <span class="ai-badge sentiment-neutral" title="Análise de Sentimento - 75% confiança">
-                                            <i class="fas fa-brain"></i> Sentimento: Neutro
-                                        </span>
-                                        <span class="ai-badge urgency-low" title="Análise de Urgência - 80% confiança">
-                                            <i class="fas fa-exclamation-triangle"></i> Urgência: Baixa
-                                        </span>
-                                        <span class="ai-badge veracity-high" title="Análise de Veracidade - 85% confiança">
-                                            <i class="fas fa-shield-check"></i> Veracidade: 85%
-                                        </span>
-                                        <span class="ai-badge language-normal" title="Análise de Linguagem">
-                                            <i class="fas fa-comment"></i> Linguagem: Normal
-                                        </span>
-                                        <button class="ai-badge duplicates-found" onclick="showSimilarCases()" title="2 manifestações similares encontradas">
-                                            <i class="fas fa-copy"></i> 2 Similares (78%, 65%)
-                                        </button>
-                                    </div>
                                 </div>
 
                                 <div class="detail-row">
@@ -168,7 +150,7 @@
 
                                 <div class="detail-row">
                                     <label>Modalidade:</label>
-                                    <div class="field-with-ai">
+                                    <div class="field-with-ai" data-field="modalidade">
                                         <span id="modalidade" class="editable-field">ACESSO À INFORMAÇÃO</span>
                                         <select id="modalidade-select" class="edit-field" style="display: none;">
                                             <option value="ACESSO À INFORMAÇÃO">ACESSO À INFORMAÇÃO</option>
@@ -177,31 +159,12 @@
                                             <option value="SUGESTÃO">SUGESTÃO</option>
                                             <option value="ELOGIO">ELOGIO</option>
                                         </select>
-                                        <div class="ai-suggestion" id="modalidade-suggestion">
-                                            <div class="ai-suggestion-content">
-                                                <i class="fas fa-robot"></i>
-                                                <span class="suggestion-label">IA sugere:</span>
-                                                <span class="suggestion-value">MANIFESTAÇÃO</span>
-                                                <span class="suggestion-confidence">(90%)</span>
-                                            </div>
-                                            <div class="ai-suggestion-actions">
-                                                <button class="ai-btn accept" onclick="acceptAISuggestion('modalidade', 'MANIFESTAÇÃO')" title="Aceitar sugestão">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button class="ai-btn reject" onclick="rejectAISuggestion('modalidade')" title="Rejeitar sugestão">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                                <button class="ai-btn explain" onclick="explainAISuggestion('modalidade')" title="Por que a IA sugere isso?">
-                                                    <i class="fas fa-question-circle"></i>
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="detail-row">
                                     <label>Tipo:</label>
-                                    <div class="field-with-ai">
+                                    <div class="field-with-ai" data-field="tipo">
                                         <span id="tipo" class="editable-field">PEDIDO DE INFORMAÇÃO DE DADOS PESSOAIS</span>
                                         <select id="tipo-select" class="edit-field" style="display: none;">
                                             <option value="PEDIDO DE INFORMAÇÃO DE DADOS PESSOAIS">PEDIDO DE INFORMAÇÃO DE DADOS PESSOAIS</option>
@@ -210,25 +173,6 @@
                                             <option value="RECURSO DE 2ª INSTÂNCIA">RECURSO DE 2ª INSTÂNCIA</option>
                                             <option value="RECLAMAÇÃO">RECLAMAÇÃO</option>
                                         </select>
-                                        <div class="ai-suggestion" id="tipo-suggestion">
-                                            <div class="ai-suggestion-content">
-                                                <i class="fas fa-robot"></i>
-                                                <span class="suggestion-label">IA sugere:</span>
-                                                <span class="suggestion-value">SUGESTÃO</span>
-                                                <span class="suggestion-confidence">(85%)</span>
-                                            </div>
-                                            <div class="ai-suggestion-actions">
-                                                <button class="ai-btn accept" onclick="acceptAISuggestion('tipo', 'SUGESTÃO')" title="Aceitar sugestão">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button class="ai-btn reject" onclick="rejectAISuggestion('tipo')" title="Rejeitar sugestão">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                                <button class="ai-btn explain" onclick="explainAISuggestion('tipo')" title="Por que a IA sugere isso?">
-                                                    <i class="fas fa-question-circle"></i>
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
@@ -246,7 +190,7 @@
 
                                 <div class="detail-row">
                                     <label>Assunto:</label>
-                                    <div class="field-with-ai">
+                                    <div class="field-with-ai" data-field="assunto">
                                         <span id="assunto" class="editable-field">SERVIDOR</span>
                                         <select id="assunto-select" class="edit-field" style="display: none;">
                                             <option value="SERVIDOR">SERVIDOR</option>
@@ -255,31 +199,12 @@
                                             <option value="INFRAESTRUTURA">INFRAESTRUTURA</option>
                                             <option value="OUTROS">OUTROS</option>
                                         </select>
-                                        <div class="ai-suggestion" id="assunto-suggestion">
-                                            <div class="ai-suggestion-content">
-                                                <i class="fas fa-robot"></i>
-                                                <span class="suggestion-label">IA sugere:</span>
-                                                <span class="suggestion-value">ATENDIMENTO</span>
-                                                <span class="suggestion-confidence">(82%)</span>
-                                            </div>
-                                            <div class="ai-suggestion-actions">
-                                                <button class="ai-btn accept" onclick="acceptAISuggestion('assunto', 'ATENDIMENTO')" title="Aceitar sugestão">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button class="ai-btn reject" onclick="rejectAISuggestion('assunto')" title="Rejeitar sugestão">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                                <button class="ai-btn explain" onclick="explainAISuggestion('assunto')" title="Por que a IA sugere isso?">
-                                                    <i class="fas fa-question-circle"></i>
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="detail-row">
                                     <label>Subassunto:</label>
-                                    <div class="field-with-ai">
+                                    <div class="field-with-ai" data-field="subassunto">
                                         <span id="subassunto" class="editable-field">IRREGULARIDADE</span>
                                         <select id="subassunto-select" class="edit-field" style="display: none;">
                                             <option value="IRREGULARIDADE">IRREGULARIDADE</option>
@@ -288,52 +213,14 @@
                                             <option value="TRANSPARÊNCIA">TRANSPARÊNCIA</option>
                                             <option value="OUTROS">OUTROS</option>
                                         </select>
-                                        <div class="ai-suggestion" id="subassunto-suggestion">
-                                            <div class="ai-suggestion-content">
-                                                <i class="fas fa-robot"></i>
-                                                <span class="suggestion-label">IA sugere:</span>
-                                                <span class="suggestion-value">DESEMPENHO</span>
-                                                <span class="suggestion-confidence">(88%)</span>
-                                            </div>
-                                            <div class="ai-suggestion-actions">
-                                                <button class="ai-btn accept" onclick="acceptAISuggestion('subassunto', 'DESEMPENHO')" title="Aceitar sugestão">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button class="ai-btn reject" onclick="rejectAISuggestion('subassunto')" title="Rejeitar sugestão">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                                <button class="ai-btn explain" onclick="explainAISuggestion('subassunto')" title="Por que a IA sugere isso?">
-                                                    <i class="fas fa-question-circle"></i>
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
 
                                 <div class="detail-row">
                                     <label>Palavras-chave:</label>
-                                    <div class="field-with-ai">
+                                    <div class="field-with-ai" data-field="palavras-chave">
                                         <span id="palavras-chave" class="editable-field">IRREGULARIDADE</span>
                                         <input type="text" id="palavras-chave-input" class="edit-field" value="IRREGULARIDADE" style="display: none;">
-                                        <div class="ai-suggestion" id="palavras-chave-suggestion">
-                                            <div class="ai-suggestion-content">
-                                                <i class="fas fa-robot"></i>
-                                                <span class="suggestion-label">IA sugere:</span>
-                                                <span class="suggestion-value">atendimento, demora, serviço público, eficiência</span>
-                                                <span class="suggestion-confidence">(90%)</span>
-                                            </div>
-                                            <div class="ai-suggestion-actions">
-                                                <button class="ai-btn accept" onclick="acceptAISuggestion('palavras-chave', 'atendimento, demora, serviço público, eficiência')" title="Aceitar sugestão">
-                                                    <i class="fas fa-check"></i>
-                                                </button>
-                                                <button class="ai-btn reject" onclick="rejectAISuggestion('palavras-chave')" title="Rejeitar sugestão">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                                <button class="ai-btn explain" onclick="explainAISuggestion('palavras-chave')" title="Por que a IA sugere isso?">
-                                                    <i class="fas fa-question-circle"></i>
-                                                </button>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -433,79 +320,6 @@
 
                         <!-- Right Column -->
                         <div class="right-column">
-                            <!-- Painel de Análise IA -->
-                            <div class="ai-analysis-panel">
-                                <div class="panel-header">
-                                    <i class="fas fa-robot"></i>
-                                    <h3>Análise Inteligente</h3>
-                                    <span class="ai-status online">IA Online</span>
-                                </div>
-                                
-                                <div class="ai-section">
-                                    <h4><i class="fas fa-crosshairs"></i> Encaminhamento Sugerido</h4>
-                                    <div class="ai-recommendation">
-                                        <div class="recommendation-item">
-                                            <span class="rec-label">Órgão:</span>
-                                            <span class="rec-value">SECRETARIA DE DESENVOLVIMENTO SOCIAL</span>
-                                            <span class="rec-confidence">80%</span>
-                                        </div>
-                                        <div class="recommendation-item">
-                                            <span class="rec-label">Setor:</span>
-                                            <span class="rec-value">DIRETORIA DE ATENDIMENTO AO CIDADÃO</span>
-                                            <span class="rec-confidence">75%</span>
-                                        </div>
-                                        <button class="ai-apply-btn" onclick="applyForwardingSuggestion()">
-                                            <i class="fas fa-magic"></i> Aplicar Sugestão
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div class="ai-section">
-                                    <h4><i class="fas fa-chart-line"></i> Scores de Análise</h4>
-                                    <div class="ai-scores">
-                                        <div class="score-item">
-                                            <span class="score-label">Prioridade</span>
-                                            <div class="score-bar">
-                                                <div class="score-fill low" style="width: 30%"></div>
-                                            </div>
-                                            <span class="score-value">Baixa (30%)</span>
-                                        </div>
-                                        <div class="score-item">
-                                            <span class="score-label">Complexidade</span>
-                                            <div class="score-bar">
-                                                <div class="score-fill medium" style="width: 60%"></div>
-                                            </div>
-                                            <span class="score-value">Média (60%)</span>
-                                        </div>
-                                        <div class="score-item">
-                                            <span class="score-label">Confiabilidade</span>
-                                            <div class="score-bar">
-                                                <div class="score-fill high" style="width: 85%"></div>
-                                            </div>
-                                            <span class="score-value">Alta (85%)</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="ai-section">
-                                    <h4><i class="fas fa-lightbulb"></i> Insights da IA</h4>
-                                    <div class="ai-insights">
-                                        <div class="insight-item">
-                                            <i class="fas fa-info-circle"></i>
-                                            <span>Manifestação similar à <strong>2 casos</strong> dos últimos 30 dias</span>
-                                        </div>
-                                        <div class="insight-item">
-                                            <i class="fas fa-clock"></i>
-                                            <span>Tempo médio de resolução: <strong>7 dias</strong></span>
-                                        </div>
-                                        <div class="insight-item">
-                                            <i class="fas fa-user-check"></i>
-                                            <span>Taxa de satisfação histórica: <strong>89%</strong></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="info-panel">
                                 <div class="info-row">
                                     <label>Órgão Atual:</label>
@@ -629,100 +443,6 @@
         </main>
     </div>
 
-    <!-- Modal de Manifestações Similares -->
-    <div id="similar-cases-modal" class="modal-overlay" style="display: none;">
-        <div class="modal-content similar-cases-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-copy"></i> Manifestações Similares Encontradas</h3>
-                <button class="modal-close" onclick="closeSimilarCasesModal()">×</button>
-            </div>
-            
-            <div class="modal-body">
-                <div class="similar-case-item">
-                    <div class="case-header">
-                        <span class="case-protocol">Protocolo: 202443</span>
-                        <span class="similarity-badge high">78% Similar</span>
-                    </div>
-                    <div class="case-content">
-                        <p><strong>Relato:</strong> Vivemos limitados pelas nossas escolhas, pelo que poderíamos ter conquistado. Ah, se apenas tivéssemos escolhido os números certos na loteria...</p>
-                        <div class="case-meta">
-                            <span><i class="fas fa-calendar"></i> 15/05/2025</span>
-                            <span><i class="fas fa-user"></i> João Santos</span>
-                            <span><i class="fas fa-building"></i> SEC. DESENVOLVIMENTO SOCIAL</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="similar-case-item">
-                    <div class="case-header">
-                        <span class="case-protocol">Protocolo: 202398</span>
-                        <span class="similarity-badge medium">65% Similar</span>
-                    </div>
-                    <div class="case-content">
-                        <p><strong>Relato:</strong> Sempre pensamos nas oportunidades perdidas, no que poderia ter sido diferente. Se ao menos tivéssemos tentado aquela oportunidade...</p>
-                        <div class="case-meta">
-                            <span><i class="fas fa-calendar"></i> 12/05/2025</span>
-                            <span><i class="fas fa-user"></i> Maria Oliveira</span>
-                            <span><i class="fas fa-building"></i> SEC. EDUCAÇÃO</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="duplicate-action">
-                    <p><i class="fas fa-exclamation-triangle"></i> <strong>Atenção:</strong> Manifestações com similaridade acima de 95% são consideradas duplicatas e devem ser analisadas para possível cancelamento.</p>
-                    <button class="action-btn secondary" onclick="markAsDuplicate()">
-                        <i class="fas fa-ban"></i> Marcar como Duplicata
-                    </button>
-                    <button class="action-btn primary" onclick="linkCases()">
-                        <i class="fas fa-link"></i> Vincular Casos
-                    </button>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button class="modal-btn secondary" onclick="closeSimilarCasesModal()">FECHAR</button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal de Explicação IA -->
-    <div id="ai-explanation-modal" class="modal-overlay" style="display: none;">
-        <div class="modal-content ai-explanation-content">
-            <div class="modal-header">
-                <h3><i class="fas fa-robot"></i> Explicação da IA</h3>
-                <button class="modal-close" onclick="closeExplanationModal()">×</button>
-            </div>
-            
-            <div class="modal-body">
-                <div class="explanation-section">
-                    <h4>Por que a IA sugere esta classificação?</h4>
-                    <div id="ai-explanation-content">
-                        <!-- Conteúdo será preenchido dinamicamente -->
-                    </div>
-                </div>
-
-                <div class="explanation-section">
-                    <h4>Fatores considerados:</h4>
-                    <ul id="ai-factors-list">
-                        <!-- Lista será preenchida dinamicamente -->
-                    </ul>
-                </div>
-
-                <div class="explanation-section">
-                    <h4>Casos similares analisados:</h4>
-                    <div id="ai-similar-examples">
-                        <!-- Exemplos serão preenchidos dinamicamente -->
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button class="modal-btn secondary" onclick="closeExplanationModal()">FECHAR</button>
-                <button class="modal-btn primary" onclick="provideFeedback()">FORNECER FEEDBACK</button>
-            </div>
-        </div>
-    </div>
-
     <!-- Modal de Resposta -->
     <div id="response-modal" class="modal-overlay" style="display: none;">
         <div class="modal-content">
@@ -734,39 +454,18 @@
             <div class="modal-body">
                 <div class="modal-form-row">
                     <div class="form-group">
-                        <label for="tipo-resposta">Tipo de Resposta *</label>
-                        <div class="field-with-ai">
-                            <select id="tipo-resposta" required>
-                                <option value="">Selecione...</option>
-                                <option value="parcial">Parcial</option>
-                                <option value="final">Final</option>
-                                <option value="complementacao">Complementação do Cidadão</option>
-                            </select>
-                            <div class="ai-suggestion modal-ai-suggestion" id="tipo-resposta-suggestion">
-                                <div class="ai-suggestion-content">
-                                    <i class="fas fa-robot"></i>
-                                    <span class="suggestion-label">IA sugere:</span>
-                                    <span class="suggestion-value">Final</span>
-                                    <span class="suggestion-confidence">(92%)</span>
-                                </div>
-                                <div class="ai-suggestion-actions">
-                                    <button class="ai-btn accept" onclick="acceptResponseAISuggestion('tipo-resposta', 'final')" title="Aceitar sugestão">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                    <button class="ai-btn reject" onclick="rejectResponseAISuggestion('tipo-resposta')" title="Rejeitar sugestão">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                    <button class="ai-btn explain" onclick="explainResponseAISuggestion('tipo-resposta')" title="Por que a IA sugere isso?">
-                                        <i class="fas fa-question-circle"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
+                        <label for="modal-tipo-resposta">Tipo de Resposta *</label>
+                        <select id="modal-tipo-resposta" required>
+                            <option value="">Selecione...</option>
+                            <option value="parcial">Parcial</option>
+                            <option value="final">Final</option>
+                            <option value="complementacao">Complementação do Cidadão</option>
+                        </select>
                     </div>
                     
                     <div class="form-group">
-                        <label for="para-cidadao">Para Cidadão</label>
-                        <select id="para-cidadao">
+                        <label for="modal-para-cidadao">Para Cidadão</label>
+                        <select id="modal-para-cidadao">
                             <option value="">Selecione...</option>
                             <option value="sim">Sim</option>
                             <option value="nao">Não</option>
@@ -776,65 +475,26 @@
 
                 <div class="form-group full-width">
                     <label for="modelo-resposta">Modelo de Resposta</label>
-                    <div class="field-with-ai">
-                        <select id="modelo-resposta">
-                            <option value="">Selecione...</option>
-                            <option value="manifestacao-encaminhamento-externo">MANIFESTAÇÃO - ENCAMINHAMENTO EXTERNO PARA ÓRGÃO COMPETENTE</option>
-                            <option value="manifestacao-encaminhamento-gestor">MANIFESTAÇÃO - ENCAMINHAMENTO PARA O GESTOR COMPETENTE</option>
-                            <option value="manifestacao-prorrogacao">MANIFESTAÇÃO - PRORROGAÇÃO</option>
-                            <option value="manifestacao-resposta-conclusiva-cidadao">MANIFESTAÇÃO - RESPOSTA CONCLUSIVA AO CIDADÃO</option>
-                            <option value="manifestacao-resposta-conclusiva-falta">MANIFESTAÇÃO - RESPOSTA CONCLUSIVA POR FALTA DE COMPLEMENTAÇÃO</option>
-                            <option value="manifestacao-resposta-parcial">MANIFESTAÇÃO - RESPOSTA PARCIAL INFORMANDO ENCAMINHAMENTO INTERNO - CIDADÃO</option>
-                            <option value="manifestacao-solicitacao-complementacao">MANIFESTAÇÃO - SOLICITAÇÃO DE COMPLEMENTAÇÃO</option>
-                            <option value="pai-conclusao-pedido">PAI - CONCLUSÃO DE PEDIDO DE ACESSO À INFORMAÇÃO</option>
-                            <option value="pai-encaminhamento-administrativa">PAI - ENCAMINHAMENTO PARA AUT ADMINISTRATIVA</option>
-                            <option value="pai-encaminhamento-gestor">PAI - ENCAMINHAMENTO PARA O GESTOR COMPETENTE</option>
-                            <option value="pai-justificativa-prorrogacao">PAI - JUSTIFICATIVA DE PRORROGAÇÃO DE PAI PARA CIDADÃO</option>
-                            <option value="pai-resposta-parcial">PAI - RESPOSTA PARCIAL AO CIDADÃO DO ENCAMINHAMENTO PARA SETOR</option>
-                        </select>
-                        <div class="ai-suggestion modal-ai-suggestion" id="modelo-resposta-suggestion">
-                            <div class="ai-suggestion-content">
-                                <i class="fas fa-robot"></i>
-                                <span class="suggestion-label">IA sugere:</span>
-                                <span class="suggestion-value">MANIFESTAÇÃO - RESPOSTA CONCLUSIVA AO CIDADÃO</span>
-                                <span class="suggestion-confidence">(88%)</span>
-                            </div>
-                            <div class="ai-suggestion-actions">
-                                <button class="ai-btn accept" onclick="acceptResponseAISuggestion('modelo-resposta', 'manifestacao-resposta-conclusiva-cidadao')" title="Aceitar sugestão">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                                <button class="ai-btn reject" onclick="rejectResponseAISuggestion('modelo-resposta')" title="Rejeitar sugestão">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                                <button class="ai-btn explain" onclick="explainResponseAISuggestion('modelo-resposta')" title="Por que a IA sugere isso?">
-                                    <i class="fas fa-question-circle"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+                    <select id="modelo-resposta">
+                        <option value="">Selecione...</option>
+                        <option value="manifestacao-encaminhamento-externo">MANIFESTAÇÃO - ENCAMINHAMENTO EXTERNO PARA ÓRGÃO COMPETENTE</option>
+                        <option value="manifestacao-encaminhamento-gestor">MANIFESTAÇÃO - ENCAMINHAMENTO PARA O GESTOR COMPETENTE</option>
+                        <option value="manifestacao-prorrogacao">MANIFESTAÇÃO - PRORROGAÇÃO</option>
+                        <option value="manifestacao-resposta-conclusiva-cidadao">MANIFESTAÇÃO - RESPOSTA CONCLUSIVA AO CIDADÃO</option>
+                        <option value="manifestacao-resposta-conclusiva-falta">MANIFESTAÇÃO - RESPOSTA CONCLUSIVA POR FALTA DE COMPLEMENTAÇÃO</option>
+                        <option value="manifestacao-resposta-parcial">MANIFESTAÇÃO - RESPOSTA PARCIAL INFORMANDO ENCAMINHAMENTO INTERNO - CIDADÃO</option>
+                        <option value="manifestacao-solicitacao-complementacao">MANIFESTAÇÃO - SOLICITAÇÃO DE COMPLEMENTAÇÃO</option>
+                        <option value="pai-conclusao-pedido">PAI - CONCLUSÃO DE PEDIDO DE ACESSO À INFORMAÇÃO</option>
+                        <option value="pai-encaminhamento-administrativa">PAI - ENCAMINHAMENTO PARA AUT ADMINISTRATIVA</option>
+                        <option value="pai-encaminhamento-gestor">PAI - ENCAMINHAMENTO PARA O GESTOR COMPETENTE</option>
+                        <option value="pai-justificativa-prorrogacao">PAI - JUSTIFICATIVA DE PRORROGAÇÃO DE PAI PARA CIDADÃO</option>
+                        <option value="pai-resposta-parcial">PAI - RESPOSTA PARCIAL AO CIDADÃO DO ENCAMINHAMENTO PARA SETOR</option>
+                    </select>
                 </div>
 
                 <div class="text-editor">
                     <div class="editor-header">
                         <label>Texto da Resposta</label>
-                        <div class="ai-suggestion modal-ai-suggestion" id="response-text-suggestion">
-                            <div class="ai-suggestion-content">
-                                <i class="fas fa-robot"></i>
-                                <span class="suggestion-label">IA sugere rascunho</span>
-                                <span class="suggestion-confidence">(85%)</span>
-                            </div>
-                            <div class="ai-suggestion-actions">
-                                <button class="ai-btn accept" onclick="acceptResponseTextSuggestion()" title="Aceitar rascunho da IA">
-                                    <i class="fas fa-check"></i>
-                                </button>
-                                <button class="ai-btn reject" onclick="rejectResponseAISuggestion('response-text')" title="Rejeitar rascunho">
-                                    <i class="fas fa-times"></i>
-                                </button>
-                                <button class="ai-btn explain" onclick="explainResponseAISuggestion('response-text')" title="Como a IA gerou este rascunho?">
-                                    <i class="fas fa-question-circle"></i>
-                                </button>
-                            </div>
-                        </div>
                     </div>
                     <div class="editor-toolbar">
                         <button type="button" class="editor-btn" title="Negrito">
@@ -867,4 +527,4 @@
     <script src="script.js"></script>
     <script src="detalhes.js"></script>
 </body>
-</html> 
+</html>

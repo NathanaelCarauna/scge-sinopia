@@ -1,0 +1,740 @@
+/**
+ * SINOPIA - Estilos de IA para Extensão
+ * Todos os estilos relacionados a componentes de IA injetados
+ */
+
+/* ===========================================
+   AI Analysis Badges
+   =========================================== */
+.sinopia-ai-badges {
+    margin-top: 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.sinopia-ai-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 11px;
+    font-weight: 500;
+    border: none;
+    cursor: default;
+    transition: all 0.2s;
+}
+
+.sinopia-ai-badge i {
+    font-size: 10px;
+}
+
+.sinopia-ai-badge.sentiment-neutral {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.sinopia-ai-badge.sentiment-positive {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.sinopia-ai-badge.sentiment-negative {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.sinopia-ai-badge.urgency-low {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.sinopia-ai-badge.urgency-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.sinopia-ai-badge.urgency-high {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.sinopia-ai-badge.veracity-high {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.sinopia-ai-badge.veracity-medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.sinopia-ai-badge.veracity-low {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.sinopia-ai-badge.language-normal {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.sinopia-ai-badge.language-aggressive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.sinopia-ai-badge.duplicates-found {
+    background: #fef3c7;
+    color: #92400e;
+    cursor: pointer;
+}
+
+.sinopia-ai-badge.duplicates-found:hover {
+    background: #fed7aa;
+    transform: translateY(-1px);
+}
+
+/* ===========================================
+   AI Suggestion Box
+   =========================================== */
+.sinopia-ai-suggestion {
+    margin-top: 8px;
+    padding: 12px;
+    background: linear-gradient(135deg, #f8faff 0%, #eff6ff 100%);
+    border: 1px solid #e0e7ff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: sinopia-fadeIn 0.3s ease;
+}
+
+.sinopia-ai-suggestion-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.sinopia-ai-suggestion-content i {
+    color: #3b82f6;
+    font-size: 14px;
+}
+
+.sinopia-suggestion-label {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.sinopia-suggestion-value {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.sinopia-suggestion-confidence {
+    color: #16a34a;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.sinopia-ai-suggestion-actions {
+    display: flex;
+    gap: 4px;
+}
+
+.sinopia-ai-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-size: 12px;
+}
+
+.sinopia-ai-btn.accept {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.sinopia-ai-btn.accept:hover {
+    background: #bbf7d0;
+}
+
+.sinopia-ai-btn.reject {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.sinopia-ai-btn.reject:hover {
+    background: #fecaca;
+}
+
+.sinopia-ai-btn.explain {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.sinopia-ai-btn.explain:hover {
+    background: #c7d2fe;
+}
+
+/* ===========================================
+   AI Analysis Panel
+   =========================================== */
+.sinopia-ai-panel {
+    background: white;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+    overflow: hidden;
+    animation: sinopia-slideIn 0.4s ease;
+}
+
+.sinopia-panel-header {
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sinopia-panel-header i {
+    font-size: 18px;
+}
+
+.sinopia-panel-header h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sinopia-ai-status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.sinopia-ai-status.online {
+    background: rgba(34, 197, 94, 0.2);
+    color: #bbf7d0;
+}
+
+.sinopia-ai-section {
+    padding: 16px;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.sinopia-ai-section:last-child {
+    border-bottom: none;
+}
+
+.sinopia-ai-section h4 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.sinopia-ai-section h4 i {
+    color: #3b82f6;
+}
+
+/* Recommendation Items */
+.sinopia-recommendation-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+}
+
+.sinopia-rec-label {
+    font-weight: 500;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.sinopia-rec-value {
+    flex: 1;
+    margin: 0 8px;
+    font-size: 12px;
+    color: #1f2937;
+}
+
+.sinopia-rec-confidence {
+    background: #dcfce7;
+    color: #166534;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.sinopia-ai-apply-btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.sinopia-ai-apply-btn:hover {
+    background: #2563eb;
+}
+
+/* Score Bars */
+.sinopia-score-item {
+    margin-bottom: 12px;
+}
+
+.sinopia-score-label {
+    display: block;
+    font-size: 12px;
+    color: #6b7280;
+    margin-bottom: 4px;
+}
+
+.sinopia-score-bar {
+    width: 100%;
+    height: 6px;
+    background: #f3f4f6;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.sinopia-score-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+.sinopia-score-fill.low {
+    background: #fbbf24;
+}
+
+.sinopia-score-fill.medium {
+    background: #f59e0b;
+}
+
+.sinopia-score-fill.high {
+    background: #16a34a;
+}
+
+.sinopia-score-value {
+    font-size: 11px;
+    color: #374151;
+    margin-left: 8px;
+}
+
+/* Insights */
+.sinopia-insight-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 8px 0;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.sinopia-insight-item i {
+    color: #3b82f6;
+    margin-top: 2px;
+    font-size: 11px;
+}
+
+/* ===========================================
+   Similar Cases Modal
+   =========================================== */
+.sinopia-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    animation: sinopia-fadeIn 0.2s ease;
+}
+
+.sinopia-modal-content {
+    background: white;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    animation: sinopia-scaleIn 0.3s ease;
+}
+
+.sinopia-modal-header {
+    padding: 20px 24px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sinopia-modal-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sinopia-modal-header h3 i {
+    color: #3b82f6;
+}
+
+.sinopia-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.sinopia-modal-close:hover {
+    background-color: #f3f4f6;
+}
+
+.sinopia-modal-body {
+    padding: 24px;
+}
+
+.sinopia-modal-footer {
+    padding: 20px 24px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.sinopia-modal-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 14px;
+}
+
+.sinopia-modal-btn.primary {
+    background: #3b82f6;
+    color: white;
+}
+
+.sinopia-modal-btn.primary:hover {
+    background: #2563eb;
+}
+
+.sinopia-modal-btn.secondary {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.sinopia-modal-btn.secondary:hover {
+    background: #e5e7eb;
+}
+
+/* Similar Case Items */
+.sinopia-similar-case {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    overflow: hidden;
+}
+
+.sinopia-case-header {
+    background: #f9fafb;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.sinopia-case-protocol {
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.sinopia-similarity-badge {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.sinopia-similarity-badge.high {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.sinopia-similarity-badge.medium {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.sinopia-case-content {
+    padding: 16px;
+}
+
+.sinopia-case-content p {
+    margin: 0 0 12px 0;
+    line-height: 1.5;
+    font-size: 14px;
+    color: #374151;
+}
+
+.sinopia-case-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 12px;
+    color: #6b7280;
+}
+
+.sinopia-case-meta span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.sinopia-duplicate-action {
+    background: #fef9e7;
+    border: 1px solid #f59e0b;
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 16px;
+}
+
+.sinopia-duplicate-action p {
+    margin: 0 0 12px 0;
+    color: #92400e;
+    font-size: 14px;
+}
+
+.sinopia-duplicate-action .sinopia-modal-btn {
+    margin-right: 8px;
+}
+
+/* ===========================================
+   AI Explanation Modal
+   =========================================== */
+.sinopia-explanation-section {
+    margin-bottom: 20px;
+}
+
+.sinopia-explanation-section h4 {
+    color: #1f2937;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.sinopia-explanation-section p {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 14px;
+}
+
+.sinopia-explanation-section ul {
+    margin: 0;
+    padding-left: 20px;
+}
+
+.sinopia-explanation-section li {
+    margin-bottom: 4px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.sinopia-example-box {
+    background: #f9fafb;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+.sinopia-example-box strong {
+    color: #1f2937;
+}
+
+.sinopia-example-box small {
+    color: #6b7280;
+    display: block;
+    margin-top: 4px;
+}
+
+/* ===========================================
+   AI Filled Field Indicator
+   =========================================== */
+.sinopia-ai-filled {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe) !important;
+    border-color: #3b82f6 !important;
+    position: relative;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.1) !important;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.sinopia-ai-filled::before {
+    content: '✨ IA';
+    position: absolute;
+    top: -8px;
+    right: 8px;
+    background: #3b82f6;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    z-index: 10;
+}
+
+/* ===========================================
+   Response Modal AI Suggestions
+   =========================================== */
+.sinopia-modal-ai-suggestion {
+    position: relative;
+    margin-top: 8px;
+}
+
+.sinopia-modal-ai-suggestion .sinopia-suggestion-value {
+    max-width: 250px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ===========================================
+   Animations
+   =========================================== */
+@keyframes sinopia-fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes sinopia-slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes sinopia-scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes sinopia-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.sinopia-loading {
+    animation: sinopia-pulse 1.5s ease-in-out infinite;
+}
+
+/* ===========================================
+   Extension Status Indicator
+   =========================================== */
+.sinopia-extension-badge {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    z-index: 9999;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.sinopia-extension-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.5);
+}
+
+.sinopia-extension-badge i {
+    font-size: 14px;
+}
+
+.sinopia-extension-badge.disabled {
+    background: #6b7280;
+    box-shadow: 0 4px 12px rgba(107, 114, 128, 0.4);
+}
+
+/* ===========================================
+   Print Styles - Hide AI Elements
+   =========================================== */
+@media print {
+    .sinopia-ai-panel,
+    .sinopia-ai-badges,
+    .sinopia-ai-suggestion,
+    .sinopia-extension-badge,
+    .sinopia-modal-overlay {
+        display: none !important;
+    }
+}
+

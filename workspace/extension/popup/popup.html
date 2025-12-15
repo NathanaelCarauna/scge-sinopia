@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SINOPIA - Assistente IA</title>
+    <link rel="stylesheet" href="popup.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="popup-container">
+        <!-- Header -->
+        <div class="popup-header">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="header-text">
+                <h1>SINOPIA</h1>
+                <span class="subtitle">Assistente IA para Ouvidoria</span>
+            </div>
+        </div>
+
+        <!-- Status -->
+        <div class="status-section">
+            <div class="status-indicator" id="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text" id="status-text">Carregando...</span>
+            </div>
+        </div>
+
+        <!-- Toggle -->
+        <div class="toggle-section">
+            <label class="toggle-label">
+                <span>Ativar Assistente IA</span>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="toggle-ai" checked>
+                    <span class="toggle-slider"></span>
+                </div>
+            </label>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-section">
+            <h2>Estatísticas da Sessão</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div class="stat-info">
+                        <span class="stat-value" id="accepted-count">0</span>
+                        <span class="stat-label">Sugestões Aceitas</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-times-circle"></i>
+                    <div class="stat-info">
+                        <span class="stat-value" id="rejected-count">0</span>
+                        <span class="stat-label">Sugestões Rejeitadas</span>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <i class="fas fa-question-circle"></i>
+                    <div class="stat-info">
+                        <span class="stat-value" id="explained-count">0</span>
+                        <span class="stat-label">Explicações Solicitadas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions-section">
+            <button class="action-btn" id="refresh-btn">
+                <i class="fas fa-sync-alt"></i>
+                Recarregar Análise
+            </button>
+            <button class="action-btn secondary" id="reset-btn">
+                <i class="fas fa-redo"></i>
+                Resetar Estatísticas
+            </button>
+        </div>
+
+        <!-- Footer -->
+        <div class="popup-footer">
+            <span>Versão 1.0.0</span>
+            <span>•</span>
+            <span>UPE - SINÓPIA</span>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>
+
