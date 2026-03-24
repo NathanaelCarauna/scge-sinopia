@@ -84,6 +84,37 @@ ip addr show tun0
 
 ## 🔧 Troubleshooting
 
+### Problema: VPN desconecta automaticamente (Inactivity timeout)
+
+**Sintoma:** A VPN conecta, mas após ~2 minutos desconecta sem motivo aparente.
+
+**Causa:** Falta de pacotes keepalive. O servidor detecta inatividade e reinicia a conexão.
+
+**✅ Solução aplicada:** A configuração atual já inclui:
+```
+keepalive 10 120
+ping-timer-rem
+persist-remote-ip
+```
+
+Isso envia ping a cada 10s e reinicia apenas após 120s de inatividade.
+
+**Se o problema persistir:**
+
+```bash
+# Ver logs em tempo real
+journalctl -u NetworkManager -f | grep vpn
+
+# Procure por: "Inactivity timeout" ou "ping-restart"
+```
+
+Se ainda houver desconexões, pode ser firewall bloqueando pacotes UDP. Teste com TCP:
+
+```bash
+# Editar conexão para usar TCP
+nmcli connection modify vpn-ati-pe vpn.data "remote=vpndc.ati.pe.gov.br 1194 tcp"
+```
+
 ### Problema: "Connection failed"
 
 1. Verifique suas credenciais
@@ -102,12 +133,27 @@ nmcli connection delete vpn-ati-pe
 nmcli connection import type openvpn file ~/Workspace/SINOPIA/vpn-ati-pe.ovpn
 ```
 
+### Problema: "AUTH_FAILED"
+
+Nos logs você verá: `AUTH: Received control message: AUTH_FAILED`
+
+**Causas comuns:**
+- Usuário ou senha incorretos
+- Usuário bloqueado/expirado no servidor
+
+**Solução:**
+1. Confirme suas credenciais com a equipe ATI-PE
+2. Reconecte e digite as credenciais corretas
+
 ### Problema: VPN conecta mas não acessa recursos internos
 
 ```bash
 # Verificar DNS
 nmcli connection show vpn-ati-pe | grep DNS
 resolvectl status tun0
+
+# Testar conectividade interna
+ping -c 4 10.12.0.1
 ```
 
 ---
