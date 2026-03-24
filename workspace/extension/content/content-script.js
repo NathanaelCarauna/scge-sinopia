@@ -12,6 +12,13 @@
 
     // Estado da extensão
     let extensionEnabled = true;
+    let enabledFeatures = {
+        sentiment: false,
+        duplicates: true,
+        classification: false,
+        forwarding: false,
+        response: false
+    };
 
     // Aguardar dados de IA carregarem
     const AI = window.SINOPIA_AI;
@@ -30,8 +37,31 @@
 
     function init() {
         // Verificar estado salvo
-        chrome.storage.local.get(['sinopiaEnabled'], (result) => {
+        chrome.storage.local.get(['sinopiaEnabled', 'features'], (result) => {
+            console.log('[SINOPIA] Estado inicial carregado:', result);
+            
             extensionEnabled = result.sinopiaEnabled !== false;
+            
+            // Carregar configurações de funcionalidades (padrão: apenas duplicatas)
+            if (!result.features) {
+                // Primeira inicialização - salvar padrão
+                enabledFeatures = {
+                    sentiment: false,
+                    duplicates: true,
+                    classification: false,
+                    forwarding: false,
+                    response: false
+                };
+                chrome.storage.local.set({ features: enabledFeatures }, () => {
+                    console.log('[SINOPIA] Features padrão salvas:', enabledFeatures);
+                });
+            } else {
+                enabledFeatures = result.features;
+            }
+            
+            console.log('[SINOPIA] Features ativas:', enabledFeatures);
+            console.log('[SINOPIA] IA habilitada:', extensionEnabled);
+            
             if (extensionEnabled) {
                 injectAIComponents();
             }
@@ -106,17 +136,22 @@
      */
     function injectAIComponents() {
         console.log('[SINOPIA] Injetando componentes de IA...');
+        console.log('[SINOPIA] Features ativas no momento da injeção:', enabledFeatures);
 
         // 1. Injetar badges de análise no relato
+        console.log('[SINOPIA] Tentando injetar badges de análise...');
         injectAnalysisBadges();
 
         // 2. Injetar sugestões nos campos de classificação
+        console.log('[SINOPIA] Tentando injetar sugestões de classificação...');
         injectFieldSuggestions();
 
         // 3. Injetar painel de análise na coluna direita
+        console.log('[SINOPIA] Tentando injetar painel de análise...');
         injectAIPanel();
 
         // 4. Interceptar modal de resposta
+        console.log('[SINOPIA] Tentando interceptar modal de resposta...');
         interceptResponseModal();
 
         // Mostrar notificação de carregamento
@@ -132,39 +167,81 @@
      * Injeta badges de análise no campo Relato
      */
     function injectAnalysisBadges() {
+        console.log('[SINOPIA] injectAnalysisBadges - sentiment:', enabledFeatures.sentiment, 'duplicates:', enabledFeatures.duplicates);
+        
         const relatoRow = document.querySelector('#relato-text');
-        if (!relatoRow) return;
+        if (!relatoRow) {
+            console.log('[SINOPIA] Elemento #relato-text não encontrado');
+            return;
+        }
 
         const parentRow = relatoRow.closest('.detail-row');
-        if (!parentRow) return;
+        if (!parentRow) {
+            console.log('[SINOPIA] .detail-row não encontrado');
+            return;
+        }
 
         // Verificar se já existe
-        if (parentRow.querySelector('.sinopia-ai-badges')) return;
+        if (parentRow.querySelector('.sinopia-ai-badges')) {
+            console.log('[SINOPIA] Badges já existem, pulando');
+            return;
+        }
 
         const analysis = AI.analysis;
-        const badgesHTML = `
-            <div class="sinopia-ai-badges">
+        let badges = [];
+
+        // Badges de sentimento (se habilitado)
+        if (enabledFeatures.sentiment) {
+            console.log('[SINOPIA] Injetando badges de sentimento');
+            badges.push(`
                 <span class="sinopia-ai-badge sentiment-${analysis.sentiment.color}" 
                       title="Análise de Sentimento - ${analysis.sentiment.confidence}% confiança">
                     <i class="fas ${analysis.sentiment.icon}"></i> Sentimento: ${analysis.sentiment.value}
                 </span>
+            `);
+            badges.push(`
                 <span class="sinopia-ai-badge urgency-${analysis.urgency.color}" 
                       title="Análise de Urgência - ${analysis.urgency.confidence}% confiança">
                     <i class="fas ${analysis.urgency.icon}"></i> Urgência: ${analysis.urgency.value}
                 </span>
+            `);
+            badges.push(`
                 <span class="sinopia-ai-badge veracity-${analysis.veracity.color}" 
                       title="Análise de Veracidade - ${analysis.veracity.confidence}% confiança">
                     <i class="fas ${analysis.veracity.icon}"></i> Veracidade: ${analysis.veracity.value}
                 </span>
+            `);
+            badges.push(`
                 <span class="sinopia-ai-badge language-${analysis.language.color}" 
                       title="Análise de Linguagem">
                     <i class="fas ${analysis.language.icon}"></i> Linguagem: ${analysis.language.value}
                 </span>
+            `);
+        }
+
+        // Badge de duplicatas (se habilitado)
+        if (enabledFeatures.duplicates) {
+            console.log('[SINOPIA] Injetando badge de duplicatas');
+            badges.push(`
                 <button class="sinopia-ai-badge duplicates-found" 
                         data-sinopia-action="show-similar-cases"
                         title="${analysis.duplicates.count} manifestações similares encontradas">
                     <i class="fas fa-copy"></i> ${analysis.duplicates.count} Similares (${analysis.duplicates.similarities.join('%, ')}%)
                 </button>
+            `);
+        }
+
+        // Se não há badges, não injeta nada
+        if (badges.length === 0) {
+            console.log('[SINOPIA] Nenhuma badge para injetar (todas as features estão desabilitadas)');
+            return;
+        }
+        
+        console.log('[SINOPIA] Total de badges a injetar:', badges.length);
+
+        const badgesHTML = `
+            <div class="sinopia-ai-badges">
+                ${badges.join('')}
             </div>
         `;
 
@@ -175,6 +252,14 @@
      * Injeta sugestões de IA nos campos de classificação
      */
     function injectFieldSuggestions() {
+        // Só injeta se a funcionalidade estiver habilitada
+        if (!enabledFeatures.classification) {
+            console.log('[SINOPIA] Sugestões de classificação desabilitadas, pulando');
+            return;
+        }
+        
+        console.log('[SINOPIA] Injetando sugestões de classificação');
+
         const suggestions = AI.suggestions;
 
         Object.keys(suggestions).forEach(fieldId => {
@@ -242,6 +327,14 @@
      * Injeta painel de análise de IA na coluna direita
      */
     function injectAIPanel() {
+        // Só injeta se a funcionalidade de encaminhamento estiver habilitada
+        if (!enabledFeatures.forwarding) {
+            console.log('[SINOPIA] Painel de encaminhamento desabilitado, pulando');
+            return;
+        }
+        
+        console.log('[SINOPIA] Injetando painel de encaminhamento');
+
         const rightColumn = document.querySelector('.right-column');
         if (!rightColumn) return;
 
@@ -323,6 +416,14 @@
      * Intercepta abertura do modal de resposta
      */
     function interceptResponseModal() {
+        // Só intercepta se a funcionalidade de resposta estiver habilitada
+        if (!enabledFeatures.response) {
+            console.log('[SINOPIA] Sugestões de resposta desabilitadas, pulando interceptação do modal');
+            return;
+        }
+        
+        console.log('[SINOPIA] Configurando interceptação do modal de resposta');
+
         // Observar mudanças no DOM para detectar quando o modal é aberto
         const observer = new MutationObserver((mutations) => {
             mutations.forEach((mutation) => {
@@ -345,6 +446,9 @@
      * Injeta sugestões de IA no modal de resposta
      */
     function injectResponseModalSuggestions() {
+        // Verificar novamente se ainda está habilitado
+        if (!enabledFeatures.response) return;
+
         const responseSuggestions = AI.responseSuggestions;
 
         // Tipo de Resposta
@@ -803,6 +907,82 @@
             type: 'FEEDBACK',
             data: feedback
         });
+    }
+
+    // ==========================================
+    // Listeners de Mensagens (do popup)
+    // ==========================================
+
+    chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+        console.log('[SINOPIA] ========================================');
+        console.log('[SINOPIA] Mensagem recebida:', message);
+        console.log('[SINOPIA] Features ANTES da mudança:', JSON.parse(JSON.stringify(enabledFeatures)));
+
+        switch (message.type) {
+            case 'TOGGLE_AI':
+                extensionEnabled = message.enabled;
+                console.log('[SINOPIA] IA', message.enabled ? 'ATIVADA' : 'DESATIVADA');
+                if (message.enabled) {
+                    injectAIComponents();
+                    showAINotification('IA Ativada', 'success');
+                } else {
+                    removeAIComponents();
+                    showAINotification('IA Desativada', 'info');
+                }
+                break;
+
+            case 'FEATURE_TOGGLE':
+                console.log('[SINOPIA] Alterando feature:', message.feature, 'para', message.enabled);
+                enabledFeatures[message.feature] = message.enabled;
+                console.log('[SINOPIA] Features DEPOIS da mudança:', JSON.parse(JSON.stringify(enabledFeatures)));
+                
+                // Recarregar componentes com novas configurações
+                console.log('[SINOPIA] Removendo todos os componentes...');
+                removeAIComponents();
+                
+                if (extensionEnabled) {
+                    console.log('[SINOPIA] Reinjetando componentes com novas configurações...');
+                    injectAIComponents();
+                }
+                
+                const featureName = getFeatureName(message.feature);
+                showAINotification(
+                    `${featureName} ${message.enabled ? 'ativada' : 'desativada'}`,
+                    message.enabled ? 'success' : 'info'
+                );
+                break;
+        }
+        
+        console.log('[SINOPIA] ========================================');
+        sendResponse({ success: true });
+        return true;
+    });
+
+    /**
+     * Remove todos os componentes de IA injetados
+     */
+    function removeAIComponents() {
+        const elements = document.querySelectorAll('[class*="sinopia-"]');
+        console.log('[SINOPIA] Removendo', elements.length, 'componentes de IA');
+        elements.forEach(el => {
+            console.log('[SINOPIA] Removendo:', el.className);
+            el.remove();
+        });
+        console.log('[SINOPIA] Componentes de IA removidos');
+    }
+
+    /**
+     * Retorna nome legível da funcionalidade
+     */
+    function getFeatureName(feature) {
+        const names = {
+            sentiment: 'Análise de Sentimento',
+            duplicates: 'Detecção de Duplicatas',
+            classification: 'Sugestões de Classificação',
+            forwarding: 'Sugestão de Encaminhamento',
+            response: 'Sugestões de Resposta'
+        };
+        return names[feature] || feature;
     }
 
 })();

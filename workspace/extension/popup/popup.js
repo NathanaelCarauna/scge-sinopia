@@ -14,10 +14,41 @@ function init() {
  * Carrega estado salvo
  */
 function loadState() {
-    chrome.storage.local.get(['sinopiaEnabled', 'stats'], (result) => {
-        // Toggle
+    chrome.storage.local.get(['sinopiaEnabled', 'stats', 'features'], (result) => {
+        console.log('[POPUP] Estado carregado:', result);
+        
+        // Toggle geral
         const toggle = document.getElementById('toggle-ai');
         toggle.checked = result.sinopiaEnabled !== false;
+        
+        // Features (por padrão, apenas duplicatas ativada)
+        let features = result.features;
+        
+        // Se não existe configuração salva, criar padrão
+        if (!features) {
+            features = {
+                sentiment: false,
+                duplicates: true,
+                classification: false,
+                forwarding: false,
+                response: false
+            };
+            // Salvar configuração padrão
+            chrome.storage.local.set({ features }, () => {
+                console.log('[POPUP] Configuração padrão salva:', features);
+            });
+        }
+        
+        console.log('[POPUP] Features ativas:', features);
+        
+        document.getElementById('feature-sentiment').checked = features.sentiment === true;
+        document.getElementById('feature-duplicates').checked = features.duplicates === true;
+        document.getElementById('feature-classification').checked = features.classification === true;
+        document.getElementById('feature-forwarding').checked = features.forwarding === true;
+        document.getElementById('feature-response').checked = features.response === true;
+        
+        // Desabilitar features se IA estiver desativada
+        updateFeaturesState(toggle.checked);
         
         // Stats
         const stats = result.stats || { accepted: 0, rejected: 0, explained: 0 };
@@ -33,22 +64,22 @@ function loadState() {
  * Configura event listeners
  */
 function setupEventListeners() {
-    // Toggle
+    // Toggle geral
     document.getElementById('toggle-ai').addEventListener('change', (e) => {
         const enabled = e.target.checked;
         chrome.storage.local.set({ sinopiaEnabled: enabled });
         updateStatus(enabled);
+        updateFeaturesState(enabled);
         
         // Notificar aba atual
-        chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-            if (tabs[0]) {
-                chrome.tabs.sendMessage(tabs[0].id, { 
-                    type: 'TOGGLE_AI', 
-                    enabled 
-                }).catch(() => {
-                    // Tab may not have content script
-                });
-            }
+        notifyContentScript({ type: 'TOGGLE_AI', enabled });
+    });
+
+    // Feature toggles
+    const featureIds = ['sentiment', 'duplicates', 'classification', 'forwarding', 'response'];
+    featureIds.forEach(featureId => {
+        document.getElementById(`feature-${featureId}`).addEventListener('change', (e) => {
+            saveFeatureState(featureId, e.target.checked);
         });
     });
 
@@ -70,6 +101,62 @@ function setupEventListeners() {
             document.getElementById('accepted-count').textContent = '0';
             document.getElementById('rejected-count').textContent = '0';
             document.getElementById('explained-count').textContent = '0';
+        }
+    });
+}
+
+/**
+ * Salva estado de uma funcionalidade
+ */
+function saveFeatureState(featureId, enabled) {
+    console.log(`[POPUP] Salvando feature ${featureId}:`, enabled);
+    
+    chrome.storage.local.get(['features'], (result) => {
+        const features = result.features || {
+            sentiment: false,
+            duplicates: true,
+            classification: false,
+            forwarding: false,
+            response: false
+        };
+        
+        features[featureId] = enabled;
+        
+        chrome.storage.local.set({ features }, () => {
+            console.log('[POPUP] Features salvas:', features);
+        });
+        
+        // Notificar content script
+        notifyContentScript({ 
+            type: 'FEATURE_TOGGLE', 
+            feature: featureId, 
+            enabled 
+        });
+    });
+}
+
+/**
+ * Atualiza estado dos toggles de funcionalidades
+ */
+function updateFeaturesState(enabled) {
+    const featuresSection = document.getElementById('features-section');
+    const featureToggles = document.querySelectorAll('.feature-item input[type="checkbox"]');
+    
+    featureToggles.forEach(toggle => {
+        toggle.disabled = !enabled;
+        toggle.parentElement.parentElement.style.opacity = enabled ? '1' : '0.5';
+    });
+}
+
+/**
+ * Notifica content script na aba atual
+ */
+function notifyContentScript(message) {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        if (tabs[0]) {
+            chrome.tabs.sendMessage(tabs[0].id, message).catch(() => {
+                // Tab may not have content script
+            });
         }
     });
 }

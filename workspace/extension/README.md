@@ -40,24 +40,41 @@ extension/
 
 ## 🎯 Funcionalidades
 
-### Análise de Relato
+A extensão oferece 5 grupos de funcionalidades que podem ser **habilitados/desabilitados individualmente** no popup:
+
+### 1. Análise de Sentimento 🟡
 - **Sentimento**: Análise do tom emocional da manifestação
 - **Urgência**: Identificação de indicadores de urgência
 - **Veracidade**: Score de consistência do relato
 - **Linguagem**: Detecção de linguagem inadequada
-- **Duplicatas**: Identificação de manifestações similares
+- **Padrão**: Desabilitado
 
-### Sugestões de Classificação
+### 2. Detecção de Duplicatas 🟢 (Padrão)
+- **Identificação**: Compara manifestações para encontrar similares
+- **Score de Similaridade**: Percentual de correspondência
+- **Vinculação**: Permite vincular ou marcar como duplicata
+- **Padrão**: **Habilitado**
+
+### 3. Sugestões de Classificação 🟡
 - Modalidade
 - Tipo
 - Assunto
 - Subassunto
 - Palavras-chave
+- **Padrão**: Desabilitado
 
-### Painel de Análise IA
-- Encaminhamento sugerido
+### 4. Sugestão de Encaminhamento 🟡
+- Órgão recomendado
+- Setor responsável
+- Prazo sugerido
 - Scores de análise
-- Insights baseados em histórico
+- **Padrão**: Desabilitado
+
+### 5. Sugestões de Resposta 🟡
+- Tipo de resposta recomendado
+- Modelo de texto
+- Rascunho gerado por IA
+- **Padrão**: Desabilitado
 
 ### Sugestões de Resposta
 - Tipo de resposta
@@ -66,11 +83,32 @@ extension/
 
 ## 🔧 Uso
 
+### Primeira Utilização
+
 1. Navegue até a página de detalhes do atendimento (`detalhes.html`)
 2. A extensão detecta automaticamente a página compatível
-3. Componentes de IA são injetados na interface
-4. Use os botões para aceitar, rejeitar ou entender as sugestões
-5. Clique no ícone da extensão para ver estatísticas e configurações
+3. Clique no ícone da extensão na barra de ferramentas
+4. Ative/desative as funcionalidades desejadas (padrão: apenas Duplicatas)
+5. Os componentes de IA correspondentes serão injetados na interface
+
+### Controle de Funcionalidades
+
+No popup da extensão você pode:
+
+- **Ativar/Desativar IA completamente**: Toggle principal
+- **Habilitar funcionalidades individuais**:
+  - ✅ **Detecção de Duplicatas** (habilitado por padrão)
+  - ⬜ Análise de Sentimento
+  - ⬜ Sugestões de Classificação
+  - ⬜ Sugestão de Encaminhamento
+  - ⬜ Sugestões de Resposta
+
+### Interação com Sugestões
+
+- **Aceitar (✓)**: Aplica a sugestão da IA
+- **Rejeitar (✗)**: Descarta a sugestão
+- **Explicar (?)**: Mostra o raciocínio da IA
+- **Feedback**: Todas as interações são registradas para melhorar o sistema
 
 ## 🖥️ Compatibilidade
 
